@@ -16,29 +16,28 @@
         <div id="dropdown-menu">
           <a href="#"><img class="langOption" src="../assets/flags/deu.jpg" alt="German"></a>
           <a href="#"><img class="langOption" src="../assets/flags/eng.jpg" alt="English"></a>
-          <a href="#"><img class="langOption" src="../assets/flags/esp.jpg" alt="Spanish"></a>
-          <a href="#"><img class="langOption" src="../assets/flags/fra.jpg" alt="French"></a>
           <a href="#"><img class="langOption" src="../assets/flags/mkd.jpg" alt="Macedonian"></a>
         </div>
       </div>
     <!-- language selector end -->
-
     <div class="contact-form">
-        <span class="heading">Contact Us</span>
+        <span class="onscreenText heading" id=contactPageTextContactUs></span>
         <form>
-            <label for="name">Name:</label>
+            <label class="onscreenText" id=contactPageTextName for="name"></label>
             <input id="nameInput" type="text" required>
-            <label for="email">Email:</label>
+            <label class="onscreenText" id=contactPageTextEmail for="email"></label>
             <input itemid="emailInput" type="email" id="email" name="email" required>
-            <label for="message">Message:</label>
+            <label class="onscreenText" id=contactPageTextMessage for="message"></label>
             <textarea id="messageInput" name="message" required></textarea>
-            <button id="submitInputs" type="submit">Submit</button>
+            <button class="onscreenText" id=contactPageTextSubmit id="submitInputs" type="submit"></button>
         </form>
     </div>
     <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
-    <script src="../scripts/contact.js"></script>
-    <link rel="stylesheet" href="../css/main.css">
+    <script src="../modules/multilingual.js"></script>
+    <link rel="stylesheet" href="../modules/multilingual.css">
     <link rel="stylesheet" href="../css/contact.css">
+
+    <link rel="stylesheet" href="../css/main.css">
 </body>
 
 </html>

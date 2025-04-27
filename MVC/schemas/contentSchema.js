@@ -6,10 +6,6 @@ export const createContentSchema = z.object({
         .string(),
     english: z
         .string(),
-    spanish: z
-        .string(),
-    french: z
-        .string(),
     macedonian: z
         .string(),
 })

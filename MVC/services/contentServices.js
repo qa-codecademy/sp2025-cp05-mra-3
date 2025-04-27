@@ -4,7 +4,9 @@ import ContentModel from '../models/contentModel.js';
 const ContentServices = {
     async getAllContents() {
         const allContents = await ContentModel.find();
+        console.log(allContents);
         return allContents;
+        
     },
     async updateContent(id, body) {
         const updatedContent = await ContentModel.findByIdAndUpdate(id, body, {

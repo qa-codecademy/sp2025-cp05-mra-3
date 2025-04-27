@@ -4,20 +4,13 @@ const contentSchema = new Schema({
     name: {
         type: String,
         required: true,
+        unique: true,
     },
     german: {
         type: String,
         required: true,
     },
     english: {
-        type: String,
-        required: true,
-    },
-    spanish: {
-        type: String,
-        required: true,
-    },
-    french: {
         type: String,
         required: true,
     },
