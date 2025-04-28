@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "37673797-2319-453f-891d-6b1e5b1257ef",
+		"name": "mrallround",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43039905"
+	},
+	"item": [
+		{
+			"name": "Get all contents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/multilingualpagecontent/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"multilingualpagecontent",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create content",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/multilingualpagecontent/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"multilingualpagecontent",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update content",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/multilingualpagecontent/update/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"multilingualpagecontent",
+						"update",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete content",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/multilingualpagecontent/delete/67e58fd72f5f2c49c6ad8831",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"multilingualpagecontent",
+						"delete",
+						"67e58fd72f5f2c49c6ad8831"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find content",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/multilingualpagecontent/67e5805178b0eb7cf2ea25ff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"multilingualpagecontent",
+						"67e5805178b0eb7cf2ea25ff"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
