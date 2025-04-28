@@ -93,7 +93,7 @@ a {
 
 #langDE,
 #langGB,
-#langDED {
+#langMK {
     height: inherit;
     width: inherit;
     border-radius: 2px;
@@ -101,8 +101,7 @@ a {
 
 #btnDE,
 #btnGB,
-#btnDED,
-#btnGBD {
+#btnMK {
     height: 15px;
     width: 30px;
     margin: 5px;
