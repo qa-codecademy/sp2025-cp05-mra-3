@@ -113,7 +113,7 @@ body, html {
     }
 
     .hero-content h1 {
-        font-size: 3rem; 
+        font-size: 2.8rem; 
         top: 5vh;
         right: 5vh;
     }
@@ -125,13 +125,38 @@ body, html {
     }
 
     .book-btn {
-        font-size: 1.6rem;
+        font-size: 1.3rem;
         padding: 10px 30px;
-        margin-top: 8vh;
-        margin-right: 20vh;
+        margin-top: 9vh;
+        margin-right: 18vh;
     }
 }
 
+@media (max-width: 1024px) {
+    .hero-img {
+        width: 80%;
+        height: 50vh;
+        margin-top: 5vh;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem; 
+        top: 5vh;
+        right: 5vh;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem; 
+        top: 15vh;
+        right: 10vh;
+    }
+    .book-btn {
+        font-size: 1.3rem;
+        padding: 10px 30px;
+        margin-top: 9vh;
+        margin-right: 10vh;
+    }
+}
 @media (max-width: 768px) {
     .hero-img {
         width: 90%;
