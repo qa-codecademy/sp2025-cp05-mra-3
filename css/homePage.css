@@ -119,9 +119,9 @@ body, html {
     }
 
     .hero-content p {
-        font-size: 2rem; 
+        font-size: 1.9rem; 
         top: 15vh;
-        right: 15vh;
+        right: 13.5vh;
     }
 
     .book-btn {
@@ -147,7 +147,7 @@ body, html {
 
     .hero-content p {
         font-size: 1.5rem; 
-        top: 15vh;
+        top: 14vh;
         right: 10vh;
     }
     .book-btn {
@@ -171,7 +171,7 @@ body, html {
 
     .hero-content p {
         font-size: 1.1rem; 
-        top: 15vh;
+        top: 12vh;
         right: 10vh;
     }
 
