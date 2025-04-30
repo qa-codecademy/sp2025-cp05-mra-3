@@ -13,7 +13,7 @@ body, html {
 .hero {
     position: relative;
     width: 100%;
-    height: 75vh;
+    height: 70vh;
     background-color: rgb(242, 250, 250);
 }
 
@@ -82,6 +82,9 @@ body, html {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 1540px) {
+    .hero {
+        height: 60vh;
+    }
     .hero-img {
         width: 75%;
         height: 60vh;
@@ -107,6 +110,9 @@ body, html {
     }
 }
 @media (max-width: 1360px) {
+    .hero {
+        height: 50vh;
+    }
     .hero-img {
         width: 80%;
         height: 50vh;
@@ -133,10 +139,12 @@ body, html {
 }
 
 @media (max-width: 1024px) {
+    .hero {
+        height: 50vh;
+    }
     .hero-img {
         width: 80%;
         height: 50vh;
-        margin-top: 5vh;
     }
 
     .hero-content h1 {
@@ -158,6 +166,9 @@ body, html {
     }
 }
 @media (max-width: 768px) {
+    .hero {
+        height: 45vh;
+    }
     .hero-img {
         width: 90%;
         height: 45vh;
@@ -185,6 +196,9 @@ body, html {
 
 
 @media (max-width: 600px) {
+    .hero {
+        height: 40vh;
+    }
     .hero-img {
         width: 100%;
         height: 40vh;
@@ -211,6 +225,9 @@ body, html {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        height: 35vh;
+    }
     .hero-img {
         width: 100%;
         height: 35vh;
