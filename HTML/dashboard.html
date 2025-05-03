@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <!-- language selector start-->
+    <div id="dropdown">
+        <div id="dropdown-toggle">
+          <img id="langSelection" src="" alt="">
+        </div>
+        <div id="dropdown-menu">
+          <a href="#"><img class="langOption" src="../assets/flags/deu.jpg" alt="German"></a>
+          <a href="#"><img class="langOption" src="../assets/flags/eng.jpg" alt="English"></a>
+          <a href="#"><img class="langOption" src="../assets/flags/mkd.jpg" alt="Macedonian"></a>
+        </div>
+      </div>
+    <!-- language selector end -->
+    <div class="contact-form">
+        <span class="onscreenText heading" id=contactPageTextContactUs></span>
+        <form>
+            <label class="onscreenText" id=contactPageTextName for="name"></label>
+            <input id="nameInput" type="text" required>
+            <label class="onscreenText" id=contactPageTextEmail for="email"></label>
+            <input class="onscreenText contactPageTextMessage" id="emailInput" type="email" id="email" name="email" required>
+            <label class="onscreenText contactPageTextMessage" id="" name="" for="message"></label>
+            <textarea class="onscreenText contactPageTextMessage" placeholder="" id="" name="" required></textarea>
+            <button class="onscreenText contactPageTextMessage" id=contactPageTextSubmit id="submitInputs" type="submit"></button>
+
+            <a href="./aboutUs.html" class="btn-link" target="_blank">Go to About Us</a>
+
+
+        </form>
+
+    <script src="../modules/multilingual.js"></script>
+    <script src="../scripts/dashboard.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</body>
+
+</html>

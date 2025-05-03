@@ -16,13 +16,11 @@ const ContentServices = {
         return updatedContent
     },
     async createContent(body) {
-        const { name, german, english, spanish, french, macedonian } = body;
+        const { title, german, english, macedonian } = body;
         const newContent = new ContentModel({
-            name,
+            title,
             german,
             english,
-            spanish,
-            french,
             macedonian,
         });
         const createdContent = await newContent.save();

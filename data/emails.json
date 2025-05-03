@@ -1,0 +1,72 @@
+[
+    {
+        "_id": "680dee4ad2e5a3a0622d3e98",
+        "name": "contactPageTextContactUs",
+        "german": "Kontaktieren Sie uns",
+        "english": "Contact us",
+        "macedonian": "Контактирајте не",
+        "createdAt": "2025-04-27T08:43:54.257Z",
+        "updatedAt": "2025-04-27T08:43:54.257Z",
+        "__v": 0
+    },
+    {
+        "_id": "680dee70d2e5a3a0622d3e9a",
+        "name": "contactPageTextName",
+        "german": "Name",
+        "english": "Name",
+        "macedonian": "Име",
+        "createdAt": "2025-04-27T08:44:32.880Z",
+        "updatedAt": "2025-04-27T08:44:32.880Z",
+        "__v": 0
+    },
+    {
+        "_id": "680deebcd2e5a3a0622d3e9e",
+        "name": "contactPageTextEmail",
+        "german": "E-mail",
+        "english": "E-mail",
+        "macedonian": "Е-пошта",
+        "createdAt": "2025-04-27T08:45:48.492Z",
+        "updatedAt": "2025-04-27T08:45:48.492Z",
+        "__v": 0
+    },
+    {
+        "_id": "680deeead2e5a3a0622d3ea0",
+        "name": "contactPageTextMessage",
+        "german": "Nachricht",
+        "english": "Message",
+        "macedonian": "Порака",
+        "createdAt": "2025-04-27T08:46:34.014Z",
+        "updatedAt": "2025-04-27T08:46:34.014Z",
+        "__v": 0
+    },
+    {
+        "_id": "680def1dd2e5a3a0622d3ea2",
+        "name": "contactPageTextSubmit",
+        "german": "Senden",
+        "english": "Submit",
+        "macedonian": "Испрати",
+        "createdAt": "2025-04-27T08:47:25.650Z",
+        "updatedAt": "2025-04-27T08:47:25.650Z",
+        "__v": 0
+    },
+    {
+        "_id": "680e2e16a66bcb62d91cd1fe",
+        "name": "aboutusPageTextTest",
+        "german": "tesger",
+        "english": "testen",
+        "macedonian": "testmk",
+        "createdAt": "2025-04-27T13:16:06.068Z",
+        "updatedAt": "2025-04-27T13:16:06.068Z",
+        "__v": 0
+    },
+    {
+        "_id": "680fc04130f452bfe9d3d18a",
+        "name": "test",
+        "german": "TestGER",
+        "english": "TestENG",
+        "macedonian": "TestMKD",
+        "createdAt": "2025-04-28T17:52:02.298Z",
+        "updatedAt": "2025-04-28T17:52:02.298Z",
+        "__v": 0
+    }
+]

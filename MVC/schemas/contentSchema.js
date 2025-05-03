@@ -1,6 +1,6 @@
 import { z } from 'zod';
 export const createContentSchema = z.object({
-    name: z
+    title: z
         .string(),
     german: z
         .string(),

@@ -3,11 +3,15 @@ function changeOnscreenText (dbContent, newLanguage){
     const allPageTexts = document.getElementsByClassName("onscreenText")
     for (pageText of allPageTexts) {
         for (dbText of dbContent) {
-            if (pageText.id === dbText.name){
-                pageText.innerText = dbText[newLanguage]
+            if (pageText.classList.contains(dbText.title)) {
+                if ((pageText.tagName === 'TEXTAREA')||(pageText.tagName === 'INPUT')) {
+                    pageText.placeholder = dbText[newLanguage];
+                } else {
+                    pageText.innerText = dbText[newLanguage];
+                }
             }
         }
-      }
+    }
 }
 // Reading from MongoDB - start
 function readContent(selectedLanguageText){
@@ -26,7 +30,6 @@ function readContent(selectedLanguageText){
     function toDoWithResult(result, selectedLanguageText) {
         console.log(result)
         console.log(selectedLanguageText)
-        console.log(result[3].name)
         if (selectedLanguageText === "English"){
             changeOnscreenText (result, "english")
         } else if (selectedLanguageText === "Macedonian"){

@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
 
 const contentSchema = new Schema({
-    name: {
+    title: {
         type: String,
         required: true,
         unique: true,
@@ -24,3 +24,5 @@ const contentSchema = new Schema({
     })
 const ContentModel = model('multilingualpagecontent', contentSchema);
 export default ContentModel;
+
+

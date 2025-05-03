@@ -45,10 +45,3 @@ const ContentController = {
         }
         return contentDetails;
     },
-
-
-
-
-
-};
-export default ContentController
