@@ -15,13 +15,12 @@ document.getElementById('contentForm').addEventListener('submit', async (e) => {
     });
 
     const responseBody = await res.json();
-    console.log(responseBody); // Log the response from the server for more details
   
-    // if (res.ok) {
-    //   alert('Content saved!');
-    //   document.getElementById('contentForm').reset();
-    // } else {
-    //   alert('Failed to save content.'+ responseBody.error);
-    // }
+    if (res.ok) {
+      alert('Content saved!');
+      document.getElementById('contentForm').reset();
+    } else {
+      alert('Failed to save content.'+ responseBody.error);
+    }
   });
   
