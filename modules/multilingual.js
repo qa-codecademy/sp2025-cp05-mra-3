@@ -3,7 +3,7 @@ function changeOnscreenText (dbContent, newLanguage){
     const allPageTexts = document.getElementsByClassName("onscreenText")
     for (pageText of allPageTexts) {
         for (dbText of dbContent) {
-            if (pageText.id === dbText.name){
+            if (pageText.classList.contains(dbText.title)){
                 pageText.innerText = dbText[newLanguage]
             }
         }
@@ -20,13 +20,11 @@ function readContent(selectedLanguageText){
             const data = await response.json();
             callback(data, selectedLanguageText);
         } catch (error) {
+            console.error('Fetch error:', error);
             alert('Fetch error:', error);
         }
     };
     function toDoWithResult(result, selectedLanguageText) {
-        console.log(result)
-        console.log(selectedLanguageText)
-        console.log(result[3].name)
         if (selectedLanguageText === "English"){
             changeOnscreenText (result, "english")
         } else if (selectedLanguageText === "Macedonian"){
@@ -35,7 +33,7 @@ function readContent(selectedLanguageText){
             changeOnscreenText (result, "german")
         }
     };
-    readAllMongoContent("http://localhost:3000/api/multilingualpagecontent/all", toDoWithResult);
+    readAllMongoContent("http://localhost:3000/api/content", toDoWithResult);
 }
 // language selector
 document.addEventListener('DOMContentLoaded', function () {

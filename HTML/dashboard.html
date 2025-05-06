@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/dashboard.css">
 </head>
 <body>
-    <form id="contentForm">
-        <input type="text" id="title" placeholder="Title" />
-        <input type="text" id="german" placeholder="German" />
-        <input type="text" id="english" placeholder="English" />
-        <input type="text" id="macedonian" placeholder="Macedonian" />
-        <button type="submit">Submit</button>
-    </form>
-    <script src="/dashboard.js" defer></script>
-    
+    <div class="signup-form">
+        <span class="onscreenText dashboardhtml SignUp heading"></span>
+        <form id="userForm">
+            <form id="userSignupForm">
+                <label class="onscreenText dashboardhtml Name" for="userNameInput"></label>
+                <input id="userNameInput" type="text" placeholder="" required>
+                <label class="onscreenText dashboardhtml Email" for="userNameEmail"></label>
+                <input id="userNameEmail" type="email" required>
+                <label class="onscreenText dashboardhtml Password" for="userNamePassword"></label>
+                <input id="userNamePassword" required></input>
+                <button class="onscreenText dashboardhtml Submit" id="submit" type="submit"></button>
+            </form>
+    </div>
+    <script src="../modules/multilingual.js"></script>
+    <script src="../scripts/dashboard.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
 </body>
 </html>

@@ -1,4 +1,4 @@
-// /MVC/routes/contentRoutes.js
+ // /MVC/routes/contentRoutes.js
 import { Router } from 'express';
 import { saveContentController, getAllContentController } from '../controllers/contentController.js';
 

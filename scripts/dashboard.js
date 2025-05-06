@@ -1,17 +1,16 @@
-document.getElementById('contentForm').addEventListener('submit', async (e) => {
+document.getElementById('userForm').addEventListener('submit', async (e) => {
     e.preventDefault();
   
-    const formData = {
-      title: document.getElementById('title').value,
-      german: document.getElementById('german').value,
-      english: document.getElementById('english').value,
-      macedonian: document.getElementById('macedonian').value,
+    const userFormData = {
+      name: document.getElementById('userNameInput').value,
+      email: document.getElementById('userNameEmail').value,
+      password: document.getElementById('userNamePassword').value,
     };
   
-    const res = await fetch('/api/content', {
+    const res = await fetch('/api/dashboard', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(userFormData),
     });
 
     const responseBody = await res.json();

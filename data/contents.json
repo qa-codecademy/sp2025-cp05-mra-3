@@ -1,14 +1,69 @@
 [
+                                     {"dashboard mlContent": "start"},
   {
-    "title": "Naslov11",
-    "german": "germnaski11",
-    "english": "angliski11",
-    "macedonian": "makedonski11"
+    "title": "SignUp",
+    "german": "Melden Sie sich an",
+    "english": "Sign up",
+    "macedonian": "Регистрирај се"
   },
   {
-    "title": "Naslov",
-    "german": "germnaski",
-    "english": "angliski",
-    "macedonian": "makedonski"
-  }
+    "title": "Name",
+    "german": "Name",
+    "english": "Name",
+    "macedonian": "Име"
+  },
+  {
+    "title": "Email",
+    "german": "Email",
+    "english": "Email",
+    "macedonian": "Е-пошта"
+  },
+  {
+    "title": "Password",
+    "german": "Passwort",
+    "english": "Password",
+    "macedonian": "Лозинка"
+  },
+  {
+    "title": "Submit",
+    "german": "Einreichen",
+    "english": "Submit",
+    "macedonian": "Испрати"
+  },
+                                                    {"dashboard mlContent": "end"},
+                                                    {"contact page form": "start"},
+  {
+    "title": "ContactUs",
+    "german": "Kontaktieren Sie uns",
+    "english": "Contact us",
+    "macedonian": "Контактирајте не"
+  },
+  {
+    "title": "Name",
+    "german": "Name",
+    "english": "Name",
+    "macedonian": "Име"
+  },
+  {
+    "title": "Email",
+    "german": "Email",
+    "english": "Email",
+    "macedonian": "Е-пошта"
+  },
+  {
+    "title": "Message",
+    "german": "Nachricht",
+    "english": "Message",
+    "macedonian": "Порака"
+  },
+  {
+    "title": "Submit",
+    "german": "Einreichen",
+    "english": "Submit",
+    "macedonian": "Испрати"
+  },
+                                                                    {"contact page form": "end"}
+
+
+
 ]
