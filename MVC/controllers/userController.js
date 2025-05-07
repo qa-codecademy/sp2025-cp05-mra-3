@@ -26,7 +26,7 @@ export async function saveUserController(req, res) {
 export async function getAllUsersController(req, res) {
   try {
     // Use the model to fetch all users
-    const content = await getAllUsers();
+    const user = await getAllUsers();
 
     res.status(200).json(user);
   } catch (err) {

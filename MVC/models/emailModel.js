@@ -7,9 +7,6 @@ const __dirname = path.dirname(__filename);
 
 // Path to the emails.json file inside the data folder
 const dataFile = path.join(__dirname, '/../../data/emails.json');
-console.log(__dirname)
-console.log(__filename)
-
 
 // Function to get all emails from the file
 export async function getAllEmails() {

@@ -1,6 +1,12 @@
 [
                                      {"dashboard mlContent": "start"},
   {
+    "title": "NewUser",
+    "german": "Neuer kunde",
+    "english": "New user",
+    "macedonian": "Нов корисник"
+  },
+  {
     "title": "SignUp",
     "german": "Melden Sie sich an",
     "english": "Sign up",
@@ -29,6 +35,18 @@
     "german": "Einreichen",
     "english": "Submit",
     "macedonian": "Испрати"
+  },
+  {
+    "title": "AllEmails",
+    "german": "Alle e-mails",
+    "english": "All e-mails",
+    "macedonian": "Сите е-пошти"
+  },
+  {
+    "title": "SubmitHideAllEmails",
+    "german": "E-Mails ausblenden",
+    "english": "Hide e-mails",
+    "macedonian": "Сокриј е-пошти"
   },
                                                     {"dashboard mlContent": "end"},
                                                     {"contact page form": "start"},

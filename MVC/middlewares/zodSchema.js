@@ -12,9 +12,11 @@ export const emailSchema = z.object({
   name: z.string().min(1, 'Name is required'),  
   email: z.string().min(1, 'Email is required').email('Invalid email format'),
   message: z.string().min(1, 'Message is required'),
+  createdAt: z.string(),
 });
 export const userSchema = z.object({
   name: z.string().min(1, 'Name is required'),  
   email: z.string().min(1, 'Email is required').email('Invalid email format'),
   password: z.string().min(6, 'Password is required'),
+  createdAt: z.string(),
 });

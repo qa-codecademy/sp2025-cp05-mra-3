@@ -26,7 +26,7 @@ export async function saveEmailController(req, res) {
 export async function getAllEmailsController(req, res) {
   try {
     // Use the model to fetch all emails
-    const content = await getAllEmails();
+    const email = await getAllEmails();
 
     res.status(200).json(email);
   } catch (err) {

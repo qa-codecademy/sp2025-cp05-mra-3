@@ -6,7 +6,8 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="signup-form">
+    <button class="onscreenText dashboardhtml NewUser" id="submitToggleNewUser" type="submit"></button>
+    <div class="signup-form" id="signup-form-wrapper">
         <span class="onscreenText dashboardhtml SignUp heading"></span>
         <form id="userForm">
             <form id="userSignupForm">
@@ -18,6 +19,13 @@
                 <input id="userNamePassword" required></input>
                 <button class="onscreenText dashboardhtml Submit" id="submit" type="submit"></button>
             </form>
+    </div>
+
+    <button class="onscreenText dashboardhtml AllEmails" id="submitToggleAllEmails" type="submit"></button>
+    <div class="allEmailsTable" id="emailTableWrapper">
+        <h2 class="onscreenText dashboardhtml heading">Submitted Emails</h2>
+        <div id="emailsContainer" class="emails-container">
+        </div>
     </div>
     <script src="../modules/multilingual.js"></script>
     <script src="../scripts/dashboard.js"></script>
