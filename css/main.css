@@ -42,15 +42,10 @@ nav {
     width: 70px;
 }
 
-#logoPic,
-#logoPicNeg {
+#logoPic {
     position: absolute;
     height: inherit;
     width: inherit;
-}
-
-#logoPic {
-    display: inline;
 }
 
 #menuDiv {
@@ -60,7 +55,6 @@ nav {
 }
 
 #menuLinks {
-    display: inline;
     padding-left: 0%;
     width: 100%;
     display: flex;

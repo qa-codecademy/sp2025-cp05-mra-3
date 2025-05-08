@@ -1,7 +1,6 @@
 const html = {
     navBar: document.getElementById("navBar"),
     logoPic: document.getElementById("logoPic"),
-    logoPicNeg: document.getElementById("logoPicNeg"),
 
     menuToggle: document.getElementById("menuToggle"),
     menu: document.getElementById("menuDiv"),
