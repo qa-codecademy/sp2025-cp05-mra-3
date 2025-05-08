@@ -5,8 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 </head>
+
 <body>
+    <!-- language selector - start-->
+    <div id="dropdown">
+        <div id="dropdown-toggle">
+            <img id="langSelection" src="" alt="">
+        </div>
+        <div id="dropdown-menu">
+            <a href="#"><img class="langOption" src="/assets/flags/deu.jpg" alt="German"></a>
+            <a href="#"><img class="langOption" src="/assets/flags/eng.jpg" alt="English"></a>
+            <a href="#"><img class="langOption" src="/assets/flags/mkd.jpg" alt="Macedonian"></a>
+        </div>
+        </div>
+    <!-- language selector - end -->
+    <!-- Toggler buttons - start -->
     <button class="onscreenText dashboardhtml NewUser" id="submitToggleNewUser" type="submit"></button>
+    <button class="onscreenText dashboardhtml AllEmails" id="submitToggleAllEmails" type="submit"></button>
+    <button class="onscreenText dashboardhtml AllContents" id="submitToggleAllContents" type="submit"></button>
+    <!-- Toggler buttons - end -->
+    <!-- Sign up form - start -->
     <div class="signup-form" id="signup-form-wrapper">
         <span class="onscreenText dashboardhtml SignUp heading"></span>
         <form id="userForm">
@@ -20,16 +38,25 @@
                 <button class="onscreenText dashboardhtml Submit" id="submit" type="submit"></button>
             </form>
     </div>
-
-    <button class="onscreenText dashboardhtml AllEmails" id="submitToggleAllEmails" type="submit"></button>
+    <!-- Sign up form - end -->
+    <!-- All emails - start -->
     <div class="allEmailsTable" id="emailTableWrapper">
-        <h2 class="onscreenText dashboardhtml heading">Submitted Emails</h2>
+        <h2 class="onscreenText dashboardhtml SubmitedEmails"></h2>
         <div id="emailsContainer" class="emails-container">
         </div>
     </div>
-    <script src="../modules/multilingual.js"></script>
+    <!-- All emails - end -->
+    <!-- All contents - start -->
+    <div class="allContentsTable" id="contentTableWrapper">
+        <h2 class="onscreenText dashboardhtml AllContents"></h2>
+        <div id="contentsContainer" class="contents-container">
+        </div>
+    </div>
+    <!-- All contents - end -->
+
     <script src="../scripts/dashboard.js"></script>
-    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="../modules/multilingual.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
 </body>
 </html>
