@@ -56,8 +56,8 @@
   transition: transform 0.3s ease-in-out;
 }
 /* user sign up form - end */
-/* table with all emails - start */
-.allEmailsTable{
+/* tables with all emails and contents - start */
+.allEmailsTable, .allContentsTable{
   background-color: #f2f2f2;
   padding: 20px;
   border-radius: 10px;
@@ -66,18 +66,18 @@
   justify-self: center;
 }
 
-#emailTableWrapper {
+#emailTableWrapper, #contentTableWrapper{
   display: none;
 }
 
-.emails-container {
+.emails-container, .contents-container{
   display: flex;
   flex-direction: column;
   gap: 20px;
   margin-top: 20px;
 }
 
-.email-entry {
+.email-entry, .content-entry{
   background-color: #f9f9f9;
   border: 1px solid #ccc;
   padding: 16px;
@@ -86,8 +86,8 @@
   overflow: auto;
 }
 
-.email-entry div {
+.email-entry div, .content-entry div{
   margin: 6px 0;
   font-size: 16px;
 }
-/* table with all emails - end */
+/* table with all emails and contents - end */
