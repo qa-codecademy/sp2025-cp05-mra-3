@@ -91,3 +91,8 @@
   font-size: 16px;
 }
 /* table with all emails and contents - end */
+#contentTableTitle {
+  display: flex;
+  align-items: center; /* Align vertically */
+  justify-content: space-between; /* Optional: adds space between h2 and dropdown */
+}

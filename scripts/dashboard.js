@@ -129,20 +129,27 @@ function renderContentsTable(contents) {
     const entry = document.createElement('div');
     entry.classList.add('content-entry');
     entry.innerHTML = `
-      <div><strong class = "onscreenText dashboardhtml Title:"></strong><p style="display: inline;"> ${content.title}</p></div>
-      <div><strong class = "onscreenText dashboardhtml German:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" > ${content.german}</p></div>
-      <div><strong class = "onscreenText dashboardhtml English:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" > ${content.english}</p></div>
-      <div><strong class = "onscreenText dashboardhtml Macedonian:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" > ${content.macedonian}</div>
+      <div>
+      <strong class = "onscreenText dashboardhtml Number:"></strong><p style="display: inline;">${content.id}</p>
+      <strong class = "onscreenText dashboardhtml Title:"></strong><p style="display: inline;">${content.title}</p>
+      </div>
+      <div><strong class = "onscreenText dashboardhtml German:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.german}</p></div>
+      <div><strong class = "onscreenText dashboardhtml English:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.english}</p></div>
+      <div><strong class = "onscreenText dashboardhtml Macedonian:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.macedonian}</div>
       <button id="enableEdit${content.id}" class="onscreenText dashboardhtml UpdateContent" onclick="enableEdit('${content.id}')" style="display: inline;" type="button"></button>
-      <button id="saveEdition${content.id}" class="onscreenText dashboardhtml SaveChanges" onclick="saveEdit('${content.id}')" style="display: none;" type="button"></button>
+      <button id="cancelEdition${content.id}" class="onscreenText dashboardhtml CancelChanges" onclick="cancelEdition('${content.id}', '${content.german}', '${content.english}', '${content.macedonian}')" style="display: none;" type="button"></button>
+      <button id="saveEdition${content.id}" class="onscreenText dashboardhtml SaveChanges" onclick="saveEdition('${content.id}', '${content.title}')" style="display: none;" type="button"></button>
     `;
     container.appendChild(entry);
   });
 }
+
 function enableEdit(contentId) {
   const thisButtonId = "enableEdit"+contentId
-  const otherButtonId = "saveEdition"+contentId
-  document.getElementById(otherButtonId).style.display = "inline"
+  const otherButton1Id = "saveEdition"+contentId
+  const otherButton2Id = "cancelEdition"+contentId
+  document.getElementById(otherButton1Id).style.display = "inline"
+  document.getElementById(otherButton2Id).style.display = "inline"
   document.getElementById(thisButtonId).style.display = "none"
   const elements = document.getElementsByClassName(contentId);
   for (let i = 0; i < elements.length; i++) {
@@ -151,18 +158,61 @@ function enableEdit(contentId) {
     element.style.border = '1px dashed gray';
   }
 }
-function saveEdit(contentId) {
-  const thisButtonId = "saveEdition"+contentId
-  const otherButtonId = "enableEdit"+contentId
-  document.getElementById(otherButtonId).style.display = "inline"
+
+function cancelEdition(contentId, contentGerman, contentEnglish, contentMacedonian) {
+  const thisButtonId = "cancelEdition"+contentId
+  const otherButton1Id = "enableEdit"+contentId
+  const otherButton2Id = "saveEdition"+contentId
+  document.getElementById(otherButton1Id).style.display = "inline"
+  document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
-  // const elements = document.getElementsByClassName(contentId);
-  // for (let i = 0; i < elements.length; i++) {
-  //   const element = elements[i];
-  //   element.contentEditable = true;
-  //   element.style.border = '1px dashed gray';
-  // }
+
+  document.getElementsByClassName(contentId)[0].innerText = contentGerman
+  document.getElementsByClassName(contentId)[1].innerText = contentEnglish
+  document.getElementsByClassName(contentId)[2].innerText = contentMacedonian
+  const elements = document.getElementsByClassName(contentId);
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    element.contentEditable = false;
+    element.style.border = 'none';
+  }
+}
+
+async function saveEdition(contentId, contentTitle) {
+  const thisButtonId = "saveEdition"+contentId
+  const otherButton1Id = "enableEdit"+contentId
+  const otherButton2Id = "cancelEdition"+contentId
+  document.getElementById(otherButton1Id).style.display = "inline"
+  document.getElementById(otherButton2Id).style.display = "none"
+  document.getElementById(thisButtonId).style.display = "none"
+  const elements = document.getElementsByClassName(contentId);
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    element.contentEditable = false;
+    element.style.border = 'none';
+  }
+  // changing content - start
+    const contentFormData = {
+      german: document.getElementsByClassName(contentId)[0].innerText,
+      english: document.getElementsByClassName(contentId)[1].innerText,
+      macedonian: document.getElementsByClassName(contentId)[2].innerText,
+      id: contentId,
+      title: contentTitle
+    };
+
+    const res = await fetch('/api/content', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(contentFormData),
+    });
+
+    const responseBody = await res.json();
   
-  alert("Changes are saved")
+    if (res.ok) {
+      alert('Content changed!');
+    } else {
+      alert('Failed to change content. ' + (responseBody.message || 'Unknown error.'));
+    }
+  // // changing content - end
 }
 // table with all contents - end

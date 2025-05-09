@@ -1,23 +1,23 @@
 // /MVC/controllers/contentController.js
-import { saveContent, getAllContent } from '../models/contentModel.js';  // Import the model functions
+import { updateContent, getAllContent } from '../models/contentModel.js';  // Import the model functions
 import { contentSchema } from '../middlewares/zodSchema.js'; // Import Zod schema for validation
 
 // Controller to save content
-export async function saveContentController(req, res) {
+export async function updateContentController(req, res) {
   try {
     // Validate the incoming request body using Zod
     const parsedData = contentSchema.parse(req.body);
 
     // Use the model to save the validated content
-    await saveContent(parsedData);
+    await updateContent(parsedData);
 
-    res.status(201).json({ message: 'Content saved successfully!' });
+    res.status(201).json({ message: 'Content changed successfully!' });
   } catch (err) {
     // If validation fails, send an error response
     if (err instanceof Error) {
       res.status(400).json({ message: err.message });
     } else {
-      res.status(500).json({ message: 'Error saving content.' });
+      res.status(500).json({ message: 'Error changing content.' });
     }
   }
 }

@@ -1,6 +1,6 @@
  // /MVC/routes/contentRoutes.js
 import { Router } from 'express';
-import { saveContentController, getAllContentController } from '../controllers/contentController.js';
+import { updateContentController, getAllContentController } from '../controllers/contentController.js';
 
 const router = Router();
 
@@ -8,6 +8,6 @@ const router = Router();
 router.get('/content', getAllContentController);
 
 // Route to post new content
-router.post('/content', saveContentController);
+router.post('/content', updateContentController);
 
 export default router;

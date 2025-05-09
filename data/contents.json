@@ -1,138 +1,163 @@
 [
-                                                    {"contact page form": "start"},
   {
-    
-    "id": "100",
+    "id": "001",
     "title": "ContactUs",
     "german": "Kontaktieren Sie uns",
     "english": "Contact us",
     "macedonian": "Контактирајте не"
   },
   {
-    "id": "200",
+    "id": "002",
     "title": "Name",
     "german": "Name",
     "english": "Name",
     "macedonian": "Име"
   },
   {
+    "id": "003",
     "title": "Email",
     "german": "Email",
     "english": "Email",
     "macedonian": "Е-пошта"
   },
   {
+    "id": "004",
     "title": "Message",
     "german": "Nachricht",
     "english": "Message",
     "macedonian": "Порака"
   },
   {
+    "id": "005",
     "title": "Submit",
     "german": "Einreichen",
     "english": "Submit",
     "macedonian": "Испрати"
   },
-                                                    {"contact page form": "end"},
-                                                    {"dashboard mlContent": "start"},
   {
+    "id": "101",
     "title": "NewUser",
     "german": "Neuer kunde",
     "english": "New user",
     "macedonian": "Нов корисник"
   },
   {
+    "id": "102",
     "title": "AllEmails",
     "german": "Alle e-mails",
     "english": "All e-mails",
     "macedonian": "Сите е-пошти"
   },
   {
+    "id": "103",
     "title": "AllContents",
     "german": "Inhalt",
     "english": "Contents",
     "macedonian": "Содржини"
   },
   {
+    "id": "104",
     "title": "SignUp",
     "german": "Neuen Benutzer anmelden",
     "english": "Sign up new user",
     "macedonian": "Регистрирај нов корисник"
   },
   {
+    "id": "105",
     "title": "Password",
     "german": "Passwort",
     "english": "Password",
     "macedonian": "Лозинка"
   },
   {
+    "id": "106",
     "title": "SubmitedEmails",
     "german": "Eingereichte E-Mails",
     "english": "Submited E-mails",
     "macedonian": "Испратени пораки"
   },
   {
+    "id": "107",
     "title": "Date:",
     "german": "Datum:",
     "english": "Date:",
     "macedonian": "Датум:"
   },
   {
+    "id": "108",
     "title": "Name:",
     "german": "Name:",
     "english": "Name:",
     "macedonian": "Име:"
   },
   {
+    "id": "109",
     "title": "Email:",
     "german": "Email:",
     "english": "Email:",
     "macedonian": "Е-пошта:"
   },
   {
+    "id": "110",
     "title": "Message:",
     "german": "Nachricht:",
     "english": "Message:",
     "macedonian": "Порака:"
   },
   {
+    "id": "111",
+    "title": "Number:",
+    "german": "Nein.: ",
+    "english": "No.: ",
+    "macedonian": "Бр.: "
+  },
+  {
+    "id": "112",
     "title": "Title:",
-    "german": "Titel:",
-    "english": "Title:",
-    "macedonian": "Наслов:"
+    "german": "Titel: ",
+    "english": "Title: ",
+    "macedonian": "Наслов: "
   },
   {
+    "id": "113",
     "title": "German:",
-    "german": "Deutsche:",
-    "english": "German:",
-    "macedonian": "Германски:"
+    "german": "Deutsche: ",
+    "english": "German: ",
+    "macedonian": "Германски: "
   },
   {
+    "id": "114",
     "title": "English:",
-    "german": "Englische:",
-    "english": "English:",
-    "macedonian": "Англиски:"
+    "german": "Englische: ",
+    "english": "English: ",
+    "macedonian": "Англиски: "
   },
   {
+    "id": "115",
     "title": "Macedonian:",
-    "german": "Mazedonische:",
-    "english": "Macedonian:",
-    "macedonian": "Македонски:"
+    "german": "Mazedonische: ",
+    "english": "Macedonian: ",
+    "macedonian": "Македонски: "
   },
   {
+    "id": "116",
     "title": "UpdateContent",
     "german": "Inhalt aktualisieren",
     "english": "Update content",
     "macedonian": "Измени содржина"
   },
   {
+    "id": "117",
+    "title": "CancelChanges",
+    "german": "Änderungen verwerfen",
+    "english": "Cancel changes",
+    "macedonian": "Откажи измени"
+  },
+  {
+    "id": "118",
     "title": "SaveChanges",
     "german": "Änderungen speichern",
     "english": "Save changes",
     "macedonian": "Зачувај измени"
-  },
-                                                    {"dashboard mlContent": "end"}
-
-
-
+  }
 ]

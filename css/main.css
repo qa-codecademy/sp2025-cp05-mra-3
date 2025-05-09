@@ -1,19 +1,19 @@
 /* Language selector - start */
-#dropdown {
+#dropdown, #dropdown1 {
     position: relative;
     display: inline-block;
     font-family: sans-serif;
   }
 
-  #dropdown-toggle {
+  #dropdown-toggle, #dropdown1-toggle {
     cursor: pointer;
   }
-  #dropdown-toggle img, #dropdown-menu a img{
+  #dropdown-toggle img, #dropdown-menu a img,   #dropdown1-toggle img, #dropdown1-menu a img{
     border-radius: 5px;
     width: 40px;
   }
 
-  #dropdown-menu {
+  #dropdown-menu, #dropdown1-menu{
     display: none;
     position: absolute;
     top: 100%;
@@ -21,16 +21,16 @@
     z-index: 1000;
   }
 
-  #dropdown:hover #dropdown-menu {
+  #dropdown:hover #dropdown-menu, #dropdown1:hover #dropdown1-menu {
     display: block;
   }
 
-  #dropdown-menu a {
+  #dropdown-menu a,   #dropdown1-menu a {
     display: block;
     height: auto;
   }
 
-  #dropdown-menu a img:hover {
+  #dropdown-menu a img:hover, #dropdown1-menu a img:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
   }
 /* Language selector - end */

@@ -7,9 +7,6 @@ const __dirname = path.dirname(__filename);
 
 // Path to the users.json file inside the data folder
 const dataFile = path.join(__dirname, '/../../data/users.json');
-console.log(__dirname)
-console.log(__filename)
-
 
 // Function to get all users from the file
 export async function getAllUsers() {
