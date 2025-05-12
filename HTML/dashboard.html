@@ -20,28 +20,28 @@
     </div>
     <!-- language selector - end -->
     <!-- Toggler buttons - start -->
-    <button class="onscreenText dashboardhtml NewUser" id="submitToggleNewUser" type="submit"></button>
-    <button class="onscreenText dashboardhtml AllEmails" id="submitToggleAllEmails" type="submit"></button>
-    <button class="onscreenText dashboardhtml AllContents" id="submitToggleAllContents" type="submit"></button>
+    <button class="onscreenText dashboardhtmlNewUser" id="submitToggleNewUser" type="submit"></button>
+    <button class="onscreenText dashboardhtmlAllEmails" id="submitToggleAllEmails" type="submit"></button>
+    <button class="onscreenText dashboardhtmlAllContents" id="submitToggleAllContents" type="submit"></button>
     <!-- Toggler buttons - end -->
     <!-- Sign up form - start -->
     <div class="signup-form" id="signup-form-wrapper">
-        <span class="onscreenText dashboardhtml SignUp heading"></span>
+        <span class="onscreenText dashboardhtmlSignUp heading"></span>
         <form id="userForm">
             <form id="userSignupForm">
-                <label class="onscreenText dashboardhtml Name" for="userNameInput"></label>
+                <label class="onscreenText dashboardhtmlFullName" for="userNameInput"></label>
                 <input id="userNameInput" type="text" placeholder="" required>
-                <label class="onscreenText dashboardhtml Email" for="userNameEmail"></label>
+                <label class="onscreenText dashboardhtmlEmail" for="userNameEmail"></label>
                 <input id="userNameEmail" type="email" required>
-                <label class="onscreenText dashboardhtml Password" for="userNamePassword"></label>
+                <label class="onscreenText dashboardhtmlPassword" for="userNamePassword"></label>
                 <input id="userNamePassword" required></input>
-                <button class="onscreenText dashboardhtml Submit" id="submit" type="submit"></button>
+                <button class="onscreenText dashboardhtmlSubmit" id="submit" type="submit"></button>
             </form>
     </div>
     <!-- Sign up form - end -->
     <!-- All emails - start -->
     <div class="allEmailsTable" id="emailTableWrapper">
-        <h2 class="onscreenText dashboardhtml SubmitedEmails"></h2>
+        <h2 class="onscreenText dashboardhtmlReceivedEmails"></h2>
         <div id="emailsContainer" class="emails-container">
         </div>
     </div>
@@ -49,15 +49,20 @@
     <!-- All contents - start -->
     <div class="allContentsTable" id="contentTableWrapper">
         <div id="contentTableTitle">
-            <h2 class="onscreenText dashboardhtml AllContents"></h2>
+            <h2 class="onscreenText dashboardhtmlAllContents"></h2>
             <div id="dropdown1">
-                <div id="dropdown1-toggle">
-                    <img id="langSelection" src="/assets/flags/deu.jpg" alt="">
+                <div>
+                    <strong class="onscreenText dashboardhtmlPage:"></strong>
+                    <div id="dropdown1-toggle" class="onscreenText dashboardhtmlAll" style="display: inline;"></div>
                 </div>
                 <div id="dropdown1-menu">
-                    <a href="#"><img class="langOption" src="/assets/flags/deu.jpg" alt="German"></a>
-                    <a href="#"><img class="langOption" src="/assets/flags/eng.jpg" alt="English"></a>
-                    <a href="#"><img class="langOption" src="/assets/flags/mkd.jpg" alt="Macedonian"></a>
+                    <div class="pageMenu onscreenText dashboardhtmlAll">All</div>
+                    <div class="pageMenu">aboutUs</div>
+                    <div class="pageMenu">contact</div>
+                    <div class="pageMenu">dashboard</div>
+                    <div class="pageMenu">homePage</div>
+                    <div class="pageMenu">reviews</div>
+                    <div class="pageMenu">services</div>
                 </div>
             </div>
         </div>

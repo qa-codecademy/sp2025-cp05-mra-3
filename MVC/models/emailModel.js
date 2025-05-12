@@ -1,6 +1,7 @@
 import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
 import path from 'path';
+import nodemailer from 'nodemailer';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -37,3 +38,37 @@ export async function saveEmail(newEmail) {
     throw new Error('Error saving email: ' + err.message);
   }
 }
+// Function to send new email
+const mailOptions1 = {}
+export function sendEmail(newEmail) {
+  mailOptions1 = {
+  from: newEmail.email,
+  to: 'mrallround5@gmail.com',
+  subject: newEmail.name,
+  text: newEmail.message
+};
+sendMail1(mailOptions1)
+// return mailOptions1;
+}
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'mrallround5@gmail.com',
+    pass: 'sbgv vaoy jrnp euva'  // Use the App Password here
+  }
+});
+
+// const mailOptions = {
+//   from: 'stevan.rufceski@gmail.com',
+//   to: 'mrallround5@gmail.com',
+//   subject: 'Test Email',
+//   text: 'Hello, this is a test email.'
+// };
+
+transporter.sendMail1(mailOptions1, (error, info) => {
+  if (error) {
+    console.log('Error:', error);
+  } else {
+    console.log('Email sent:', info.response);
+  }
+});

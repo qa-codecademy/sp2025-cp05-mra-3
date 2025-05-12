@@ -3,7 +3,7 @@ function changeOnscreenText (dbContent, newLanguage){
     const allPageTexts = document.getElementsByClassName("onscreenText")
     for (pageText of allPageTexts) {
         for (dbText of dbContent) {
-            if (pageText.classList.contains(dbText.title)){
+            if (pageText.classList.contains(dbText.id)){
                 pageText.innerText = dbText[newLanguage]
             }
         }

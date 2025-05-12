@@ -1,161 +1,162 @@
 [
   {
-    "id": "001",
-    "title": "ContactUs",
+    "id": "contacthtmlContactUs",
     "german": "Kontaktieren Sie uns",
     "english": "Contact us",
     "macedonian": "Контактирајте не"
   },
   {
-    "id": "002",
-    "title": "Name",
-    "german": "Name",
+    "id": "contacthtmlName",
+    "german": "1Name",
     "english": "Name",
     "macedonian": "Име"
   },
   {
-    "id": "003",
-    "title": "Email",
+    "id": "contacthtmlEmail",
     "german": "Email",
     "english": "Email",
     "macedonian": "Е-пошта"
   },
   {
-    "id": "004",
-    "title": "Message",
+    "id": "contacthtmlMessage",
     "german": "Nachricht",
     "english": "Message",
     "macedonian": "Порака"
   },
   {
-    "id": "005",
-    "title": "Submit",
+    "id": "contacthtmlSubmit",
     "german": "Einreichen",
     "english": "Submit",
     "macedonian": "Испрати"
   },
   {
-    "id": "101",
-    "title": "NewUser",
+    "id": "dashboardhtmlNewUser",
     "german": "Neuer kunde",
     "english": "New user",
     "macedonian": "Нов корисник"
   },
   {
-    "id": "102",
-    "title": "AllEmails",
+    "id": "dashboardhtmlAllEmails",
     "german": "Alle e-mails",
     "english": "All e-mails",
     "macedonian": "Сите е-пошти"
   },
   {
-    "id": "103",
-    "title": "AllContents",
+    "id": "dashboardhtmlAllContents",
     "german": "Inhalt",
     "english": "Contents",
     "macedonian": "Содржини"
   },
   {
-    "id": "104",
-    "title": "SignUp",
+    "id": "dashboardhtmlSignUp",
     "german": "Neuen Benutzer anmelden",
     "english": "Sign up new user",
     "macedonian": "Регистрирај нов корисник"
   },
   {
-    "id": "105",
-    "title": "Password",
+    "id": "dashboardhtmlFullName",
+    "german": "Vollständiger Name",
+    "english": "Full name",
+    "macedonian": "Целосно име"
+  },
+  {
+    "id": "dashboardhtmlEmail",
+    "german": "Email",
+    "english": "Email",
+    "macedonian": "Е-пошта"
+  },
+  {
+    "id": "dashboardhtmlPassword",
     "german": "Passwort",
     "english": "Password",
     "macedonian": "Лозинка"
   },
   {
-    "id": "106",
-    "title": "SubmitedEmails",
-    "german": "Eingereichte E-Mails",
-    "english": "Submited E-mails",
-    "macedonian": "Испратени пораки"
+    "id": "dashboardhtmlSubmit",
+    "german": "Einreichen",
+    "english": "Submit",
+    "macedonian": "Испрати"
   },
   {
-    "id": "107",
-    "title": "Date:",
+    "id": "dashboardhtmlReceivedEmails",
+    "german": "Empfangene E-Mails",
+    "english": "Received E-mails",
+    "macedonian": "Примени пораки"
+  },
+  {
+    "id": "dashboardhtmlDate:",
     "german": "Datum:",
     "english": "Date:",
     "macedonian": "Датум:"
   },
   {
-    "id": "108",
-    "title": "Name:",
+    "id": "dashboardhtmlName:",
     "german": "Name:",
     "english": "Name:",
     "macedonian": "Име:"
   },
   {
-    "id": "109",
-    "title": "Email:",
+    "id": "dashboardhtmlEmail:",
     "german": "Email:",
     "english": "Email:",
     "macedonian": "Е-пошта:"
   },
   {
-    "id": "110",
-    "title": "Message:",
+    "id": "dashboardhtmlMessage:",
     "german": "Nachricht:",
     "english": "Message:",
     "macedonian": "Порака:"
   },
   {
-    "id": "111",
-    "title": "Number:",
+    "id": "dashboardhtmlPage:",
+    "german": "Seite:",
+    "english": "Page:",
+    "macedonian": "Страна:"
+  },
+  {
+    "id": "dashboardhtmlAll",
+    "german": "Alle",
+    "english": "All",
+    "macedonian": "Сите"
+  },
+  {
+    "id": "dashboardhtmlNumber:",
     "german": "Nein.: ",
     "english": "No.: ",
     "macedonian": "Бр.: "
   },
   {
-    "id": "112",
-    "title": "Title:",
-    "german": "Titel: ",
-    "english": "Title: ",
-    "macedonian": "Наслов: "
-  },
-  {
-    "id": "113",
-    "title": "German:",
+    "id": "dashboardhtmlGerman:",
     "german": "Deutsche: ",
     "english": "German: ",
     "macedonian": "Германски: "
   },
   {
-    "id": "114",
-    "title": "English:",
+    "id": "dashboardhtmlEnglish:",
     "german": "Englische: ",
     "english": "English: ",
     "macedonian": "Англиски: "
   },
   {
-    "id": "115",
-    "title": "Macedonian:",
+    "id": "dashboardhtmlMacedonian:",
     "german": "Mazedonische: ",
     "english": "Macedonian: ",
     "macedonian": "Македонски: "
   },
   {
-    "id": "116",
-    "title": "UpdateContent",
+    "id": "dashboardhtmlUpdateContent",
     "german": "Inhalt aktualisieren",
     "english": "Update content",
     "macedonian": "Измени содржина"
   },
   {
-    "id": "117",
-    "title": "CancelChanges",
+    "id": "dashboardhtmlCancelChanges",
     "german": "Änderungen verwerfen",
     "english": "Cancel changes",
     "macedonian": "Откажи измени"
   },
   {
-    "id": "118",
-    "title": "SaveChanges",
+    "id": "dashboardhtmlSaveChanges",
     "german": "Änderungen speichern",
     "english": "Save changes",
     "macedonian": "Зачувај измени"

@@ -79,16 +79,17 @@ function renderEmailsTable(emails) {
     entry.classList.add('email-entry');
 
     entry.innerHTML = `
-        <div><strong class = "onscreenText dashboardhtml Date:"></strong> ${new Date(email.createdAt).toLocaleString()}</div>
-        <div><strong class = "onscreenText dashboardhtml Name:"></strong> ${email.name}</div>
-        <div><strong class = "onscreenText dashboardhtml Email:"></strong> ${email.email}</div>
-        <div><strong class = "onscreenText dashboardhtml Message:"></strong> ${email.message}</div>
+        <div><strong class = "onscreenText dashboardhtmlDate:"></strong> ${new Date(email.createdAt).toLocaleString()}</div>
+        <div><strong class = "onscreenText dashboardhtmlName:"></strong> ${email.name}</div>
+        <div><strong class = "onscreenText dashboardhtmlEmail:"></strong> ${email.email}</div>
+        <div><strong class = "onscreenText dashboardhtmlMessage:"></strong> ${email.message}</div>
       `;
     container.appendChild(entry);
   });
 }
 // table with all emails - end
 // table with all contents - start
+let allContents = [];
 document.getElementById('submitToggleAllContents').addEventListener('click', () => {
   const wrapper = document.getElementById('contentTableWrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
@@ -111,17 +112,45 @@ document.addEventListener('DOMContentLoaded', async () => {
     const sortedContents = contents
       .map(content => ({
         ...content,
-        createdAt: new Date(content.createdAt)
       }))
       .sort((a, b) => b.createdAt - a.createdAt);
+    
+    allContents = sortedContents
 
-    renderContentsTable(sortedContents);
+    renderContentsTable(allContents);
   } catch (err) {
     console.error('Error fetching contents:', err);
     alert('Could not load contents.');
   }
 });
+// selecting page-filter - start
+const menuList = document.getElementsByClassName('pageMenu')
+for (let i=0; i<menuList.length; i++){
+  menuList[i].addEventListener('click', () => {
+    document.getElementById('dropdown1-toggle').innerHTML = menuList[i].innerHTML
+    const page = menuList[i].innerHTML.trim().toLowerCase()
+    filterEntriesByPage(page)
+  });
+}
 
+function filterEntriesByPage(page) {
+  const entries = document.querySelectorAll('.content-entry');
+  entries.forEach(entry => {
+    const idParagraph = entry.querySelector('div > p');
+    const contentId = idParagraph.textContent.trim().toLowerCase();
+
+    if ((page !== 'alle')&&(page !== 'all')&&(page !== 'сите')) {
+      if (contentId.includes(page)) {
+        entry.style.display = 'block';
+      } else {
+        entry.style.display = 'none';
+      }
+    } else {
+      entry.style.display = 'block';
+    }
+  });
+}
+// selecting page-filter - end
 function renderContentsTable(contents) {
   const container = document.getElementById('contentsContainer');
   container.innerHTML = '';
@@ -129,16 +158,13 @@ function renderContentsTable(contents) {
     const entry = document.createElement('div');
     entry.classList.add('content-entry');
     entry.innerHTML = `
-      <div>
-      <strong class = "onscreenText dashboardhtml Number:"></strong><p style="display: inline;">${content.id}</p>
-      <strong class = "onscreenText dashboardhtml Title:"></strong><p style="display: inline;">${content.title}</p>
-      </div>
-      <div><strong class = "onscreenText dashboardhtml German:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.german}</p></div>
-      <div><strong class = "onscreenText dashboardhtml English:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.english}</p></div>
-      <div><strong class = "onscreenText dashboardhtml Macedonian:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.macedonian}</div>
-      <button id="enableEdit${content.id}" class="onscreenText dashboardhtml UpdateContent" onclick="enableEdit('${content.id}')" style="display: inline;" type="button"></button>
-      <button id="cancelEdition${content.id}" class="onscreenText dashboardhtml CancelChanges" onclick="cancelEdition('${content.id}', '${content.german}', '${content.english}', '${content.macedonian}')" style="display: none;" type="button"></button>
-      <button id="saveEdition${content.id}" class="onscreenText dashboardhtml SaveChanges" onclick="saveEdition('${content.id}', '${content.title}')" style="display: none;" type="button"></button>
+      <div><strong class = "onscreenText dashboardhtmlNumber:"></strong><p style="display: inline;">${content.id}</p></div>
+      <div><strong class = "onscreenText dashboardhtmlGerman:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.german}</p></div>
+      <div><strong class = "onscreenText dashboardhtmlEnglish:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.english}</p></div>
+      <div><strong class = "onscreenText dashboardhtmlMacedonian:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.macedonian}</div>
+      <button id="enableEdit${content.id}" class="onscreenText dashboardhtmlUpdateContent" onclick="enableEdit('${content.id}')" style="display: inline;" type="button"></button>
+      <button id="cancelEdition${content.id}" class="onscreenText dashboardhtmlCancelChanges" onclick="cancelEdition('${content.id}', '${content.german}', '${content.english}', '${content.macedonian}')" style="display: none;" type="button"></button>
+      <button id="saveEdition${content.id}" class="onscreenText dashboardhtmlSaveChanges" onclick="saveEdition('${content.id}')" style="display: none;" type="button"></button>
     `;
     container.appendChild(entry);
   });
@@ -178,7 +204,7 @@ function cancelEdition(contentId, contentGerman, contentEnglish, contentMacedoni
   }
 }
 
-async function saveEdition(contentId, contentTitle) {
+async function saveEdition(contentId) {
   const thisButtonId = "saveEdition"+contentId
   const otherButton1Id = "enableEdit"+contentId
   const otherButton2Id = "cancelEdition"+contentId
@@ -197,7 +223,6 @@ async function saveEdition(contentId, contentTitle) {
       english: document.getElementsByClassName(contentId)[1].innerText,
       macedonian: document.getElementsByClassName(contentId)[2].innerText,
       id: contentId,
-      title: contentTitle
     };
 
     const res = await fetch('/api/content', {

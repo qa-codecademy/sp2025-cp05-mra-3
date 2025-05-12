@@ -1,3 +1,4 @@
+  // saving email - start
 document.getElementById('emailForm').addEventListener('submit', async (e) => {
     e.preventDefault();
   
@@ -23,3 +24,4 @@ document.getElementById('emailForm').addEventListener('submit', async (e) => {
       alert('Failed to save email.'+ responseBody.error);
     }
   });
+  // saving email - end
