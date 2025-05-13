@@ -1,4 +1,4 @@
-  // saving email - start
+  // processing email - start
 document.getElementById('emailForm').addEventListener('submit', async (e) => {
     e.preventDefault();
   
@@ -14,14 +14,13 @@ document.getElementById('emailForm').addEventListener('submit', async (e) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(emailFormData),
     });
-
     const responseBody = await res.json();
   
     if (res.ok) {
-      alert('Email saved!');
+      alert('Email processed!');
       document.getElementById('emailForm').reset();
     } else {
-      alert('Failed to save email.'+ responseBody.error);
+      alert('Failed to process email.'+ responseBody.error);
     }
   });
-  // saving email - end
+  // processing email - end

@@ -9,6 +9,8 @@ const __dirname = path.dirname(__filename);
 // Path to the emails.json file inside the data folder
 const dataFile = path.join(__dirname, '/../../data/emails.json');
 
+
+
 // Function to get all emails from the file
 export async function getAllEmails() {
   try {
@@ -38,37 +40,31 @@ export async function saveEmail(newEmail) {
     throw new Error('Error saving email: ' + err.message);
   }
 }
-// Function to send new email
-const mailOptions1 = {}
-export function sendEmail(newEmail) {
-  mailOptions1 = {
-  from: newEmail.email,
-  to: 'mrallround5@gmail.com',
-  subject: newEmail.name,
-  text: newEmail.message
-};
-sendMail1(mailOptions1)
-// return mailOptions1;
-}
+
+  // Function to send new email with dynamic content
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'mrallround5@gmail.com',
+    user: 'mrallround5@gmail.com', // ovoj e FROM email address
     pass: 'sbgv vaoy jrnp euva'  // Use the App Password here
   }
 });
 
-// const mailOptions = {
-//   from: 'stevan.rufceski@gmail.com',
-//   to: 'mrallround5@gmail.com',
-//   subject: 'Test Email',
-//   text: 'Hello, this is a test email.'
-// };
+export async function sendEmail({ email, name, message }) {
+  const mailOptions = {
+    from: email,
+    to: 'mrallround5@gmail.com',
+    subject: `New message from ${name}`,
+    text: message
+  };
 
-transporter.sendMail1(mailOptions1, (error, info) => {
-  if (error) {
-    console.log('Error:', error);
-  } else {
+  try {
+    const info = await transporter.sendMail(mailOptions);
     console.log('Email sent:', info.response);
+    return info;
+  } catch (error) {
+    console.error('sendEmail error:', error);
+    throw new Error('Failed to send email');
   }
-});
+}

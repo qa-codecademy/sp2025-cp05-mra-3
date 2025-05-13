@@ -9,9 +9,9 @@ export const contentSchema = z.object({
   macedonian: z.string().min(1, 'Macedonian translation is required') // Macedonian translation is required
 });
 export const emailSchema = z.object({
-  name: z.string().min(1, 'Name is required'),  
-  email: z.string().min(1, 'Email is required').email('Invalid email format'),
-  message: z.string().min(1, 'Message is required'),
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  message: z.string().min(1, "Message is required"),
   createdAt: z.string(),
 });
 export const userSchema = z.object({
