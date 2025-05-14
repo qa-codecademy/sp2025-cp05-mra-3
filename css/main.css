@@ -3,12 +3,13 @@
     position: relative;
     display: inline-block;
     font-family: sans-serif;
+    margin-left: 3px;
   }
 
   #dropdownLanguageSelector-toggle {
     cursor: pointer;
   }
-  #dropdownLanguageSelector-toggle img, #dropdownLanguageSelector-menu a img{
+  #dropdownLanguageSelector-toggle img, #dropdownLanguageSelector-menu a img {
     border-radius: 5px;
     width: 40px;
     vertical-align: middle;
@@ -32,10 +33,49 @@
     margin-top: 5px;
   }
 
-  #dropdownLanguageSelector-menu a img:hover {
+  #dropdownLanguageSelector-menu a img:hover{
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
   }
 /* Language selector - end */
+/* Settings selector - start */
+#dropdownSettings {
+    position: relative;
+    display: inline-block;
+    font-family: sans-serif;
+    margin-left: 3px;
+  }
+
+#dropdownSettings-toggle {
+    cursor: pointer;
+  }
+#dropdownSettings-toggle, #dropdownSettings-menu a img{
+    border-radius: 5px;
+    width: auto;
+    vertical-align: middle;
+  }
+
+ #dropdownSettings-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+  }
+
+ #dropdownSettings:hover #dropdownSettings-menu {
+    display: block;
+  }
+
+#dropdownSettings-menu a {
+    display: block;
+    height: auto;
+    margin-top: 5px;
+  }
+
+#dropdownSettings-menu a img:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  }
+/* Settings selector - end */
                                                 /* Dashboard - Content page selector - start */
   #dropdown1 {
     position: relative;
@@ -231,6 +271,7 @@ a {
     min-width: 200px;
     box-shadow: 0px 2px 4px #b8b8b8;
     z-index: 1;
+    margin-top: 70px;
 }
 
 .dropdown a {
