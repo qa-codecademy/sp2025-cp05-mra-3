@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!localStorage.getItem('language')) {
         localStorage.setItem('language', 'German');
     }
-    document.querySelectorAll('#dropdown-menu a img').forEach(option => {
+    document.querySelectorAll('#dropdownLanguageSelector-menu a img').forEach(option => {
         if (option.alt === localStorage.getItem('language')) {
             document.getElementById('langSelection').alt = option.alt
             document.getElementById('langSelection').src = option.src
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     readContent(localStorage.getItem('language'))
     // changing language on click
-    const languageOptions = document.querySelectorAll('#dropdown-menu a');
+    const languageOptions = document.querySelectorAll('#dropdownLanguageSelector-menu a');
     const selectedLanguage = document.getElementById('langSelection');
     languageOptions.forEach(option => {
         option.addEventListener('click', function (event) {

@@ -1,19 +1,20 @@
 /* Language selector - start */
-#dropdown {
+#dropdownLanguageSelector {
     position: relative;
     display: inline-block;
     font-family: sans-serif;
   }
 
-  #dropdown-toggle {
+  #dropdownLanguageSelector-toggle {
     cursor: pointer;
   }
-  #dropdown-toggle img, #dropdown-menu a img{
+  #dropdownLanguageSelector-toggle img, #dropdownLanguageSelector-menu a img{
     border-radius: 5px;
     width: 40px;
+    vertical-align: middle;
   }
 
-  #dropdown-menu {
+  #dropdownLanguageSelector-menu {
     display: none;
     position: absolute;
     top: 100%;
@@ -21,20 +22,21 @@
     z-index: 1000;
   }
 
-  #dropdown:hover #dropdown-menu {
+  #dropdownLanguageSelector:hover #dropdownLanguageSelector-menu {
     display: block;
   }
 
-  #dropdown-menu a {
+  #dropdownLanguageSelector-menu a {
     display: block;
     height: auto;
+    margin-top: 5px;
   }
 
-  #dropdown-menu a img:hover {
+  #dropdownLanguageSelector-menu a img:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
   }
 /* Language selector - end */
-/* Content page - start */
+                                                /* Dashboard - Content page selector - start */
   #dropdown1 {
     position: relative;
     display: inline-block;
@@ -72,5 +74,301 @@
   #dropdown1-menu div:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
   }
-/* Content page selector - end */
+                                            /* Dashboard - Content page selector - end */
+                                            /* Navbar - start */
+#settingsDiv {
+  display: flex;
+  align-items: center;  /* vertical centering */
+  height: auto;
+}
+@font-face {
+    font-family: "Rubik";
+    src: url("../assets/fonts/Rubik-VariableFont_wght.ttf");
+}
+
+* {
+    font-family: "Rubik";
+}
+
+nav {
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    color: #87CEEB;
+    font-size: 17px;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    position: fixed;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: color 0s ease-in-out;
+    transition: background-color 0s ease-in-out;
+    z-index: 1;
+}
+
+.link {
+    background-color: inherit;
+    color: inherit;
+}
+
+.scrolledNav {
+    background-color: #87CEEB;
+    color: #FFFFFF;
+}
+
+#logoDiv, #logoLink {
+    position: relative;
+    height: 70px;
+    width: 70px;
+}
+
+#logoPic {
+    position: absolute;
+    height: inherit;
+    width: inherit;
+}
+
+#menuDiv {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#menuLinks {
+    padding-left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.menuLink {
+    display: inline;
+    padding: 1.1%;
+}
+
+.menuLink:hover {
+    border-bottom: 2px solid;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#menuToggle {
+    display: none;
+    font-size: 32px;
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+#langDE,
+#langGB,
+#langMK {
+    height: inherit;
+    width: inherit;
+    border-radius: 2px;
+}
+
+#btnDE,
+#btnGB,
+#btnMK {
+    height: 15px;
+    width: 30px;
+    margin: 5px;
+    padding: 0%;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+#setLanguage,
+#setTheme {
+    font-size: 15px;
+    color: #87CEEB;
+}
+
+#setLanguage:hover,
+#setTheme:hover {
+    background-color: #87CEEB;
+    color: #FFFFFF;
+}
+
+#setDark,
+#setLight {
+    height: inherit;
+    width: inherit
+}
+
+.settings {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    font-weight: bolder;
+    padding: 0%;
+}
+
+.icon {
+    height: inherit;
+    width: inherit;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 2px 4px #b8b8b8;
+    z-index: 1;
+}
+
+.dropdown a {
+    padding: 10px;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown.show {
+    display: block;
+}
+
+#settingsToggle {
+    margin-left: 3px;
+}
+
+.switch {
+    font-size: 11px;
+    position: relative;
+    display: inline-block;
+    width: 38px;
+    height: 21px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2196F3;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.3em;
+    bottom: 0.3em;
+    background-color: yellow;
+    transition: .4s;
+}
+
+.switch input:checked+.slider:before {
+    background-color: black;
+    border-radius: 50px;
+    box-shadow: inset 9px 0px 1px 0px white;
+}
+
+.switch input:checked+.slider {
+    background-color: black;
+}
+
+.switch input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+.switch input:checked+.slider:before {
+    transform: translateX(1.5em);
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+
+    nav {
+        font-size: 16px;
+    }
+
+    #menuDiv {
+        width: 55%;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    #menuDiv {
+        width: 60%;
+    }
+}
+
+@media (max-width: 800px) {
+
+    nav {
+        justify-content: space-around;
+    }
+
+    #menuToggle {
+        display: block;
+        margin-left: 50%;
+    }
+
+    #menuDiv.show {
+        display: flex
+    }
+
+    #menuLinks {
+        flex-direction: column;
+        align-items: end;
+        background-color: inherit;
+        color: inherit;
+        width: 100%;
+    }
+
+    #menuDiv {
+        display: none;
+        position: absolute;
+        height: 220px;
+        padding: 0%;
+        margin-top: 290px;
+        padding-right: 50px;
+        color: #69b6d4;
+        width: 100%;
+        font-size: 18px;
+        float: left;
+        justify-content: center;
+        flex-direction: row;
+        -webkit-backdrop-filter:blur(15px);
+        backdrop-filter: blur(15px);
+    }
+}
+                                            /* Navbar - end */
+
+
 

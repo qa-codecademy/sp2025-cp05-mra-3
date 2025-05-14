@@ -27,6 +27,18 @@
             </ul>
         </div>
         <div id="settingsDiv">
+            <!-- language selector - start-->
+            <div id="dropdownLanguageSelector">
+                <div id="dropdownLanguageSelector-toggle">
+                    <img id="langSelection" src="" alt="">
+                </div>
+                <div id="dropdownLanguageSelector-menu">
+                    <a href="#"><img class="langOption" src="/assets/flags/deu.jpg" alt="German"></a>
+                    <a href="#"><img class="langOption" src="/assets/flags/eng.jpg" alt="English"></a>
+                    <a href="#"><img class="langOption" src="/assets/flags/mkd.jpg" alt="Macedonian"></a>
+                </div>
+            </div>
+            <!-- language selector - end -->
             <button id="settingsToggle" class="settings show">
                 <img class="icon" src="../assets/pictures/gear.png">
             </button>
@@ -49,18 +61,7 @@
     </nav>
     <!-- navbar - end-->
 
-    <!-- language selector start-->
-    <div id="dropdown">
-        <div id="dropdown-toggle">
-          <img id="langSelection" src="" alt="">
-        </div>
-        <div id="dropdown-menu">
-          <a href="#"><img class="langOption" src="/assets/flags/deu.jpg" alt="German"></a>
-          <a href="#"><img class="langOption" src="/assets/flags/eng.jpg" alt="English"></a>
-          <a href="#"><img class="langOption" src="/assets/flags/mkd.jpg" alt="Macedonian"></a>
-        </div>
-    </div>
-    <!-- language selector end -->
+    <!-- contact form - start -->
     <div class="contact-form">
         <span class="onscreenText contacthtmlContactUs heading"></span>
         <form id="emailForm">
@@ -73,6 +74,7 @@
             <button class="onscreenText contacthtmlSubmit" id="submit" type="submit"></button>
         </form>
     </div>
+    <!-- contact form - end -->
     
     <script src="../scripts/contact.js"></script>
     <link rel="stylesheet" href="../css/contact.css">
