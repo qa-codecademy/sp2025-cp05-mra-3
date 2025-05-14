@@ -48,7 +48,7 @@
 #dropdownSettings-toggle {
     cursor: pointer;
   }
-#dropdownSettings-toggle, #dropdownSettings-menu a img{
+#dropdownSettings-toggle, #dropdownSettings-menu a{
     border-radius: 5px;
     width: auto;
     vertical-align: middle;
@@ -148,16 +148,24 @@ nav {
     transition: background-color 0s ease-in-out;
     z-index: 1;
 }
-
-.link {
-    background-color: inherit;
-    color: inherit;
+#setTheme, .link, .settingsLink {
+    font-size: 15px;
+    color: #87CEEB;
 }
-
-.scrolledNav {
+#setTheme:hover, .link:hover, .settingsLink:hover {
     background-color: #87CEEB;
     color: #FFFFFF;
 }
+.menuLink {
+    display: inline;
+    padding: 1.1%;
+}
+
+.menuLink:hover {
+    border-bottom: 2px solid;
+}
+
+
 
 #logoDiv, #logoLink {
     position: relative;
@@ -183,16 +191,6 @@ nav {
     display: flex;
     justify-content: space-evenly;
 }
-
-.menuLink {
-    display: inline;
-    padding: 1.1%;
-}
-
-.menuLink:hover {
-    border-bottom: 2px solid;
-}
-
 a {
     text-decoration: none;
     font-weight: 600;
@@ -208,85 +206,9 @@ a {
     cursor: pointer;
 }
 
-#langDE,
-#langGB,
-#langMK {
-    height: inherit;
-    width: inherit;
-    border-radius: 2px;
-}
-
-#btnDE,
-#btnGB,
-#btnMK {
-    height: 15px;
-    width: 30px;
-    margin: 5px;
-    padding: 0%;
-    border: none;
-    background-color: inherit;
-    cursor: pointer;
-}
-
-#setLanguage,
-#setTheme {
+#setLanguage {
     font-size: 15px;
     color: #87CEEB;
-}
-
-#setLanguage:hover,
-#setTheme:hover {
-    background-color: #87CEEB;
-    color: #FFFFFF;
-}
-
-#setDark,
-#setLight {
-    height: inherit;
-    width: inherit
-}
-
-.settings {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-    height: 32px;
-    width: 32px;
-    font-weight: bolder;
-    padding: 0%;
-}
-
-.icon {
-    height: inherit;
-    width: inherit;
-}
-
-.dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    background-color: white;
-    min-width: 200px;
-    box-shadow: 0px 2px 4px #b8b8b8;
-    z-index: 1;
-    margin-top: 70px;
-}
-
-.dropdown a {
-    padding: 10px;
-    display: flex;
-    text-decoration: none;
-    justify-content: center;
-}
-
-.dropdown a:hover {
-    background-color: #f1f1f1;
-}
-
-.dropdown.show {
-    display: block;
 }
 
 #settingsToggle {
