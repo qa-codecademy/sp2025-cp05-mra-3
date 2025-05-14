@@ -9,8 +9,6 @@ const __dirname = path.dirname(__filename);
 // Path to the emails.json file inside the data folder
 const dataFile = path.join(__dirname, '/../../data/emails.json');
 
-
-
 // Function to get all emails from the file
 export async function getAllEmails() {
   try {
@@ -47,16 +45,17 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'mrallround5@gmail.com', // ovoj e FROM email address
-    pass: 'sbgv vaoy jrnp euva'  // Use the App Password here
+    pass: 'sbgv vaoy jrnp euva'  // Gmail App Password here
   }
 });
 
 export async function sendEmail({ email, name, message }) {
   const mailOptions = {
-    from: email,
+    from: '',
     to: 'mrallround5@gmail.com',
-    subject: `New message from ${name}`,
-    text: message
+    subject: email,
+    text: `New message from ${name}:
+    ${message}`
   };
 
   try {

@@ -7,10 +7,7 @@ const router = Router();
 // Route to fetch all email
 router.get('/contact', getAllEmailsController);
 
-// // Route to send new email
-// router.post('/contact', sendEmailController);
-
-// Route to save new email
-router.post('/contact', saveEmailController);
+// Route to save and send new email
+router.post('/contact', sendEmailController, saveEmailController);
 
 export default router;
