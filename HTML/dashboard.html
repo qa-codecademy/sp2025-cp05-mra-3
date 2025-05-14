@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
 </head>
 
 <body>
-        <!-- navbar - start-->
+    <!-- navbar - start-->
     <nav id="navBar" class="">
         <div id="logoDiv">
             <a id="logoLink" href="./homePage.html">
@@ -61,61 +62,66 @@
     </nav>
     <!-- navbar - end-->
     <!-- Toggler buttons - start -->
-    <button class="onscreenText dashboardhtmlNewUser" id="submitToggleNewUser" type="submit"></button>
-    <button class="onscreenText dashboardhtmlAllEmails" id="submitToggleAllEmails" type="submit"></button>
-    <button class="onscreenText dashboardhtmlAllContents" id="submitToggleAllContents" type="submit"></button>
+    <div id="leftVerticalMenu">
+        <button class="onscreenText dashboardhtmlNewUser" id="submitToggleNewUser" type="submit"></button>
+        <button class="onscreenText dashboardhtmlAllEmails" id="submitToggleAllEmails" type="submit"></button>
+        <button class="onscreenText dashboardhtmlAllContents" id="submitToggleAllContents" type="submit"></button>
+    </div>
     <!-- Toggler buttons - end -->
-    <!-- Sign up form - start -->
-    <div class="signup-form" id="signup-form-wrapper">
-        <span class="onscreenText dashboardhtmlSignUp heading"></span>
-        <form id="userForm">
-            <form id="userSignupForm">
-                <label class="onscreenText dashboardhtmlFullName" for="userNameInput"></label>
-                <input id="userNameInput" type="text" placeholder="" required>
-                <label class="onscreenText dashboardhtmlEmail" for="userNameEmail"></label>
-                <input id="userNameEmail" type="email" required>
-                <label class="onscreenText dashboardhtmlPassword" for="userNamePassword"></label>
-                <input id="userNamePassword" required></input>
-                <button class="onscreenText dashboardhtmlSubmit" id="submit" type="submit"></button>
-            </form>
-    </div>
-    <!-- Sign up form - end -->
-    <!-- All emails - start -->
-    <div class="allEmailsTable" id="emailTableWrapper">
-        <h2 class="onscreenText dashboardhtmlReceivedEmails"></h2>
-        <div id="emailsContainer" class="emails-container">
+    <div id="mainContent">
+        <!-- Sign up form - start -->
+        <div class="signup-form" id="signup-form-wrapper">
+            <span class="onscreenText dashboardhtmlSignUp heading"></span>
+            <form id="userForm">
+                <form id="userSignupForm">
+                    <label class="onscreenText dashboardhtmlFullName" for="userNameInput"></label>
+                    <input id="userNameInput" type="text" placeholder="" required>
+                    <label class="onscreenText dashboardhtmlEmail" for="userNameEmail"></label>
+                    <input id="userNameEmail" type="email" required>
+                    <label class="onscreenText dashboardhtmlPassword" for="userNamePassword"></label>
+                    <input id="userNamePassword" required></input>
+                    <button class="onscreenText dashboardhtmlSubmit" id="submit" type="submit"></button>
+                </form>
         </div>
-    </div>
-    <!-- All emails - end -->
-    <!-- All contents - start -->
-    <div class="allContentsTable" id="contentTableWrapper">
-        <div id="contentTableTitle">
-            <h2 class="onscreenText dashboardhtmlAllContents"></h2>
-            <div id="dropdown1">
-                <div>
-                    <strong class="onscreenText dashboardhtmlPage:"></strong>
-                    <div id="dropdown1-toggle" class="onscreenText dashboardhtmlAll" style="display: inline;"></div>
-                </div>
-                <div id="dropdown1-menu">
-                    <div class="pageMenu onscreenText dashboardhtmlAll">All</div>
-                    <div class="pageMenu">aboutUs</div>
-                    <div class="pageMenu">contact</div>
-                    <div class="pageMenu">dashboard</div>
-                    <div class="pageMenu">homePage</div>
-                    <div class="pageMenu">reviews</div>
-                    <div class="pageMenu">services</div>
-                </div>
+        <!-- Sign up form - end -->
+        <!-- All emails - start -->
+        <div class="allEmailsTable" id="emailTableWrapper">
+            <h2 class="onscreenText dashboardhtmlReceivedEmails"></h2>
+            <div id="emailsContainer" class="emails-container">
             </div>
         </div>
-        <!-- <h2 class="onscreenText dashboardhtml AllContents"></h2> -->
-        <div id="contentsContainer" class="contents-container">
+        <!-- All emails - end -->
+        <!-- All contents - start -->
+        <div class="allContentsTable" id="contentTableWrapper">
+            <div id="contentTableTitle">
+                <h2 class="onscreenText dashboardhtmlAllContents"></h2>
+                <div id="dropdown1">
+                    <div>
+                        <strong class="onscreenText dashboardhtmlPage:"></strong>
+                        <div id="dropdown1-toggle" class="onscreenText dashboardhtmlAll" style="display: inline;"></div>
+                    </div>
+                    <div id="dropdown1-menu">
+                        <div class="pageMenu onscreenText dashboardhtmlAll">All</div>
+                        <div class="pageMenu">aboutUs</div>
+                        <div class="pageMenu">contact</div>
+                        <div class="pageMenu">dashboard</div>
+                        <div class="pageMenu">homePage</div>
+                        <div class="pageMenu">reviews</div>
+                        <div class="pageMenu">services</div>
+                    </div>
+                </div>
+            </div>
+            <!-- <h2 class="onscreenText dashboardhtml AllContents"></h2> -->
+            <div id="contentsContainer" class="contents-container">
+            </div>
         </div>
+        <!-- All contents - end -->
     </div>
-    <!-- All contents - end -->
 
     <script src="../scripts/dashboard.js"></script>
     <link rel="stylesheet" href="../css/dashboard.css">
     <script src="../modules/multilingual.js"></script>
     <link rel="stylesheet" href="../css/main.css">
 </body>
+
 </html>

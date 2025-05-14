@@ -1,13 +1,29 @@
+#leftVerticalMenu {
+  position: fixed; /* stays on the left */
+  left: 0;
+  width: 100px; /* adjust width as needed */
+  height: 100vh; /* full height minus navbar */
+  background-color: #f0f0f0; /* or any color you want */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  z-index: 2;
+  margin-top: 70px, auto;
+}
+#mainContent {
+  margin-left: 100px; /* same as #leftVerticalMenu width */
+  padding: 10px;
+}
 /* user sign up form - start */
 #signup-form-wrapper{
   display: none;
-}
-.signup-form {
   background-color: #f2f2f2;
   padding: 20px;
   border-radius: 10px;
   width: 600px;
-  margin: 50px auto;
+  margin: 60px auto;
   justify-self: center;
 }
 
@@ -68,6 +84,7 @@
 
 #emailTableWrapper, #contentTableWrapper{
   display: none;
+  margin: 60px auto;
 }
 
 .emails-container, .contents-container{
@@ -93,6 +110,15 @@
 /* table with all emails and contents - end */
 #contentTableTitle {
   display: flex;
-  align-items: center; /* Align vertically */
-  justify-content: space-between; /* Optional: adds space between h2 and dropdown */
+  align-items: center; 
+  justify-content: space-between; 
 }
+/* Left vertical menu - start */
+#leftVerticalMenu{
+  margin-top: 70px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  
+}
+/* Left vertical menu - end */
