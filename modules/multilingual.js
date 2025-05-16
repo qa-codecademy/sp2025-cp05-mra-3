@@ -1,16 +1,16 @@
 // Changing language od screen-text
-function changeOnscreenText (dbContent, newLanguage){
+function changeOnscreenText(dbContent, newLanguage) {
     const allPageTexts = document.getElementsByClassName("onscreenText")
     for (pageText of allPageTexts) {
         for (dbText of dbContent) {
-            if (pageText.classList.contains(dbText.id)){
+            if (pageText.classList.contains(dbText.id)) {
                 pageText.innerText = dbText[newLanguage]
             }
         }
-      }
+    }
 }
-// Reading from MongoDB - start
-function readContent(selectedLanguageText){
+// Reading from DB - start
+function readContent(selectedLanguageText) {
     async function readAllMongoContent(url, callback) {
         try {
             const response = await fetch(url);
@@ -25,12 +25,12 @@ function readContent(selectedLanguageText){
         }
     };
     function toDoWithResult(result, selectedLanguageText) {
-        if (selectedLanguageText === "English"){
-            changeOnscreenText (result, "english")
-        } else if (selectedLanguageText === "Macedonian"){
-            changeOnscreenText (result, "macedonian")
-        } else{
-            changeOnscreenText (result, "german")
+        if (selectedLanguageText === "English") {
+            changeOnscreenText(result, "english")
+        } else if (selectedLanguageText === "Macedonian") {
+            changeOnscreenText(result, "macedonian")
+        } else {
+            changeOnscreenText(result, "german")
         }
     };
     readAllMongoContent("http://localhost:3000/api/content", toDoWithResult);
@@ -49,8 +49,25 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     readContent(localStorage.getItem('language'))
     // changing language on click
-    const languageOptions = document.querySelectorAll('#dropdownLanguageSelector-menu a');
     const selectedLanguage = document.getElementById('langSelection');
+    const languagesMenu = document.getElementById('dropdownLanguageSelector-menu');
+    const languageOptions = document.querySelectorAll('#dropdownLanguageSelector-menu a');
+
+    selectedLanguage.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        if (languagesMenu.style.display === 'block') {
+            languagesMenu.style.display = 'none';
+        } else {
+            languagesMenu.style.display = 'block'; // Or 'flex', depending on your layout
+        }
+    })
+    document.addEventListener('click', function () {
+        if (languagesMenu.style.display === 'block')  {
+            languagesMenu.style.display = 'none';
+        }
+    });
+    
     languageOptions.forEach(option => {
         option.addEventListener('click', function (event) {
             event.preventDefault();
@@ -59,9 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
             selectedLanguage.alt = flagImg.alt;
             localStorage.setItem('language', flagImg.alt);
             const selectedLanguageText = localStorage.getItem('language');
+
+            languagesMenu.style.display = 'none';
+
             readContent(selectedLanguageText)
-        }); 
-    }); 
+        });
+    });
 });
 
 
