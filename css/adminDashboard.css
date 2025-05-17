@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    flex-direction: row;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+.dashboardContainer{
+    background-color: #C71E5E;
+    width: 40vh;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.backToMain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8vh;
+    background-color: transparent;
+    font-size: 150%;
+    cursor: pointer; /*Makes the cursor a pointer*/
+}
+.options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6vh;
+    width: 100%;
+    background-color: aliceblue;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-bottom: 3px;
+    cursor: pointer; /*Makes the cursor a pointer*/
+}
+.options:hover{
+    background-color: #C71E5E;
+    font-size: 120%;
+}
+.backToMain:hover{
+    font-size: 200%;
+}
+.container {
+  background-image: url('/assets/pictures/navbar-logo.png');
+  background-size: contain; 
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+}
+#splitter{
+    height: 1.5vh;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.editOptions{
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+    height: 90%;
+    border-radius: 10vh;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: rgba(94, 94, 94, 0.9);
+    transition: opacity 2s ease;
+}
+
