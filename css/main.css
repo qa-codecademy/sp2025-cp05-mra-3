@@ -1,10 +1,44 @@
-@font-face {
-    font-family: "Rubik";
-    src: url("../assets/fonts/Rubik-VariableFont_wght.ttf");
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-* {
-    font-family: "Rubik";
+.footer {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 20px 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+}
+
+.footer-icons a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-icons a:hover {
+    color: #007BFF;
+}
+
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 5px;
+    }
+    .footer-icons a {
+        font-size: 1em;
+    }
 }
 
 nav {
