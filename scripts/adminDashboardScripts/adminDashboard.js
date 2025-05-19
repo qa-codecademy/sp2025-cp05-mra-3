@@ -6,6 +6,7 @@ const theme = document.getElementById('themeStyleId');
 const multilanguage = document.getElementById('multilanguageStyleId');
 const cards = document.getElementById('cardStyleId');
 const logo = document.getElementById('logoStyleId');
+
 export const editOptions = document.getElementById('editOptionsId');
 export const defaultTitle = document.title;  /*Gets default page title*/
 
