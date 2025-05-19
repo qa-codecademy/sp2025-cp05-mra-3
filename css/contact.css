@@ -1,60 +1,101 @@
-/* contact form laptop POV */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .contact-form {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
-    width: 600px;
-    margin: 80px auto;
-    justify-self: center;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  padding: 1.5%;
+  border-radius: 1.5%;
+  width: 50%;
+  height: 50%;
+}
+
+@media (max-width: 600px) {
+  .contact-form {
+    width: 90%;
   }
-  
-  .contact-form label {
-    color: black;
-    margin-bottom: 10px;
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  .contact-form {
+    width: 75%;
   }
-  
-  .contact-form .heading {
-    font-size: 24px;
-    color: black;
-    margin-bottom: 12px;
-    font-weight: bold;
-    display: block;
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  .contact-form {
+    width: 60%;
   }
+}
+
+.heading {
+  display: block;
+  font-weight: bold;
+  color: black;
+  margin: 0px;
+  height: 10%;
+  font-size: 24px;
+  overflow-y: auto;
+}
+
+#emailForm {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+
+#emailForm label {
+  color: black;
+  padding-bottom: 1%;
+  margin: 0px;
+  height: 5%;
+  font-size: 16px;
+}
+
+#emailForm input {
+  border: none;
+  border-radius: 5px;
+  padding: 1.5%;
+  margin-bottom: 1.5%;
+  height: 5%;
+}
+
+#emailForm textarea {
+  border: none;
+  resize: none;
+  border-radius: 5px;
+  padding: 1.5%;
+  margin-bottom: 1.5%;
+  height: 100%;
+}
+
+#emailForm input:focus, #emailForm textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ff6384;
+}
+
+#emailForm button[type="submit"] {
+  cursor: pointer;
+  background-color: #ff6384;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1.5%;
+  height: 15%;
+  font-size: 18px;
   
-  .contact-form form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contact-form textarea {
-    resize: none;
-    height: 80px;
-  }
-  
-  .contact-form input, .contact-form textarea {
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .contact-form input:focus, .contact-form textarea:focus {
-    outline: none;
-    box-shadow: 0 0 5px #ff6384;
-  }
-  
-  .contact-form button[type="submit"] {
-    background-color: #ff6384;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .contact-form button[type="submit"]:hover {
-    transform: scale(1.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
+}
+
+#emailForm button[type="submit"]:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}

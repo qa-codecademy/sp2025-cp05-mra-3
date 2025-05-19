@@ -10,7 +10,7 @@ document.getElementById('submitToggleNewUser').addEventListener('click', () => {
   }
 });
 
-document.getElementById('userForm').addEventListener('submit', async (e) => {
+document.getElementById('userSignupForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const userFormData = {
@@ -30,7 +30,7 @@ document.getElementById('userForm').addEventListener('submit', async (e) => {
 
   if (res.ok) {
     alert('Content saved!');
-    document.getElementById('contentForm').reset();
+    document.getElementById('userSignupForm').reset();
   } else {
     alert('Failed to save content.' + responseBody.error);
   }
