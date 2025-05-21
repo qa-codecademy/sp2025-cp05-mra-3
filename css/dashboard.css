@@ -1,3 +1,4 @@
+/* adminpanel - start */
 /* user sign up form - start */
 #signup-form-wrapper{
   display: none;
@@ -95,6 +96,45 @@
   justify-content: space-between; 
 }
 /* table with all emails and contents - end */
+/* Content page selector - start */
+  #dropdown1 {
+    position: relative;
+    display: inline-block;
+    font-family: sans-serif;
+  }
+
+  #dropdown1-toggle {
+    cursor: pointer;
+  }
+
+  #dropdown1-toggle, #dropdown1-toggle div, #dropdown1-menu div{
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  #dropdown1-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+  }
+
+  #dropdown1:hover #dropdown1-menu {
+    display: block;
+  }
+
+  #dropdown1-menu div {
+    display: block;
+    height: auto;
+    cursor: pointer;
+    text-align: right;
+  }
+
+  #dropdown1-menu div:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  }
+/* Content page selector - end */
 /* Left vertical menu - start */
 #leftVerticalMenu{
   margin-top: 70px;
@@ -115,3 +155,4 @@
   padding: 10px;
 }
 /* Left vertical menu - end */
+/* adminpanel - end */
