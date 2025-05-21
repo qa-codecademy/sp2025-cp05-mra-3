@@ -11,7 +11,7 @@ function changeOnscreenText(dbContent, newLanguage) {
 }
 // Reading from DB - start
 function readContent(selectedLanguageText) {
-    async function readAllMongoContent(url, callback) {
+    async function readAllContent(url, callback) {
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -33,7 +33,7 @@ function readContent(selectedLanguageText) {
             changeOnscreenText(result, "german")
         }
     };
-    readAllMongoContent("http://localhost:3000/api/content", toDoWithResult);
+    readAllContent("http://localhost:3000/api/content", toDoWithResult);
 }
 // language selector
 document.addEventListener('DOMContentLoaded', function () {
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (languagesMenu.style.display === 'block') {
             languagesMenu.style.display = 'none';
         } else {
-            languagesMenu.style.display = 'block'; // Or 'flex', depending on your layout
+            languagesMenu.style.display = 'block';
         }
     })
     document.addEventListener('click', function () {
