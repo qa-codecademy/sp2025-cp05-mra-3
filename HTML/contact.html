@@ -33,9 +33,9 @@
     <!-- adminpanel - start -->
     <!-- Toggler buttons - start -->
     <div id="leftVerticalMenu">
-      <button class="onscreenText dashboardhtmlNewUser" id="submitToggleNewUser" type="submit"></button>
-      <button class="onscreenText dashboardhtmlAllEmails" id="submitToggleAllEmails" type="submit"></button>
-      <button class="onscreenText dashboardhtmlAllContents" id="submitToggleAllContents" type="submit"></button>
+      <button class="onscreenText adminhtmlNewUser" id="submitToggleNewUser" type="submit"></button>
+      <button class="onscreenText adminhtmlAllEmails" id="submitToggleAllEmails" type="submit"></button>
+      <button class="onscreenText adminhtmlAllContents" id="submitToggleAllContents" type="submit"></button>
       <!-- language selector - start-->
       <div id="dropdownLanguageSelector">
         <div id="dropdownLanguageSelector-toggle">
@@ -53,23 +53,23 @@
     <!-- Sign up form - start -->
     <div id="signup-form-wrapper">
       <div id="userFormTitle">
-        <h2 class="onscreenText dashboardhtmlSignUp heading"></h2>
+        <h2 class="onscreenText adminhtmlSignUp heading"></h2>
       </div>
       <form id="userSignupForm">
-        <label class="onscreenText dashboardhtmlFullName" for="userNameInput"></label>
+        <label class="onscreenText adminhtmlFullName" for="userNameInput"></label>
         <input id="userNameInput" type="text" placeholder="" required>
-        <label class="onscreenText dashboardhtmlEmail" for="userNameEmail"></label>
+        <label class="onscreenText adminhtmlEmail" for="userNameEmail"></label>
         <input id="userNameEmail" type="email" required>
-        <label class="onscreenText dashboardhtmlPassword" for="userNamePassword"></label>
+        <label class="onscreenText adminhtmlPassword" for="userNamePassword"></label>
         <input id="userNamePassword" required></input>
-        <button class="onscreenText dashboardhtmlSubmit" id="submitNewUser" type="submit"></button>
+        <button class="onscreenText adminhtmlSubmit" id="submitNewUser" type="submit"></button>
       </form>
     </div>
     <!-- Sign up form - end -->
     <!-- All emails - start -->
     <div id="emailTableWrapper">
       <div id="emailTableTitle">
-        <h2 class="onscreenText dashboardhtmlReceivedEmails"></h2>
+        <h2 class="onscreenText adminhtmlReceivedEmails"></h2>
       </div>
       <div id="emailsContainer" class="emails-container">
       </div>
@@ -78,17 +78,17 @@
     <!-- All contents - start -->
     <div id="contentTableWrapper">
       <div id="contentTableTitle">
-        <h2 class="onscreenText dashboardhtmlAllContents"></h2>
+        <h2 class="onscreenText adminhtmlAllContents"></h2>
         <div id="dropdown1">
           <div>
-            <strong class="onscreenText dashboardhtmlPage:"></strong>
-            <div id="dropdown1-toggle" class="onscreenText dashboardhtmlAll" style="display: inline;"></div>
+            <strong class="onscreenText adminhtmlPage:"></strong>
+            <div id="dropdown1-toggle" class="onscreenText adminhtmlAll" style="display: inline;"></div>
           </div>
           <div id="dropdown1-menu">
-            <div class="pageMenu onscreenText dashboardhtmlAll">All</div>
+            <div class="pageMenu onscreenText adminhtmlAll">All</div>
             <div class="pageMenu">aboutUs</div>
             <div class="pageMenu">contact</div>
-            <div class="pageMenu">dashboard</div>
+            <div class="pageMenu">admin</div>
             <div class="pageMenu">homePage</div>
             <div class="pageMenu">reviews</div>
             <div class="pageMenu">services</div>
@@ -102,18 +102,34 @@
     <!-- adminpanel - end -->
 
   </main>
+
   <footer>
+    <footer class="footer">
+      <div class="footer-section contact-info">
+        <p class="onscreenText footertmlContactUs"></p>
+        <p class="onscreenText footerhtmlAddress" style="display: inline-block;"></p>
+        <a href="https://www.google.com/maps?q=Bannstrasse+5,+4600+Olten" target="_blank" aria-label="View address on Google Maps">Bannstrasse 5, 4600 Olten</a>
+        <br>
+        <p class="onscreenText footerhtmlPhone" style="display: inline-block;"></p>
+        <a href="tel:+41786925155">+41 78 692 51 55</a>
+        <br>
+        <p class="onscreenText footerhtmlEmail" style="display: inline-block;"></p>
+        <a href="mailto:info@mrallround.ch">info@mrallround.ch</a>
+    </footer>
+    <footer class="footer">
+      <div class="footer-icons"></div>
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+      <br>
+      <p style="display: inline-block;">© MR.Allround.</p> 
+      <p class="onscreenText footerhtmlAllRightsReserved." style="display: inline-block;"></p>
+    </footer>
 
   </footer>
 
   <script src="../scripts/contact.js"></script>
   <script src="../modules/multilingual.js"></script>
-    <!-- contact form - end -->
-    
-    <script src="../scripts/contact.js"></script>
-    <link rel="stylesheet" href="../css/contact.css">
-    <script src="../modules/multilingual.js"></script>
-    <link rel="stylesheet" href="../css/main.css">
 </body>
 
 </html>

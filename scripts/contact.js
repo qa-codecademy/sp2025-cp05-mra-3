@@ -189,9 +189,9 @@ function renderContentsTable(contents) {
     entry.classList.add('content-entry');
     entry.innerHTML = `
       <div><strong class = "onscreenText dashboardhtmlNumber:"></strong><p style="display: inline;">${content.id}</p></div>
-      <div><strong class = "onscreenText dashboardhtmlGerman:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.german}</p></div>
-      <div><strong class = "onscreenText dashboardhtmlEnglish:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.english}</p></div>
-      <div><strong class = "onscreenText dashboardhtmlMacedonian:"></strong><p class = "${content.id}" style="display: inline;" onclick="this.focus()" >${content.macedonian}</div>
+      <div><strong class = "onscreenText dashboardhtmlGerman:"></strong><p class = "onscreenText${content.id}" style="display: inline;" onclick="this.focus()" >${content.german}</p></div>
+      <div><strong class = "onscreenText dashboardhtmlEnglish:"></strong><p class = "onscreenText${content.id}" style="display: inline;" onclick="this.focus()" >${content.english}</p></div>
+      <div><strong class = "onscreenText dashboardhtmlMacedonian:"></strong><p class = "onscreenText${content.id}" style="display: inline;" onclick="this.focus()" >${content.macedonian}</div>
       <button id="enableEdit${content.id}" class="onscreenText dashboardhtmlUpdateContent" onclick="enableEdit('${content.id}')" style="display: inline;" type="button"></button>
       <button id="cancelEdition${content.id}" class="onscreenText dashboardhtmlCancelChanges" onclick="cancelEdition('${content.id}', '${content.german}', '${content.english}', '${content.macedonian}')" style="display: none;" type="button"></button>
       <button id="saveEdition${content.id}" class="onscreenText dashboardhtmlSaveChanges" onclick="saveEdition('${content.id}')" style="display: none;" type="button"></button>
@@ -201,22 +201,25 @@ function renderContentsTable(contents) {
 }
 
 function enableEdit(contentId) {
+  const onscreenContentId = "onscreenText"+contentId
   const thisButtonId = "enableEdit"+contentId
   const otherButton1Id = "saveEdition"+contentId
   const otherButton2Id = "cancelEdition"+contentId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "inline"
   document.getElementById(thisButtonId).style.display = "none"
-  const elements = document.getElementsByClassName(contentId);
+  const elements = document.getElementsByClassName(onscreenContentId);
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     element.contentEditable = true;
     element.style.border = '1px dashed gray';
   }
-  console.log(document.getElementsByClassName(contentId))
+  console.log(document.getElementsByClassName(onscreenContentId))
+  console.log(onscreenContentId)
 }
 
 function cancelEdition(contentId, contentGerman, contentEnglish, contentMacedonian) {
+  const onscreenContentId = "onscreenText"+contentId
   const thisButtonId = "cancelEdition"+contentId
   const otherButton1Id = "enableEdit"+contentId
   const otherButton2Id = "saveEdition"+contentId
@@ -224,9 +227,9 @@ function cancelEdition(contentId, contentGerman, contentEnglish, contentMacedoni
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
 
-  document.getElementsByClassName(contentId)[1].innerText = contentGerman
-  document.getElementsByClassName(contentId)[2].innerText = contentEnglish
-  document.getElementsByClassName(contentId)[3].innerText = contentMacedonian
+  document.getElementsByClassName(onscreenContentId)[0].innerText = contentGerman
+  document.getElementsByClassName(onscreenContentId)[1].innerText = contentEnglish
+  document.getElementsByClassName(onscreenContentId)[2].innerText = contentMacedonian
   const elements = document.getElementsByClassName(contentId);
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
@@ -236,13 +239,14 @@ function cancelEdition(contentId, contentGerman, contentEnglish, contentMacedoni
 }
 
 async function saveEdition(contentId) {
+  const onscreenContentId = "onscreenText"+contentId
   const thisButtonId = "saveEdition"+contentId
   const otherButton1Id = "enableEdit"+contentId
   const otherButton2Id = "cancelEdition"+contentId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
-  const elements = document.getElementsByClassName(contentId);
+  const elements = document.getElementsByClassName(onscreenContentId);
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     element.contentEditable = false;
@@ -250,9 +254,9 @@ async function saveEdition(contentId) {
   }
   // changing content - start
     const contentFormData = {
-      german: document.getElementsByClassName(contentId)[1].innerText,
-      english: document.getElementsByClassName(contentId)[2].innerText,
-      macedonian: document.getElementsByClassName(contentId)[3].innerText,
+      german: document.getElementsByClassName(onscreenContentId)[0].innerText,
+      english: document.getElementsByClassName(onscreenContentId)[1].innerText,
+      macedonian: document.getElementsByClassName(onscreenContentId)[2].innerText,
       id: contentId,
     };
 
