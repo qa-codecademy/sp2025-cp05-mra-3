@@ -8,6 +8,7 @@
 </head>
 
 <body>
+
   <nav id="navBar" class="">
     <div id="logoDiv">
       <a id="logoLink" href="./homePage.html">
@@ -23,42 +24,44 @@
         <li class="menuLink"><a class="link" href="./reviews.html">Reviews</a></li>
         <li class="menuLink"><a class="link" href="./aboutUs.html">About us</a></li>
         <li class="menuLink"><a class="link" href="./contact.html">Contact</a></li>
+        <li class="menuLink menuLinkSettings">
+          <div id="dark-light">
+            <label class="switch">
+              <input type="checkbox" name="theme">
+              <span class="slider"></span>
+            </label>
+          </div>
+        </li>
+        <li class="menuLink menuLinkSettings">
+          <div class="dropdown" id="languageDropdown">
+            <button class="dropdown-toggle" id="dropdownToggle">
+              <img src="../assets/pictures/gb.svg" alt="English">
+            </button>
+            <div class="dropdown-menu">
+              <a href="#" data-lang="en" data-flag="../assets/pictures/gb.svg">
+                <img src="../assets/pictures/gb.svg" alt="English">
+              </a>
+              <a href="#" data-lang="de" data-flag="../assets/pictures/de.svg">
+                <img src="../assets/pictures/de.svg" alt="German">
+              </a>
+              <a href="#" data-lang="mk" data-flag="../assets/pictures/mk.svg">
+                <img src="../assets/pictures/mk.svg" alt="Macedonian">
+              </a>
+            </div>
+          </div>
+        </li>
       </ul>
-    </div>
-    <div id="settingsDiv">
-      <button id="settingsToggle" class="settings show">
-        <img class="icon" src="../assets/pictures/gear.png">
-      </button>
-      <div id="settingsDropdown" class="dropdown">
-        <a id="setLanguage" class="settingsLink">
-          Pick language:
-          <button id="btnDE"><img id="langDE" src="../assets/pictures/de.png"></button>
-          <button id="btnGB"><img id="langGB" src="../assets/pictures/gb.png"></button>
-          <button id="btnMK"><img id="langMK" src="../assets/pictures/mk.png"></button>
-        </a>
-        <a id="setTheme" class="settingsLink">
-          Change theme: &nbsp;
-          <label class="switch">
-            <input type="checkbox" name="theme">
-            <span class="slider"></span>
-          </label>
-        </a>
-      </div>
-    </div>
   </nav>
-    <section class="hero">
-        <img src="../assets/pictures/img1.jpg" alt="Hero Image" class="hero-img">
-        <div class="hero-content">
-          <h1>Your Trusted Cleaning Service</h1>
-          <p>Efficient. Reliable. Affordable.</p>
-          <a href="#book-now" class="book-btn">Book Now</a>
-        </div>
-      </section>
-    <script src="../scripts/homePage.js"></script>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/homePage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-  
+
+  <section class="hero">
+    <img src="../assets/pictures/img1.jpg" alt="Hero Image" class="hero-img">
+    <div class="hero-content">
+      <h1>Your Trusted Cleaning Service</h1>
+      <p>Efficient. Reliable. Affordable.</p>
+      <a href="#book-now" class="book-btn">Book Now</a>
+    </div>
+  </section>
+
   <footer>
     <footer class="footer">
       <div class="footer-section contact-info">
@@ -80,11 +83,12 @@
       <p>© MR.Allaround. All Rights Reserved.</p>
     </footer>
   </footer>
+
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/homePage.js"></script>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/homePage.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </body>
-<script src="../scripts/main.js"></script>
-<script src="../scripts/homePage.js"></script>
-<link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/homePage.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </html>

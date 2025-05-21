@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ body, html {
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
-}
+} */
 
 .hero {
     position: relative;
@@ -252,3 +252,4 @@ body, html {
         margin-right: 0.5vh;
     }
 }
+
