@@ -5,11 +5,11 @@ window.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("cardContainer");
       container.innerHTML = '';
       
-      // Create navigation dots
+
       const dotsContainer = document.createElement("div");
       dotsContainer.className = "dots-container";
       
-      // Create cards
+
       let currentIndex = 0;
       const cards = data.cards.map((card, index) => {
         const cardElement = document.createElement("div");
@@ -27,7 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
         return cardElement;
       });
 
-      // Create dots
+ 
       data.cards.forEach((_, index) => {
         const dot = document.createElement("div");
         dot.className = `dot ${index === 0 ? 'active' : ''}`;
@@ -40,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
       
       container.appendChild(dotsContainer);
 
-      // Card rotation functions
+
       function showCard(index) {
         cards.forEach((card, i) => {
           card.classList.toggle('active', i === index);
