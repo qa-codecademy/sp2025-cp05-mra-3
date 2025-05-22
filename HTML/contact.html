@@ -33,7 +33,9 @@
     <!-- adminpanel - start -->
     <!-- Toggler buttons - start -->
     <div id="leftVerticalMenu">
+      <a href="http://localhost:3000/aboutUs.html">Go to aboutus.html</a>
       <button class="onscreenText adminhtmlNewUser" id="submitToggleNewUser" type="submit"></button>
+      <button class="onscreenText adminhtmlAllUsers" id="submitToggleAllUsers" type="submit"></button>
       <button class="onscreenText adminhtmlAllEmails" id="submitToggleAllEmails" type="submit"></button>
       <button class="onscreenText adminhtmlAllContents" id="submitToggleAllContents" type="submit"></button>
       <!-- language selector - start-->
@@ -66,10 +68,19 @@
       </form>
     </div>
     <!-- Sign up form - end -->
+    <!-- All users - start -->
+    <div id="userTableWrapper">
+      <div id="userTableTitle">
+        <h2 class="onscreenText adminhtmlAllUsers heading"></h2>
+      </div>
+      <div id="usersContainer" class="users-container">
+      </div>
+    </div>
+    <!-- All users - end -->
     <!-- All emails - start -->
     <div id="emailTableWrapper">
       <div id="emailTableTitle">
-        <h2 class="onscreenText adminhtmlReceivedEmails"></h2>
+        <h2 class="onscreenText adminhtmlReceivedEmails heading"></h2>
       </div>
       <div id="emailsContainer" class="emails-container">
       </div>
@@ -78,7 +89,7 @@
     <!-- All contents - start -->
     <div id="contentTableWrapper">
       <div id="contentTableTitle">
-        <h2 class="onscreenText adminhtmlAllContents"></h2>
+        <h2 class="onscreenText adminhtmlAllContents heading"></h2>
         <div id="dropdown1">
           <div>
             <strong class="onscreenText adminhtmlPage:"></strong>

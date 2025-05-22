@@ -95,15 +95,33 @@
 }
 /* contact form - end */
 /* adminpanel - start */
-/* user sign up form - start */
-#signup-form-wrapper{
-  display: none;
+#signup-form-wrapper {
+  box-sizing: border-box;
   background-color: #f2f2f2;
-  padding: 20px;
+  padding: 1.5%;
   border-radius: 10px;
-  width: 600px;
-  margin: 60px auto;
-  justify-self: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #signup-form-wrapper {
+    width: 90%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #signup-form-wrapper {
+    width: 75%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  #signup-form-wrapper {
+    width: 60%;
+  }
 }
 
 #signup-form-wrapper label {
@@ -151,16 +169,65 @@
   transition: transform 0.3s ease-in-out;
 }
 /* user sign up form - end */
+/* all users form - start */
+/* #userTableWrapper {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  padding: 1.5%;
+  border-radius: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #userTableWrapper {
+    width: 90%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #userTableWrapper {
+    width: 75%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  #userTableWrapper {
+    width: 60%;
+  }
+} */
+/* all users up form - end */
 /* tables with all emails and contents - start */
 
 #emailTableWrapper, #contentTableWrapper{
+  box-sizing: border-box;
   background-color: #f2f2f2;
-  padding: 20px;
+  padding: 1.5%;
   border-radius: 10px;
-  width: 600px;
-  margin: 50px auto;
-  justify-self: center;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
   display: none;
+}
+
+@media (max-width: 600px) {
+  #emailTableWrapper, #contentTableWrapper {
+    width: 90%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #emailTableWrapper, #contentTableWrapper {
+    width: 75%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  #emailTableWrapper, #contentTableWrapper {
+    width: 60%;
+  }
 }
 
 .emails-container, .contents-container{

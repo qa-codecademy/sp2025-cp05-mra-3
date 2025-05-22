@@ -29,14 +29,13 @@
     "english": "Submit",
     "macedonian": "Испрати"
   },
-
-    {
+  {
     "id": "footertmlContactUs",
     "german": "Kontaktieren Sie uns",
     "english": "Contact us",
     "macedonian": "Контактирајте не"
   },
-    {
+  {
     "id": "footerhtmlAddress",
     "german": "Adresse: ",
     "english": "Address: ",
@@ -60,12 +59,17 @@
     "english": "All Rights Reserved.",
     "macedonian": "Сите права се задржани."
   },
-
   {
     "id": "adminhtmlNewUser",
     "german": "Neuer kunde",
     "english": "New user",
     "macedonian": "Нов корисник"
+  },
+  {
+    "id": "adminhtmlAllUsers",
+    "german": "Alle Benutzer",
+    "english": "All users",
+    "macedonian": "Сите корисници"
   },
   {
     "id": "adminhtmlAllEmails",
@@ -134,7 +138,7 @@
     "macedonian": "Е-пошта:"
   },
   {
-    "id": "dadminhtmlMessage:",
+    "id": "adminhtmlMessage:",
     "german": "Nachricht:",
     "english": "Message:",
     "macedonian": "Порака:"
@@ -164,7 +168,7 @@
     "macedonian": "Германски: "
   },
   {
-    "id": "dadminhtmlEnglish:",
+    "id": "adminhtmlEnglish:",
     "german": "Englische: ",
     "english": "English: ",
     "macedonian": "Англиски: "
