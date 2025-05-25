@@ -4,19 +4,27 @@ body {
     padding: 0;
 }
 
-.footer {
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
-    padding: 20px 10px;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-    position: relative;
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    background: transparent;
+    color: #2196F3;
+    text-align: center;
+    padding: 5px;
+}
+footer a {
+    color: #2196F3; 
+    text-decoration: none; 
+}
+
+footer a:hover {
+    color: lightgray; 
 }
 
 .footer-icons a {
-    margin: 0 10px;
-    color: #333;
+    color: #2196F3;
     font-size: 1.2em;
     text-decoration: none;
 }
@@ -28,14 +36,14 @@ body {
 }
 
 .footer-icons a:hover {
-    color: #007BFF;
+    color: #2196F3;
 }
-
 
 @media (max-width: 768px) {
     .footer {
-        padding: 15px 5px;
+        padding: 10px 5px;
     }
+
     .footer-icons a {
         font-size: 1em;
     }
