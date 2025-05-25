@@ -28,7 +28,25 @@ footer a:hover {
     font-size: 1.2em;
     text-decoration: none;
 }
-
+.fa-facebook { background-color: #1877F2; color: white; }
+.fa-instagram { display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s; }
+.fa-linkedin { background-color: #0077B5; color: white; }
+.fa {
+  padding: 5px;
+  font-size: 15px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
 .footer-icons {
     display: flex;
     justify-content: center;
