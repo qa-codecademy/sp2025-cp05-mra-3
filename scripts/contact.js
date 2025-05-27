@@ -115,9 +115,9 @@ function renderUsersTable(users) {
       <div><strong class = "onscreenText adminhtmlPassword:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.password}</div>
       <div><strong class = "onscreenText adminhtmlEnabled:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.enabled}</div>
 
-      <button id="enableEdit${user.id}" class="onscreenText adminhtmlUpdateContent" onclick="enableUserEdit('${user.id}')" style="display: inline;" type="button"></button>
-      <button id="cancelEdition${user.id}" class="onscreenText adminhtmlCancelChanges" onclick="cancelUserEdition('${user.id}', '${user.name}', '${user.email}', '${user.password}', '${user.enabled}')" style="display: none;" type="button"></button>
-      <button id="saveEdition${user.id}" class="onscreenText adminhtmlSaveChanges" onclick="saveUserEdition('${user.id}')" style="display: none;" type="button"></button>
+      <button id="enableEdit${user.id}" class="onscreenText adminhtmlUpdate" onclick="enableUserEdit('${user.id}')" style="display: inline;" type="button"></button>
+      <button id="cancelEdition${user.id}" class="onscreenText adminhtmlCancel" onclick="cancelUserEdition('${user.id}', '${user.name}', '${user.email}', '${user.password}', '${user.enabled}')" style="display: none;" type="button"></button>
+      <button id="saveEdition${user.id}" class="onscreenText adminhtmlSave" onclick="saveUserEdition('${user.id}')" style="display: none;" type="button"></button>
     `;
     container.appendChild(entry);
   });
@@ -184,8 +184,8 @@ async function saveUserEdition(userId) {
       id: userId,
     };
 
-    const res = await fetch('/api/user/update', {
-      method: 'POST',
+    const res = await fetch('/api/user', {
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(userFormData),
     });
@@ -332,15 +332,15 @@ function renderContentsTable(contents) {
       <div><strong class = "onscreenText adminhtmlGerman:"></strong><p class = "onscreenText${content.id}" style="display: inline;" onclick="this.focus()" >${content.german}</p></div>
       <div><strong class = "onscreenText adminhtmlEnglish:"></strong><p class = "onscreenText${content.id}" style="display: inline;" onclick="this.focus()" >${content.english}</p></div>
       <div><strong class = "onscreenText adminhtmlMacedonian:"></strong><p class = "onscreenText${content.id}" style="display: inline;" onclick="this.focus()" >${content.macedonian}</div>
-      <button id="enableEdit${content.id}" class="onscreenText adminhtmlUpdateContent" onclick="enableEdit('${content.id}')" style="display: inline;" type="button"></button>
-      <button id="cancelEdition${content.id}" class="onscreenText adminhtmlCancelChanges" onclick="cancelEdition('${content.id}', '${content.german}', '${content.english}', '${content.macedonian}')" style="display: none;" type="button"></button>
-      <button id="saveEdition${content.id}" class="onscreenText adminhtmlSaveChanges" onclick="saveEdition('${content.id}')" style="display: none;" type="button"></button>
+      <button id="enableEdit${content.id}" class="onscreenText adminhtmlUpdate" onclick="enableContentEdit('${content.id}')" style="display: inline;" type="button"></button>
+      <button id="cancelEdition${content.id}" class="onscreenText adminhtmlCancel" onclick="cancelContentEdition('${content.id}', '${content.german}', '${content.english}', '${content.macedonian}')" style="display: none;" type="button"></button>
+      <button id="saveEdition${content.id}" class="onscreenText adminhtmlSave" onclick="saveEContentdition('${content.id}')" style="display: none;" type="button"></button>
     `;
     container.appendChild(entry);
   });
 }
 
-function enableEdit(contentId) {
+function enableContentEdit(contentId) {
   const onscreenContentId = "onscreenText"+contentId
   const thisButtonId = "enableEdit"+contentId
   const otherButton1Id = "saveEdition"+contentId
@@ -356,7 +356,7 @@ function enableEdit(contentId) {
   }
 }
 
-function cancelEdition(contentId, contentGerman, contentEnglish, contentMacedonian) {
+function cancelContentEdition(contentId, contentGerman, contentEnglish, contentMacedonian) {
   const onscreenContentId = "onscreenText"+contentId
   const thisButtonId = "cancelEdition"+contentId
   const otherButton1Id = "enableEdit"+contentId
@@ -376,7 +376,7 @@ function cancelEdition(contentId, contentGerman, contentEnglish, contentMacedoni
   }
 }
 
-async function saveEdition(contentId) {
+async function saveContentEdition(contentId) {
   const onscreenContentId = "onscreenText"+contentId
   const thisButtonId = "saveEdition"+contentId
   const otherButton1Id = "enableEdit"+contentId
@@ -399,7 +399,7 @@ async function saveEdition(contentId) {
     };
 
     const res = await fetch('/api/content', {
-      method: 'POST',
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(contentFormData),
     });

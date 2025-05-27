@@ -7,7 +7,7 @@ const router = Router();
 // Route to fetch all content
 router.get('/content', getAllContentController);
 
-// Route to post new content
-router.post('/content', updateContentController);
+// Route to update content
+router.put('/content', updateContentController);
 
 export default router;

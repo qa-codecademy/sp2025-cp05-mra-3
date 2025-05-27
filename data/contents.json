@@ -198,21 +198,21 @@
     "macedonian": "Македонски: "
   },
   {
-    "id": "adminhtmlUpdateContent",
-    "german": "Inhalt aktualisieren",
-    "english": "Update content",
-    "macedonian": "Измени содржина"
+    "id": "adminhtmlUpdate",
+    "german": "Aktualisieren",
+    "english": "Update",
+    "macedonian": "Измени"
   },
   {
-    "id": "adminhtmlCancelChanges",
-    "german": "Änderungen verwerfen",
-    "english": "Cancel changes",
-    "macedonian": "Откажи измени"
+    "id": "adminhtmlCancel",
+    "german": "Stornieren",
+    "english": "Cancel",
+    "macedonian": "Откажи"
   },
   {
-    "id": "adminhtmlSaveChanges",
-    "german": "Änderungen speichern",
-    "english": "Save changes",
-    "macedonian": "Зачувај измени"
+    "id": "adminhtmlSave",
+    "german": "Speichern",
+    "english": "Save",
+    "macedonian": "Зачувај"
   }
 ]

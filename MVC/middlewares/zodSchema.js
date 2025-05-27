@@ -14,10 +14,14 @@ export const emailSchema = z.object({
   message: z.string().min(1, "Message is required"),
   createdAt: z.string(),
 });
-export const userSchema = z.object({
+export const userCreateSchema  = z.object({
   name: z.string().min(1, 'Name is required'),  
   email: z.string().min(1, 'Email is required').email('Invalid email format'),
   enabled: z.string(),
   password: z.string().min(6, 'Password is required'),
   // id: z.string(),
+});
+
+export const userUpdateSchema = userCreateSchema.extend({
+  id: z.string().min(1, 'Id is required')
 });

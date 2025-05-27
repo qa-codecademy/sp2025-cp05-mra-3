@@ -11,6 +11,6 @@ router.get('/user', getAllUsersController);
 router.post('/user', saveUserController);
 
 // Route to update user
-router.post('/user/update', updateUserController);
+router.put('/user', updateUserController);
 
 export default router;

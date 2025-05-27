@@ -1,13 +1,13 @@
 // /MVC/controllers/userController.js
 import { v4 as uuidv4 } from 'uuid';
 import { saveUser, getAllUsers, updateUser } from '../models/userModel.js';  // Import the model functions
-import { userSchema } from '../middlewares/zodSchema.js'; // Import Zod schema for validation
+import { userCreateSchema, userUpdateSchema  } from '../middlewares/zodSchema.js'; // Import Zod schema for validation
 
 // Controller to save user
 export async function saveUserController(req, res) {
   try {
     // Validate the incoming request body using Zod
-    const parsedData = userSchema.parse(req.body);
+    const parsedData = userCreateSchema.parse(req.body);
 
     // Check if email exists
     const existingUsers = await getAllUsers();
@@ -41,7 +41,7 @@ export async function saveUserController(req, res) {
 export async function updateUserController(req, res) {
   try {
     // Validate the incoming request body using Zod
-    const parsedData = userSchema.parse(req.body);
+    const parsedData = userUpdateSchema.parse(req.body);
 
     // Use the model to save the user
     await updateUser(parsedData);
