@@ -47,7 +47,6 @@ document.getElementById('userSignupForm').addEventListener('submit', async (e) =
     email: document.getElementById('userNameEmail').value,
     password: document.getElementById('userNamePassword').value,
     enabled: 'true',
-    createdAt: new Date().toISOString()
   };
 
   const res = await fetch('/api/user', {
@@ -115,10 +114,9 @@ function renderUsersTable(users) {
       <div><strong class = "onscreenText adminhtmlEmail:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.email}</p></div>
       <div><strong class = "onscreenText adminhtmlPassword:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.password}</div>
       <div><strong class = "onscreenText adminhtmlEnabled:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.enabled}</div>
-      <div><strong class = "onscreenText adminhtmlCreatedAt:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.createdAt}</div>
 
       <button id="enableEdit${user.id}" class="onscreenText adminhtmlUpdateContent" onclick="enableUserEdit('${user.id}')" style="display: inline;" type="button"></button>
-      <button id="cancelEdition${user.id}" class="onscreenText adminhtmlCancelChanges" onclick="cancelUserEdition('${user.id}', '${user.name}', '${user.email}', '${user.password}', '${user.enabled}', '${user.createdAt}')" style="display: none;" type="button"></button>
+      <button id="cancelEdition${user.id}" class="onscreenText adminhtmlCancelChanges" onclick="cancelUserEdition('${user.id}', '${user.name}', '${user.email}', '${user.password}', '${user.enabled}')" style="display: none;" type="button"></button>
       <button id="saveEdition${user.id}" class="onscreenText adminhtmlSaveChanges" onclick="saveUserEdition('${user.id}')" style="display: none;" type="button"></button>
     `;
     container.appendChild(entry);
@@ -134,14 +132,14 @@ function enableUserEdit(userId) {
   document.getElementById(otherButton2Id).style.display = "inline"
   document.getElementById(thisButtonId).style.display = "none"
   const elements = document.getElementsByClassName(onscreenUserId);
-  for (let i = 0; i < elements.length - 1; i++) {
+  for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     element.contentEditable = true;
     element.style.border = '1px dashed gray';
   }
 }
 
-function cancelUserEdition(userId, userName, userEmail, userPassword, userEnabled, userCreatedAt) {
+function cancelUserEdition(userId, userName, userEmail, userPassword, userEnabled) {
   const onscreenUserId = "onscreenText"+userId
   const thisButtonId = "cancelEdition"+userId
   const otherButton1Id = "enableEdit"+userId
@@ -156,7 +154,7 @@ function cancelUserEdition(userId, userName, userEmail, userPassword, userEnable
   document.getElementsByClassName(onscreenUserId)[3].innerText = userEnabled
 
   const elements = document.getElementsByClassName(onscreenUserId);
-  for (let i = 0; i < elements.length-1; i++) {
+  for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     element.contentEditable = false;
     element.style.border = 'none';
@@ -172,7 +170,7 @@ async function saveUserEdition(userId) {
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
   const elements = document.getElementsByClassName(onscreenUserId);
-  for (let i = 0; i < elements.length-1; i++) {
+  for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     element.contentEditable = false;
     element.style.border = 'none';
@@ -183,7 +181,6 @@ async function saveUserEdition(userId) {
       email: document.getElementsByClassName(onscreenUserId)[1].innerText,
       password: document.getElementsByClassName(onscreenUserId)[2].innerText,
       enabled: document.getElementsByClassName(onscreenUserId)[3].innerText,
-      createdAt: document.getElementsByClassName(onscreenUserId)[4].innerText,
       id: userId,
     };
 

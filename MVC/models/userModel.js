@@ -25,12 +25,12 @@ export async function getAllUsers() {
 // Function to update user to the file
 export async function updateUser(updatedUser) {
   try {
-    const user = await getAllUsers();
-    const index = user.findIndex(c => c.id === updatedUser.id);
+    const users = await getAllUsers();
+    const index = users.findIndex(user => user.id === updatedUser.id);
 
-    user[index] = updatedUser;
+    users[index] = updatedUser;
 
-    await fs.writeFile(dataFile, JSON.stringify(user, null, 2));
+    await fs.writeFile(dataFile, JSON.stringify(users, null, 2));
   } catch (err) {
     throw new Error('Error updating user: ' + err.message);
   }

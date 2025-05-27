@@ -43,11 +43,6 @@ export async function updateUserController(req, res) {
     // Validate the incoming request body using Zod
     const parsedData = userSchema.parse(req.body);
 
-    //     const newUserWithId = {
-    //   ...parsedData,
-    //   id: uuidv4(),
-    // };
-
     // Use the model to save the user
     await updateUser(parsedData);
 

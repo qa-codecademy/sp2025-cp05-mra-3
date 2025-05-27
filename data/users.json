@@ -1,67 +1,16 @@
 [
   {
-    "name": "nov ime12",
-    "email": "novaposta1@gsgr.com",
-    "enabled": true,
-    "password": "lozinka12",
-    "createdAt": "2025-05-27T08:36:31.170Z",
-    "id": "82ec6841-1e10-45c1-9420-8cec67e2d60c"
-  },
-  {
-    "name": "novo ime 2",
-    "email": "novaposta2@gsgr.com",
-    "password": "lozinka123",
-    "id": "0c9e9c62-eb43-41c8-8f3e-0fdf5e4b2799"
-  },
-  {
-    "name": "nov ime12222",
-    "email": "novaposta1@gsgr.com",
-    "enabled": "true",
-    "password": "lozinka12",
-    "createdAt": "2025-05-27T08:36:31.170Z"
-  },
-  {
-    "name": "novo ime 4",
-    "email": "novaposta54@gsgr.com",
-    "password": "5555555",
-    "id": "d3d738f0-eef3-44c2-ad17-2cf074ae4290"
-  },
-  {
-    "name": "novo ime 5",
-    "email": "novaposta45@gsgr.com",
-    "password": "5555555",
-    "id": "38694a71-3be7-4582-991f-098c5e5ac846"
-  },
-  {
-    "name": "novo ime 888",
-    "email": "novaposta456@gsgr.com",
-    "enabled": true,
-    "password": "5555555",
-    "createdAt": "2025-05-27T10:58:07.179Z",
-    "id": "87414633-d796-462d-b9ef-c15970be1e93"
-  },
-  {
-    "name": "novo ime 888888",
-    "email": "novaposta45666@gsgr.com",
-    "enabled": true,
-    "password": "5555555",
-    "createdAt": "2025-05-27T10:59:08.731Z",
-    "id": "f5e1bdd5-ce0d-40b3-bac3-f74b215f6788"
-  },
-  {
-    "name": "novo ime 555555",
-    "email": "novaposta45666555@gsgr.com",
-    "enabled": true,
-    "password": "5555555",
-    "createdAt": "2025-05-27T11:04:38.008Z",
-    "id": "12625a8c-0660-4932-8048-afdcb88c06b2"
-  },
-  {
-    "name": "novo ime 5555551111",
-    "email": "novaposta11145666555@gsgr.com",
+    "name": "qwswqswqime aaa5555551111wqwwqs",
+    "email": "wdqqwdwqd@gsgr.com",
     "enabled": "true",
     "password": "5555555",
-    "createdAt": "2025-05-27T11:29:06.263Z",
-    "id": "ec0ccbd3-de12-42a2-80a0-63a2f8ee3de0"
+    "id": "fb9e5650-ce84-4ce4-9247-c9aa53df0506"
+  },
+  {
+    "name": "qwswqswqime ",
+    "email": "121scewce@gsgr.com",
+    "enabled": "true",
+    "password": "5555555",
+    "id": "437240e8-4c46-42fd-a337-488f1ad3f32e"
   }
 ]
