@@ -1,6 +1,6 @@
  // /MVC/routes/userRoutes.js
 import { Router } from 'express';
-import { saveUserController, getAllUsersController } from '../controllers/userController.js';
+import { saveUserController, getAllUsersController, updateUserController} from '../controllers/userController.js';
 
 const router = Router();
 
@@ -9,5 +9,8 @@ router.get('/user', getAllUsersController);
 
 // Route to post new user
 router.post('/user', saveUserController);
+
+// Route to update user
+router.post('/user/update', updateUserController);
 
 export default router;

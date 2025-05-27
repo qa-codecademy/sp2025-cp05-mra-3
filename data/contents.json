@@ -114,6 +114,30 @@
     "macedonian": "Испрати"
   },
   {
+    "id": "adminhtmlFullName:",
+    "german": "Vollständiger Name: ",
+    "english": "Full name: ",
+    "macedonian": "Целосно име: "
+  },
+  {
+    "id": "adminhtmlEmail:",
+    "german": "Email: ",
+    "english": "Email: ",
+    "macedonian": "Е-пошта: "
+  },
+  {
+    "id": "adminhtmlPassword:",
+    "german": "Passwort: ",
+    "english": "Password: ",
+    "macedonian": "Лозинка: "
+  },
+  {
+    "id": "adminhtmlEnabled:",
+    "german": "Ermöglicht: ",
+    "english": "Enabled: ",
+    "macedonian": "Активен: "
+  },
+  {
     "id": "adminhtmlReceivedEmails",
     "german": "Empfangene E-Mails",
     "english": "Received E-mails",
@@ -130,12 +154,6 @@
     "german": "Name:",
     "english": "Name:",
     "macedonian": "Име:"
-  },
-  {
-    "id": "adminhtmlEmail:",
-    "german": "Email:",
-    "english": "Email:",
-    "macedonian": "Е-пошта:"
   },
   {
     "id": "adminhtmlMessage:",

@@ -22,7 +22,7 @@ export async function getAllContent() {
   }
 }
 
-// Function to save new content to the file
+// Function to update content to the file
 export async function updateContent(updatedContent) {
   try {
     const content = await getAllContent();
@@ -32,6 +32,6 @@ export async function updateContent(updatedContent) {
 
     await fs.writeFile(dataFile, JSON.stringify(content, null, 2));
   } catch (err) {
-    throw new Error('Error saving content: ' + err.message);
+    throw new Error('Error updating content: ' + err.message);
   }
 }
