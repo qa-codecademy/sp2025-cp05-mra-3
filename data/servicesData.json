@@ -75,19 +75,31 @@
   },
   "cards": [
     {
-      "title": "Reparaturarbeiten",
-      "description": "Von kleinen Reparaturen bis hin zu umfangreichen Instandsetzungen. Unsere Experten kümmern sich um alle Ihre Bedürfnisse.",
-      "image": "../assets/download.jpeg"
+      "title": "Streicharbeiten",
+      "description": "Unser Unternehmen bietet umfassende Malerarbeiten an. Dazu gehören Innen- und Außenarbeiten, die Vorbereitung des Untergrunds, die Auswahl hochwertiger Materialien und die präzise Ausführung. Wir arbeiten für Wohnhäuser, Gewerbebauten und Industrieanlagen und garantieren langlebige, makellose Ergebnisse.",
+      "image": "../assets/servicesCardsIMG/Streicharbeiten.jpg"
+    },
+    {
+      "title": "Tapezierarbeiten",
+      "description": "Unser Unternehmen Allround bietet Polsterarbeiten an – professionelle Polsterarbeiten für Möbel und Innenräume. Dazu gehören die Restaurierung von Sesseln, Sofas, Stühlen und anderen Möbeln, der Austausch von Stoffen oder Leder, dekorative Änderungen und die Anbringung von Wandteppichen. Wir arbeiten mit hochwertigen Materialien und achten auf Präzision bis ins kleinste Detail.",
+      "image": "../assets/servicesCardsIMG//Tapezierarbeiten.jpg"
     },
     {
       "title": "Renovierungen",
-      "description": "Modernisierung von Wohnräumen, Badezimmern und Küchen. Wir verwandeln Ihre Vision in Realität.",
-      "image": "../assets/download (1).jpeg"
-    },
+      "description": "Ihr Raum verdient Perfektion bis ins kleinste Detail. Als Ihr Allround-Partner runden wir jeden Umbau mit präziser Innenausbauarbeit ab, die Ihr Zuhause einzigartig macht.Vom Möbeleinbau bis hin zu kreativen Dekorationslösungen – unser Team achtet auf jedes Detail, um einen harmonischen und funktionalen Raum zu schaffen. Ob eine Küche, die Sie lieben, stimmungsvolle Beleuchtung oder Bodenbeläge, die den Charakter eines Raumes prägen – wir setzen Ihre Ideen um.",
+      "image": "../assets/servicesCardsIMG/Renovierungen.jpg"
+    }
+    ,
     {
-      "title": "Renovierungen",
-      "description": "Modernisierung von Wohnräumen, Badezimmern und Küchen. Wir verwandeln Ihre Vision in Realität.",
-      "image": "../assets/download (1).jpeg"
+      "title": "Sanierung",
+      "description": "Als Ihr zuverlässiger Partner für umfassende Sanierungen bieten wir Ihnen einen umfassenden Ansatz für die Instandhaltung und Verbesserung Ihres Zuhauses. Ob Strukturreparaturen, Feuchtigkeitssanierung oder Raummodernisierung – wir verwandeln Ihr Zuhause in einen sicheren, effizienten und schönen Wohnort.Unser Ansatz ist umfassend – vom ersten Kontakt bis zum letzten Detail. So ist jeder Aspekt Ihres Zuhauses in den besten Händen.",
+      "image": "../assets/servicesCardsIMG/Sanierung.jpg"
+    }
+    ,
+    {
+      "title": "Sonstige Arbeiten im Innenbereich",
+      "description": "Ihr Zuhause verdient den perfekten Abschluss! Als Allround-Unternehmen bieten wir Ihnen professionelle Dienstleistungen für alle Ihre Inneneinrichtungswünsche – von Fliesenarbeiten und Möbelmontage bis hin zur Beleuchtungsinstallation und kleinen Anpassungen.Mit Liebe zum Detail und einem Fokus auf Qualität sorgt unser Team dafür, dass Ihre Räume ordentlich, funktional und modern wirken. <br>  ✆ Kontaktieren Sie uns für eine kostenlose Beratung und ein individuelles Angebot!",
+      "image": "../assets/servicesCardsIMG/Sonstige Arbeiten im Innenbereich.jpg"
     }
     
     
