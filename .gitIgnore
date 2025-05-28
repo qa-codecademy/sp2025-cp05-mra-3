@@ -1,0 +1,88 @@
+# Dependencies
+node_modules/
+vendor/
+.pnp/
+.pnp.js
+
+# Build outputs
+dist/
+build/
+out/
+*.class
+target/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+venv/
+.venv/
+env/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak
+*.sublime-workspace
+*.sublime-project
+.project
+.settings/
+.classpath
+.factorypath
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+npm-debug.log*
+
+# Testing
+coverage/
+.coverage
+.nyc_output/
+junit.xml
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+.cache/
+
+# Package files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Cursor files
+.cursor/
+.cursor.json
+cursor-tutor/
+cursor-chat/
+
+# Powerpoint files
+*.ppt
+*.pptx
+*.pot
+*.potx
+*.ppsx
+*.pps
