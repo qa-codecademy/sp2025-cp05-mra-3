@@ -1,17 +1,3 @@
-//  Log in and out simulation - start
-document.getElementById('logInButton').addEventListener('click', (e) => {
-  e.preventDefault();
-  localStorage.setItem('isLoggedIn', 'pppp@opppp.com');
-  alert('Logged in! LocalStorage set.');
-});
-
-document.getElementById('logOutButton').addEventListener('click', (e) => {
-  e.preventDefault();
-  localStorage.removeItem('isLoggedIn');
-  alert('Logged out! LocalStorage removed.');
-});
-//  Log in and out simulation - end
-
 // processing email - start
 document.getElementById('emailForm').addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -117,18 +103,94 @@ document.addEventListener('DOMContentLoaded', async () => {
     alert('Could not load users.');
   }
 });
+// function renderUsersTable(users) {
+//   const container = document.getElementById('usersContainer');
+//   container.innerHTML = '';
+//   users.forEach(user => {
+//     const entry = document.createElement('div');
+//     entry.classList.add('user-entry');
+//     entry.innerHTML = `
+//       <div><strong class = "onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${user.id}</p></div>
+//       <div><strong class = "onscreenText adminhtmlFullName:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.name}</p></div>
+//       <div><strong class = "onscreenText adminhtmlEmail:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.email}</p></div>
+//       <div><strong class = "onscreenText adminhtmlPassword:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${'•'.repeat(user.password.length)}</p></div>
+//       <div><strong class = "onscreenText adminhtmlEnabled:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.enabled}</p></div>
+
+//       <button id="enableEdit${user.id}" class="onscreenText adminhtmlUpdate" onclick="enableUserEdit('${user.id}')" style="display: inline;" type="button"></button>
+//       <button id="cancelEdition${user.id}" class="onscreenText adminhtmlCancel" onclick="cancelUserEdition('${user.id}', '${user.name}', '${user.email}', '${user.password}', '${user.enabled}')" style="display: none;" type="button"></button>
+//       <button id="saveEdition${user.id}" class="onscreenText adminhtmlSave" onclick="saveUserEdition('${user.id}')" style="display: none;" type="button"></button>
+//     `;
+//     container.appendChild(entry);
+//   });
+// }
+
+// function enableUserEdit(userId) {
+//   const onscreenUserId = "onscreenText" + userId
+//   const thisButtonId = "enableEdit" + userId
+//   const otherButton1Id = "saveEdition" + userId
+//   const otherButton2Id = "cancelEdition" + userId
+
+//   document.getElementById(otherButton1Id).style.display = "inline"
+//   document.getElementById(otherButton2Id).style.display = "inline"
+//   document.getElementById(thisButtonId).style.display = "none"
+//   const elements = document.getElementsByClassName(onscreenUserId);
+
+//   const user = allUsers.find(u => u.id == userId);
+//   if (!user) return alert('User not found.');
+
+//   const isLoggedIn = localStorage.getItem('isLoggedIn');
+//   if (isLoggedIn === user.email) {
+//     for (let i = 0; i < elements.length-1; i++) {
+//       const element = elements[i];
+//       element.contentEditable = true;
+//       element.style.border = '1px dashed gray';
+//     }
+//   } else {
+//     alert("You can only edit your own user details.");
+//   }
+// }
+
+//  Log in and out simulation - start
+document.getElementById('logInButton').addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.setItem('isLoggedIn', '22a73cfa-6c65-4849-b816-4ada6408daac');
+  alert('Logged in! LocalStorage set.');
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  location.reload()
+  console.log(isLoggedIn);
+});
+
+document.getElementById('logOutButton').addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.removeItem('isLoggedIn');
+  alert('Logged out! LocalStorage removed.');
+});
+const adminId = 'fb9e5650-ce84-4ce4-9247-c9aa53df0506'
+//  Log in and out simulation - end
 function renderUsersTable(users) {
   const container = document.getElementById('usersContainer');
   container.innerHTML = '';
+
+  const loggedInId = localStorage.getItem('isLoggedIn');
+  const isAdmin = (loggedInId === adminId);
+
   users.forEach(user => {
+    // Toggle enabled status:
+    // Admin can toggle all users, normal user only own row
+    const canToggle = isAdmin || (loggedInId === user.id);
+
+    const cursorStyle = canToggle ? 'pointer' : 'default';
+    const colorStyle = canToggle ? 'blue' : 'black';
+    const onclickHandler = canToggle ? `onclick="toggleEnabled(this, '${user.id}')"` : '';
+
     const entry = document.createElement('div');
     entry.classList.add('user-entry');
     entry.innerHTML = `
-      <div><strong class = "onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${user.id}</p></div>
-      <div><strong class = "onscreenText adminhtmlFullName:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.name}</p></div>
-      <div><strong class = "onscreenText adminhtmlEmail:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.email}</p></div>
-      <div><strong class = "onscreenText adminhtmlPassword:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${'•'.repeat(user.password.length)}</div>
-      <div><strong class = "onscreenText adminhtmlEnabled:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.enabled}</div>
+      <div><strong class="onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${user.id}</p></div>
+      <div><strong class="onscreenText adminhtmlFullName:"></strong><p class="onscreenText${user.id}" style="display: inline;" onclick="this.focus()">${user.name}</p></div>
+      <div><strong class="onscreenText adminhtmlEmail:"></strong><p class="onscreenText${user.id}" style="display: inline;" onclick="this.focus()">${user.email}</p></div>
+      <div><strong class="onscreenText adminhtmlPassword:"></strong><p class="onscreenText${user.id}" style="display: inline;">${'•'.repeat(user.password.length)}</p></div>
+      <div><strong class="onscreenText adminhtmlEnabled:"></strong><p class="onscreenText${user.id} enabled-status" style="display: inline; cursor: ${cursorStyle}; color: ${colorStyle};" tabindex="0" ${onclickHandler}>${user.enabled}</p></div>
 
       <button id="enableEdit${user.id}" class="onscreenText adminhtmlUpdate" onclick="enableUserEdit('${user.id}')" style="display: inline;" type="button"></button>
       <button id="cancelEdition${user.id}" class="onscreenText adminhtmlCancel" onclick="cancelUserEdition('${user.id}', '${user.name}', '${user.email}', '${user.password}', '${user.enabled}')" style="display: none;" type="button"></button>
@@ -138,23 +200,36 @@ function renderUsersTable(users) {
   });
 }
 
+function toggleEnabled(element, userId) {
+  let current = element.textContent;
+  let newValue = (current === 'true') ? 'false' : 'true';
+  element.textContent = newValue;
+  saveUserEdition(userId)
+
+  // You can update your allUsers data or backend here accordingly
+  const user = allUsers.find(u => u.id == userId);
+  if (user) {
+    user.enabled = newValue;
+  }
+}
+
 function enableUserEdit(userId) {
-  const onscreenUserId = "onscreenText" + userId
-  const thisButtonId = "enableEdit" + userId
-  const otherButton1Id = "saveEdition" + userId
-  const otherButton2Id = "cancelEdition" + userId
+  const onscreenUserId = "onscreenText" + userId;
+  const thisButtonId = "enableEdit" + userId;
+  const otherButton1Id = "saveEdition" + userId;
+  const otherButton2Id = "cancelEdition" + userId;
 
-  document.getElementById(otherButton1Id).style.display = "inline"
-  document.getElementById(otherButton2Id).style.display = "inline"
-  document.getElementById(thisButtonId).style.display = "none"
   const elements = document.getElementsByClassName(onscreenUserId);
-
   const user = allUsers.find(u => u.id == userId);
   if (!user) return alert('User not found.');
 
   const isLoggedIn = localStorage.getItem('isLoggedIn');
-  if (isLoggedIn === user.email) {
-    for (let i = 0; i < elements.length; i++) {
+  if (isLoggedIn === user.id) {
+    document.getElementById(otherButton1Id).style.display = "inline";
+    document.getElementById(otherButton2Id).style.display = "inline";
+    document.getElementById(thisButtonId).style.display = "none";
+
+    for (let i = 0; i < elements.length-1; i++) {
       const element = elements[i];
       element.contentEditable = true;
       element.style.border = '1px dashed gray';
@@ -163,6 +238,7 @@ function enableUserEdit(userId) {
     alert("You can only edit your own user details.");
   }
 }
+// 
 
 function cancelUserEdition(userId, userName, userEmail, userPassword, userEnabled) {
   const onscreenUserId = "onscreenText" + userId
@@ -221,6 +297,11 @@ async function saveUserEdition(userId) {
     alert('User changed!');
   } else {
     alert('Failed to change user. ' + (responseBody.message || 'Unknown error.'));
+    const oldUser = allUsers.find(u => u.id == userId);
+    document.getElementsByClassName(onscreenUserId)[0].innerText = oldUser.name;
+    document.getElementsByClassName(onscreenUserId)[1].innerText = oldUser.email;
+    document.getElementsByClassName(onscreenUserId)[2].innerText = '•'.repeat(user.password.length);
+    document.getElementsByClassName(onscreenUserId)[3].innerText = oldUser.enabled;
   }
   // // changing content - end
 }
