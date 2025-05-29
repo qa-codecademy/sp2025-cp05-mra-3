@@ -19,7 +19,6 @@ export const userCreateSchema  = z.object({
   email: z.string().min(1, 'Email is required').email('Invalid email format'),
   enabled: z.string(),
   password: z.string().min(6, 'Password is required'),
-  // id: z.string(),
 });
 
 export const userUpdateSchema = userCreateSchema.extend({

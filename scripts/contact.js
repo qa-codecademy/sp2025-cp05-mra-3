@@ -60,6 +60,7 @@ document.getElementById('userSignupForm').addEventListener('submit', async (e) =
   if (res.ok) {
     alert('User saved!');
     document.getElementById('userSignupForm').reset();
+    location.reload(true);
   } else {
     alert('Failed to save user.' + responseBody.error);
   }
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       .map(user => ({
         ...user,
       }))
-      .sort((a, b) => b.createdAt - a.createdAt);
+      .sort((a, b) => a.name.localeCompare(b.name));
     
     allUsers = sortedUsers
 
@@ -334,7 +335,7 @@ function renderContentsTable(contents) {
       <div><strong class = "onscreenText adminhtmlMacedonian:"></strong><p class = "onscreenText${content.id}" style="display: inline;" onclick="this.focus()" >${content.macedonian}</div>
       <button id="enableEdit${content.id}" class="onscreenText adminhtmlUpdate" onclick="enableContentEdit('${content.id}')" style="display: inline;" type="button"></button>
       <button id="cancelEdition${content.id}" class="onscreenText adminhtmlCancel" onclick="cancelContentEdition('${content.id}', '${content.german}', '${content.english}', '${content.macedonian}')" style="display: none;" type="button"></button>
-      <button id="saveEdition${content.id}" class="onscreenText adminhtmlSave" onclick="saveEContentdition('${content.id}')" style="display: none;" type="button"></button>
+      <button id="saveEdition${content.id}" class="onscreenText adminhtmlSave" onclick="saveContentEdition('${content.id}')" style="display: none;" type="button"></button>
     `;
     container.appendChild(entry);
   });
