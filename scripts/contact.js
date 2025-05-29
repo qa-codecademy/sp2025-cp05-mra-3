@@ -1,31 +1,45 @@
-  // processing email - start
+//  Log in and out simulation - start
+document.getElementById('logInButton').addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.setItem('isLoggedIn', 'pppp@opppp.com');
+  alert('Logged in! LocalStorage set.');
+});
+
+document.getElementById('logOutButton').addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.removeItem('isLoggedIn');
+  alert('Logged out! LocalStorage removed.');
+});
+//  Log in and out simulation - end
+
+// processing email - start
 document.getElementById('emailForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-  
-    const emailFormData = {
-      name: document.getElementById('nameInput').value,
-      email: document.getElementById('emailInput').value,
-      message: document.getElementById('messageInput').value,
-      createdAt: new Date().toISOString()
-    };
-  
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(emailFormData),
-    });
-    const responseBody = await res.json();
-  
-    if (res.ok) {
-      alert('Email processed!');
-      document.getElementById('emailForm').reset();
-    } else {
-      alert('Failed to process email.'+ responseBody.error);
-    }
+  e.preventDefault();
+
+  const emailFormData = {
+    name: document.getElementById('nameInput').value,
+    email: document.getElementById('emailInput').value,
+    message: document.getElementById('messageInput').value,
+    createdAt: new Date().toISOString()
+  };
+
+  const res = await fetch('/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(emailFormData),
   });
-  // processing email - end
-  // adminpanel - start 
-  // user sign up form - start
+  const responseBody = await res.json();
+
+  if (res.ok) {
+    alert('Email processed!');
+    document.getElementById('emailForm').reset();
+  } else {
+    alert('Failed to process email.' + responseBody.error);
+  }
+});
+// processing email - end
+// adminpanel - start 
+// user sign up form - start
 document.getElementById('submitToggleNewUser').addEventListener('click', () => {
   const wrapper = document.getElementById('signup-form-wrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
@@ -94,7 +108,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         ...user,
       }))
       .sort((a, b) => a.name.localeCompare(b.name));
-    
+
     allUsers = sortedUsers
 
     renderUsersTable(allUsers);
@@ -113,7 +127,7 @@ function renderUsersTable(users) {
       <div><strong class = "onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${user.id}</p></div>
       <div><strong class = "onscreenText adminhtmlFullName:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.name}</p></div>
       <div><strong class = "onscreenText adminhtmlEmail:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.email}</p></div>
-      <div><strong class = "onscreenText adminhtmlPassword:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.password}</div>
+      <div><strong class = "onscreenText adminhtmlPassword:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${'•'.repeat(user.password.length)}</div>
       <div><strong class = "onscreenText adminhtmlEnabled:"></strong><p class = "onscreenText${user.id}" style="display: inline;" onclick="this.focus()" >${user.enabled}</div>
 
       <button id="enableEdit${user.id}" class="onscreenText adminhtmlUpdate" onclick="enableUserEdit('${user.id}')" style="display: inline;" type="button"></button>
@@ -125,26 +139,36 @@ function renderUsersTable(users) {
 }
 
 function enableUserEdit(userId) {
-  const onscreenUserId = "onscreenText"+userId
-  const thisButtonId = "enableEdit"+userId
-  const otherButton1Id = "saveEdition"+userId
-  const otherButton2Id = "cancelEdition"+userId
+  const onscreenUserId = "onscreenText" + userId
+  const thisButtonId = "enableEdit" + userId
+  const otherButton1Id = "saveEdition" + userId
+  const otherButton2Id = "cancelEdition" + userId
+
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "inline"
   document.getElementById(thisButtonId).style.display = "none"
   const elements = document.getElementsByClassName(onscreenUserId);
-  for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    element.contentEditable = true;
-    element.style.border = '1px dashed gray';
+
+  const user = allUsers.find(u => u.id == userId);
+  if (!user) return alert('User not found.');
+
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  if (isLoggedIn === user.email) {
+    for (let i = 0; i < elements.length; i++) {
+      const element = elements[i];
+      element.contentEditable = true;
+      element.style.border = '1px dashed gray';
+    }
+  } else {
+    alert("You can only edit your own user details.");
   }
 }
 
 function cancelUserEdition(userId, userName, userEmail, userPassword, userEnabled) {
-  const onscreenUserId = "onscreenText"+userId
-  const thisButtonId = "cancelEdition"+userId
-  const otherButton1Id = "enableEdit"+userId
-  const otherButton2Id = "saveEdition"+userId
+  const onscreenUserId = "onscreenText" + userId
+  const thisButtonId = "cancelEdition" + userId
+  const otherButton1Id = "enableEdit" + userId
+  const otherButton2Id = "saveEdition" + userId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
@@ -163,10 +187,10 @@ function cancelUserEdition(userId, userName, userEmail, userPassword, userEnable
 }
 
 async function saveUserEdition(userId) {
-  const onscreenUserId = "onscreenText"+userId
-  const thisButtonId = "saveEdition"+userId
-  const otherButton1Id = "enableEdit"+userId
-  const otherButton2Id = "cancelEdition"+userId
+  const onscreenUserId = "onscreenText" + userId
+  const thisButtonId = "saveEdition" + userId
+  const otherButton1Id = "enableEdit" + userId
+  const otherButton2Id = "cancelEdition" + userId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
@@ -177,27 +201,27 @@ async function saveUserEdition(userId) {
     element.style.border = 'none';
   }
   // changing user - start
-    const userFormData = {
-      name: document.getElementsByClassName(onscreenUserId)[0].innerText,
-      email: document.getElementsByClassName(onscreenUserId)[1].innerText,
-      password: document.getElementsByClassName(onscreenUserId)[2].innerText,
-      enabled: document.getElementsByClassName(onscreenUserId)[3].innerText,
-      id: userId,
-    };
+  const userFormData = {
+    name: document.getElementsByClassName(onscreenUserId)[0].innerText,
+    email: document.getElementsByClassName(onscreenUserId)[1].innerText,
+    password: document.getElementsByClassName(onscreenUserId)[2].innerText,
+    enabled: document.getElementsByClassName(onscreenUserId)[3].innerText,
+    id: userId,
+  };
 
-    const res = await fetch('/api/user', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(userFormData),
-    });
+  const res = await fetch('/api/user', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(userFormData),
+  });
 
-    const responseBody = await res.json();
-  
-    if (res.ok) {
-      alert('User changed!');
-    } else {
-      alert('Failed to change user. ' + (responseBody.message || 'Unknown error.'));
-    }
+  const responseBody = await res.json();
+
+  if (res.ok) {
+    alert('User changed!');
+  } else {
+    alert('Failed to change user. ' + (responseBody.message || 'Unknown error.'));
+  }
   // // changing content - end
 }
 // table with all users - end
@@ -285,7 +309,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         ...content,
       }))
       .sort((a, b) => b.createdAt - a.createdAt);
-    
+
     allContents = sortedContents
 
     renderContentsTable(allContents);
@@ -296,7 +320,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 // selecting page-filter - start
 const menuList = document.getElementsByClassName('pageMenu')
-for (let i=0; i<menuList.length; i++){
+for (let i = 0; i < menuList.length; i++) {
   menuList[i].addEventListener('click', () => {
     document.getElementById('dropdown1-toggle').innerHTML = menuList[i].innerHTML
     const page = menuList[i].innerHTML.trim().toLowerCase()
@@ -310,7 +334,7 @@ function filterEntriesByPage(page) {
     const idParagraph = entry.querySelector('div > p');
     const contentId = idParagraph.textContent.trim().toLowerCase();
 
-    if ((page !== 'alle')&&(page !== 'all')&&(page !== 'сите')) {
+    if ((page !== 'alle') && (page !== 'all') && (page !== 'сите')) {
       if (contentId.includes(page)) {
         entry.style.display = 'block';
       } else {
@@ -342,10 +366,10 @@ function renderContentsTable(contents) {
 }
 
 function enableContentEdit(contentId) {
-  const onscreenContentId = "onscreenText"+contentId
-  const thisButtonId = "enableEdit"+contentId
-  const otherButton1Id = "saveEdition"+contentId
-  const otherButton2Id = "cancelEdition"+contentId
+  const onscreenContentId = "onscreenText" + contentId
+  const thisButtonId = "enableEdit" + contentId
+  const otherButton1Id = "saveEdition" + contentId
+  const otherButton2Id = "cancelEdition" + contentId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "inline"
   document.getElementById(thisButtonId).style.display = "none"
@@ -358,10 +382,10 @@ function enableContentEdit(contentId) {
 }
 
 function cancelContentEdition(contentId, contentGerman, contentEnglish, contentMacedonian) {
-  const onscreenContentId = "onscreenText"+contentId
-  const thisButtonId = "cancelEdition"+contentId
-  const otherButton1Id = "enableEdit"+contentId
-  const otherButton2Id = "saveEdition"+contentId
+  const onscreenContentId = "onscreenText" + contentId
+  const thisButtonId = "cancelEdition" + contentId
+  const otherButton1Id = "enableEdit" + contentId
+  const otherButton2Id = "saveEdition" + contentId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
@@ -378,10 +402,10 @@ function cancelContentEdition(contentId, contentGerman, contentEnglish, contentM
 }
 
 async function saveContentEdition(contentId) {
-  const onscreenContentId = "onscreenText"+contentId
-  const thisButtonId = "saveEdition"+contentId
-  const otherButton1Id = "enableEdit"+contentId
-  const otherButton2Id = "cancelEdition"+contentId
+  const onscreenContentId = "onscreenText" + contentId
+  const thisButtonId = "saveEdition" + contentId
+  const otherButton1Id = "enableEdit" + contentId
+  const otherButton2Id = "cancelEdition" + contentId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
@@ -392,26 +416,26 @@ async function saveContentEdition(contentId) {
     element.style.border = 'none';
   }
   // changing content - start
-    const contentFormData = {
-      german: document.getElementsByClassName(onscreenContentId)[0].innerText,
-      english: document.getElementsByClassName(onscreenContentId)[1].innerText,
-      macedonian: document.getElementsByClassName(onscreenContentId)[2].innerText,
-      id: contentId,
-    };
+  const contentFormData = {
+    german: document.getElementsByClassName(onscreenContentId)[0].innerText,
+    english: document.getElementsByClassName(onscreenContentId)[1].innerText,
+    macedonian: document.getElementsByClassName(onscreenContentId)[2].innerText,
+    id: contentId,
+  };
 
-    const res = await fetch('/api/content', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(contentFormData),
-    });
+  const res = await fetch('/api/content', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(contentFormData),
+  });
 
-    const responseBody = await res.json();
-  
-    if (res.ok) {
-      alert('Content changed!');
-    } else {
-      alert('Failed to change content. ' + (responseBody.message || 'Unknown error.'));
-    }
+  const responseBody = await res.json();
+
+  if (res.ok) {
+    alert('Content changed!');
+  } else {
+    alert('Failed to change content. ' + (responseBody.message || 'Unknown error.'));
+  }
   // // changing content - end
 }
 // table with all contents - end
