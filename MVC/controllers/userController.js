@@ -47,7 +47,7 @@ export async function updateUserController(req, res) {
     await updateUser(parsedData);
 
 
-    res.status(201).json({ message: 'User saved successfully!' });
+    res.status(201).json({ message: 'User updated successfully!' });
   } catch (err) {
     // If validation fails, send an error response
     if (err instanceof Error) {

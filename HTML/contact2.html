@@ -9,7 +9,7 @@
 
 <body>
   <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="../css/contact2.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -41,6 +41,8 @@
       <button class="onscreenText adminhtmlAllContents" id="submitToggleAllContents" type="submit"></button>
       <button id="logInButton" type="submit">Log in</button>
       <button id="logOutButton" type="submit">Log out</button>
+      <button class="onscreenText adminhtmlNewCard" id="submitToggleNewCard" type="submit"></button>
+      <button class="onscreenText adminhtmlAllCards" id="submitToggleAllCards" type="submit"></button>
       <!-- language selector - start-->
       <div id="dropdownLanguageSelector">
         <div id="dropdownLanguageSelector-toggle">
@@ -112,7 +114,39 @@
       <div id="contentsContainer" class="contents-container">
       </div>
     </div>
+
     <!-- All contents - end -->
+
+        <!-- New Card form - start -->
+    <div id="card-form-wrapper">
+      <div id="cardFormTitle">
+        <h2 class="onscreenText adminhtmlNewCard heading"></h2>
+      </div>
+      <form id="newCardForm">
+        <label class="onscreenText adminhtmlCardTitle" for="cardTitle"></label>
+        <input id="cardTitle" type="text" required>
+        <label class="onscreenText adminhtmlCardDescription" for="cardDescription"></label>
+        <input id="cardDescription" type="text" required>
+        <label class="onscreenText adminhtmlCardPicture" for="cardPicture"></label>
+        <input id="cardPicture" required></input>
+        <button class="onscreenText adminhtmlSubmit" id="submitNewCard" type="submit"></button>
+      </form>
+    </div>
+    <!-- New Card form - end -->
+
+    <!-- all cards - start -->
+    <!-- <div id="cardContainer">
+      <div class="error-container"></div>
+    </div> -->
+
+    <div id="cardTableWrapper">
+      <div id="cardTableTitle">
+        <h2 class="onscreenText adminhtmlAllCards heading"></h2>
+      </div>
+      <div id="cardsContainer" class="cards-container">
+      </div>
+    </div>
+    <!-- all cards - end -->
     <!-- adminpanel - end -->
 
   </main>
@@ -143,7 +177,7 @@
 
   </footer>
 
-  <script src="../scripts/contact1.js"></script>
+  <script src="../scripts/contact2.js"></script>
   <script src="../modules/multilingual.js"></script>
 </body>
 

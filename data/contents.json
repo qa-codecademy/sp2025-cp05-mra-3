@@ -1,9 +1,9 @@
 [
   {
     "id": "contacthtmlContactUs",
-    "german": "contacthtmlContactUs",
-    "english": "Kontaktieren12 Sie uns",
-    "macedonian": "Contact us"
+    "german": "Kontaktieren Sie uns",
+    "english": "Contact us",
+    "macedonian": "Контактирајте не"
   },
   {
     "id": "contacthtmlName",
@@ -214,5 +214,53 @@
     "german": "Speichern",
     "english": "Save",
     "macedonian": "Зачувај"
+  },
+  {
+    "id": "adminhtmlAllCards",
+    "german": "Alle Karten",
+    "english": "All cards",
+    "macedonian": "Сите картички"
+  },
+  {
+    "id": "adminhtmlNewCard",
+    "german": "Neue Karte",
+    "english": "New card",
+    "macedonian": "Нова картичка"
+  },
+  {
+    "id": "adminhtmlCardTitle",
+    "german": "Titel",
+    "english": "Title",
+    "macedonian": "Наслов"
+  },
+  {
+    "id": "adminhtmlCardDescription",
+    "german": "Beschreibung",
+    "english": "Description",
+    "macedonian": "Опис"
+  },
+  {
+    "id": "adminhtmlCardPicture",
+    "german": "Bild",
+    "english": "Picture",
+    "macedonian": "Слика"
+  },
+  {
+    "id": "adminhtmlCardTitle:",
+    "german": "Titel: ",
+    "english": "Title: ",
+    "macedonian": "Наслов: "
+  },
+  {
+    "id": "adminhtmlCardDescription:",
+    "german": "Beschreibung: ",
+    "english": "Description: ",
+    "macedonian": "Опис: "
+  },
+  {
+    "id": "adminhtmlCardPicture:",
+    "german": "Bild: ",
+    "english": "Picture: ",
+    "macedonian": "Слика: "
   }
 ]

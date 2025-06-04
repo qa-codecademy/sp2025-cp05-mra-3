@@ -24,3 +24,13 @@ export const userCreateSchema  = z.object({
 export const userUpdateSchema = userCreateSchema.extend({
   id: z.string().min(1, 'Id is required')
 });
+
+export const cardCreateSchema  = z.object({
+  title: z.string().min(1, 'Title is required'),  
+  description: z.string().min(1, 'Description is required'),
+  picture: z.string().min(1, 'Picture is required'),
+});
+
+export const cardUpdateSchema = cardCreateSchema.extend({
+  id: z.string().min(1, 'Id is required')
+});

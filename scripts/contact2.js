@@ -33,6 +33,8 @@ document.getElementById('submitToggleNewUser').addEventListener('click', () => {
     document.getElementById('userTableWrapper').style.display = 'none';
     document.getElementById('emailTableWrapper').style.display = 'none';
     document.getElementById('contentTableWrapper').style.display = 'none';
+    document.getElementById('card-form-wrapper').style.display = 'none';
+    document.getElementById('cardTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -75,6 +77,8 @@ document.getElementById('submitToggleAllUsers').addEventListener('click', () => 
     document.getElementById('signup-form-wrapper').style.display = 'none';
     document.getElementById('emailTableWrapper').style.display = 'none';
     document.getElementById('contentTableWrapper').style.display = 'none';
+    document.getElementById('card-form-wrapper').style.display = 'none';
+    document.getElementById('cardTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -183,7 +187,7 @@ function enableUserEdit(userId) {
     document.getElementById(otherButton2Id).style.display = "inline";
     document.getElementById(thisButtonId).style.display = "none";
 
-    for (let i = 0; i < elements.length-1; i++) {
+    for (let i = 0; i < elements.length - 1; i++) {
       const element = elements[i];
       element.contentEditable = true;
       element.style.border = '1px dashed gray';
@@ -270,6 +274,8 @@ document.getElementById('submitToggleAllEmails').addEventListener('click', () =>
     document.getElementById('signup-form-wrapper').style.display = 'none';
     document.getElementById('userTableWrapper').style.display = 'none';
     document.getElementById('contentTableWrapper').style.display = 'none';
+    document.getElementById('card-form-wrapper').style.display = 'none';
+    document.getElementById('cardTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -325,6 +331,8 @@ document.getElementById('submitToggleAllContents').addEventListener('click', () 
     document.getElementById('signup-form-wrapper').style.display = 'none';
     document.getElementById('userTableWrapper').style.display = 'none';
     document.getElementById('emailTableWrapper').style.display = 'none';
+    document.getElementById('card-form-wrapper').style.display = 'none';
+    document.getElementById('cardTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -474,4 +482,188 @@ async function saveContentEdition(contentId) {
   // // changing content - end
 }
 // table with all contents - end
+
+// cards - start
+// new card form - start
+document.getElementById('submitToggleNewCard').addEventListener('click', () => {
+  const wrapper = document.getElementById('card-form-wrapper');
+  if (wrapper.style.display === 'none' || wrapper.style.display === '') {
+    wrapper.style.display = 'block';
+    document.getElementById('signup-form-wrapper').style.display = 'none';
+    document.getElementById('userTableWrapper').style.display = 'none';
+    document.getElementById('emailTableWrapper').style.display = 'none';
+    document.getElementById('contentTableWrapper').style.display = 'none';
+    document.getElementById('cardTableWrapper').style.display = 'none';
+    wrapper.focus();
+  } else {
+    wrapper.style.display = 'none';
+  }
+});
+
+document.getElementById('newCardForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const cardFormData = {
+    title: document.getElementById('cardTitle').value,
+    description: document.getElementById('cardDescription').value,
+    picture: document.getElementById('cardPicture').value,
+  };
+
+  const res = await fetch('/api/card', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(cardFormData),
+  });
+
+  const responseBody = await res.json();
+
+  if (res.ok) {
+    alert('Card saved!');
+    document.getElementById('newCardForm').reset();
+    location.reload(true);
+  } else {
+    alert('Failed to save card.' + responseBody.error);
+  }
+});
+// new card form - end
+// table with all cards - start
+let allCards = [];
+document.getElementById('submitToggleAllCards').addEventListener('click', () => {
+  const wrapper = document.getElementById('cardTableWrapper');
+  if (wrapper.style.display === 'none' || wrapper.style.display === '') {
+    wrapper.style.display = 'block';
+    document.getElementById('signup-form-wrapper').style.display = 'none';
+    document.getElementById('userTableWrapper').style.display = 'none';
+    document.getElementById('emailTableWrapper').style.display = 'none';
+    document.getElementById('contentTableWrapper').style.display = 'none';
+    document.getElementById('card-form-wrapper').style.display = 'none';
+    wrapper.focus();
+  } else {
+    wrapper.style.display = 'none';
+  }
+});
+
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const res = await fetch('/api/card');
+    if (!res.ok) throw new Error('Failed to fetch users');
+
+    const cards = await res.json();
+    if (!Array.isArray(cards)) throw new Error('Invalid data format');
+
+    const sortedCards = cards
+      .map(user => ({
+        ...user,
+      }))
+      .sort((a, b) => a.title.localeCompare(b.title));
+
+    allCards = sortedCards
+
+    renderCardsTable(allCards);
+  } catch (err) {
+    console.error('Error fetching cards:', err);
+    alert('Could not load cards.');
+  }
+});
+
+function renderCardsTable(cards) {
+  const container = document.getElementById('cardsContainer');
+  container.innerHTML = '';
+  cards.forEach(card => {
+    const entry = document.createElement('div');
+    entry.classList.add('card-entry');
+    entry.innerHTML = `
+      <div><strong class = "onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${card.id}</p></div>
+      <div><strong class = "onscreenText adminhtmlCardTitle:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.title}</p></div>
+      <div><strong class = "onscreenText adminhtmlCardDescription:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.description}</p></div>
+      <div><strong class = "onscreenText adminhtmlCardPicture:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.picture}</div>
+      <button id="enableEdit${card.id}" class="onscreenText adminhtmlUpdate" onclick="enableCardEdit('${card.id}')" style="display: inline;" type="button"></button>
+      <button id="cancelEdition${card.id}" class="onscreenText adminhtmlCancel" onclick="cancelCardEdition('${card.id}', '${card.title}', '${card.description}', '${card.picture}')" style="display: none;" type="button"></button>
+      <button id="saveEdition${card.id}" class="onscreenText adminhtmlSave" onclick="saveCardEdition('${card.id}')" style="display: none;" type="button"></button>
+    `;
+    container.appendChild(entry);
+  });
+}
+
+function enableCardEdit(cardId) {
+  const onscreenCardId = "onscreenText" + cardId
+  const thisButtonId = "enableEdit" + cardId
+  const otherButton1Id = "saveEdition" + cardId
+  const otherButton2Id = "cancelEdition" + cardId
+  document.getElementById(otherButton1Id).style.display = "inline"
+  document.getElementById(otherButton2Id).style.display = "inline"
+  document.getElementById(thisButtonId).style.display = "none"
+  const elements = document.getElementsByClassName(onscreenCardId);
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    element.contentEditable = true;
+    element.style.border = '1px dashed gray';
+  }
+}
+// 
+
+function cancelCardEdition(cardId, cardTitle, cardDescription, cardPicture) {
+  const onscreenCardId = "onscreenText" + cardId
+  const thisButtonId = "cancelEdition" + cardId
+  const otherButton1Id = "enableEdit" + cardId
+  const otherButton2Id = "saveEdition" + cardId
+  document.getElementById(otherButton1Id).style.display = "inline"
+  document.getElementById(otherButton2Id).style.display = "none"
+  document.getElementById(thisButtonId).style.display = "none"
+
+  document.getElementsByClassName(onscreenCardId)[0].innerText = cardTitle
+  document.getElementsByClassName(onscreenCardId)[1].innerText = cardDescription
+  document.getElementsByClassName(onscreenCardId)[2].innerText = cardPicture
+
+  const elements = document.getElementsByClassName(onscreenCardId);
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    element.contentEditable = false;
+    element.style.border = 'none';
+  }
+}
+
+async function saveCardEdition(cardId) {
+  const onscreenCardId = "onscreenText" + cardId
+  const thisButtonId = "saveEdition" + cardId
+  const otherButton1Id = "enableEdit" + cardId
+  const otherButton2Id = "cancelEdition" + cardId
+  document.getElementById(otherButton1Id).style.display = "inline"
+  document.getElementById(otherButton2Id).style.display = "none"
+  document.getElementById(thisButtonId).style.display = "none"
+  const elements = document.getElementsByClassName(onscreenCardId);
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    element.contentEditable = false;
+    element.style.border = 'none';
+  }
+  // changing card - start
+  const cardFormData = {
+    title: document.getElementsByClassName(onscreenCardId)[0].innerText,
+    description: document.getElementsByClassName(onscreenCardId)[1].innerText,
+    picture: document.getElementsByClassName(onscreenCardId)[2].innerText,
+    id: cardId,
+  };
+
+  const res = await fetch('/api/card', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(cardFormData),
+  });
+
+  const responseBody = await res.json();
+
+  if (res.ok) {
+    alert('Card changed!');
+  } else {
+    alert('Failed to change card. ' + (responseBody.message || 'Unknown error.'));
+    const oldCard = allCards.find(c => c.id == cardId);
+    document.getElementsByClassName(onscreenCardId)[0].innerText = oldCard.title;
+    document.getElementsByClassName(onscreenCardId)[1].innerText = oldCard.description;
+    document.getElementsByClassName(onscreenCardId)[2].innerText = oldCard.picture;
+  }
+  // // changing card - end
+}
+
+// cards - end
 // adminpanel - end
