@@ -40,13 +40,13 @@ export async function updateCard(updatedCard) {
 export async function saveCard(newCard) {
   try {
     // Get the existing card from the file
-    const card = await getAllCards();
+    const cards = await getAllCards();
 
     // Add the new card
-    card.push(newCard);
+    cards.push(newCard);
 
     // Save the card back to the file
-    await fs.writeFile(dataFile, JSON.stringify(card, null, 2));
+    await fs.writeFile(dataFile, JSON.stringify(cards, null, 2));
   } catch (err) {
     throw new Error('Error saving card: ' + err.message);
   }

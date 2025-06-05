@@ -33,6 +33,8 @@ document.getElementById('submitToggleNewUser').addEventListener('click', () => {
     document.getElementById('userTableWrapper').style.display = 'none';
     document.getElementById('emailTableWrapper').style.display = 'none';
     document.getElementById('contentTableWrapper').style.display = 'none';
+    document.getElementById('card-form-wrapper').style.display = 'none';
+    document.getElementById('cardTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -75,6 +77,8 @@ document.getElementById('submitToggleAllUsers').addEventListener('click', () => 
     document.getElementById('signup-form-wrapper').style.display = 'none';
     document.getElementById('emailTableWrapper').style.display = 'none';
     document.getElementById('contentTableWrapper').style.display = 'none';
+    document.getElementById('card-form-wrapper').style.display = 'none';
+    document.getElementById('cardTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -87,13 +91,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!res.ok) throw new Error('Failed to fetch users');
 
     const users = await res.json();
-    if (!Array.isArray(users)) throw new Error('Invalid data format');
-
     const sortedUsers = users
       .map(user => ({
         ...user,
       }))
-      .sort((a, b) => a.name.localeCompare(b.name));
+      .sort((a, b) => {
+        const nameA = a.name || '';
+        const nameB = b.name || '';
+        return nameA.localeCompare(nameB);
+      });
 
     allUsers = sortedUsers
 
@@ -183,7 +189,7 @@ function enableUserEdit(userId) {
     document.getElementById(otherButton2Id).style.display = "inline";
     document.getElementById(thisButtonId).style.display = "none";
 
-    for (let i = 0; i < elements.length-1; i++) {
+    for (let i = 0; i < elements.length - 1; i++) {
       const element = elements[i];
       element.contentEditable = true;
       element.style.border = '1px dashed gray';
@@ -249,6 +255,7 @@ async function saveUserEdition(userId) {
 
   if (res.ok) {
     alert('User changed!');
+    location.reload();
   } else {
     alert('Failed to change user. ' + (responseBody.message || 'Unknown error.'));
     const oldUser = allUsers.find(u => u.id == userId);
@@ -270,6 +277,8 @@ document.getElementById('submitToggleAllEmails').addEventListener('click', () =>
     document.getElementById('signup-form-wrapper').style.display = 'none';
     document.getElementById('userTableWrapper').style.display = 'none';
     document.getElementById('contentTableWrapper').style.display = 'none';
+    document.getElementById('card-form-wrapper').style.display = 'none';
+    document.getElementById('cardTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -282,8 +291,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!res.ok) throw new Error('Failed to fetch emails');
 
     const emails = await res.json();
-    if (!Array.isArray(emails)) throw new Error('Invalid data format');
-
     const sortedEmails = emails
       .map(email => ({
         ...email,
@@ -325,6 +332,8 @@ document.getElementById('submitToggleAllContents').addEventListener('click', () 
     document.getElementById('signup-form-wrapper').style.display = 'none';
     document.getElementById('userTableWrapper').style.display = 'none';
     document.getElementById('emailTableWrapper').style.display = 'none';
+    document.getElementById('card-form-wrapper').style.display = 'none';
+    document.getElementById('cardTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -337,8 +346,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!res.ok) throw new Error('Failed to fetch contents');
 
     const contents = await res.json();
-    if (!Array.isArray(contents)) throw new Error('Invalid data format');
-
     const sortedContents = contents
       .map(content => ({
         ...content,
@@ -468,10 +475,227 @@ async function saveContentEdition(contentId) {
 
   if (res.ok) {
     alert('Content changed!');
+    location.reload();
   } else {
     alert('Failed to change content. ' + (responseBody.message || 'Unknown error.'));
   }
   // // changing content - end
 }
 // table with all contents - end
+
+// cards - start
+// new card form - start
+document.getElementById('submitToggleNewCard').addEventListener('click', () => {
+  const wrapper = document.getElementById('card-form-wrapper');
+  if (wrapper.style.display === 'none' || wrapper.style.display === '') {
+    wrapper.style.display = 'block';
+    document.getElementById('signup-form-wrapper').style.display = 'none';
+    document.getElementById('userTableWrapper').style.display = 'none';
+    document.getElementById('emailTableWrapper').style.display = 'none';
+    document.getElementById('contentTableWrapper').style.display = 'none';
+    document.getElementById('cardTableWrapper').style.display = 'none';
+    wrapper.focus();
+  } else {
+    wrapper.style.display = 'none';
+  }
+});
+
+document.getElementById('newCardForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const cardFormData = {
+    titleDEU: document.getElementById('cardTitleDEU').value,
+    titleENG: document.getElementById('cardTitleENG').value,
+    titleMKD: document.getElementById('cardTitleMKD').value,
+    descriptionDEU: document.getElementById('cardDescriptionDEU').value,
+    descriptionENG: document.getElementById('cardDescriptionENG').value,
+    descriptionMKD: document.getElementById('cardDescriptionMKD').value,
+    picture: document.getElementById('cardPicture').value,
+  };
+
+  const res = await fetch('/api/card', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(cardFormData),
+  });
+
+  const responseBody = await res.json();
+
+  if (res.ok) {
+    alert('Card saved!');
+    document.getElementById('newCardForm').reset();
+    location.reload(true);
+  } else {
+    alert('Failed to save card.' + responseBody.error);
+  }
+});
+// new card form - end
+// table with all cards - start
+let allCards = [];
+document.getElementById('submitToggleAllCards').addEventListener('click', () => {
+  const wrapper = document.getElementById('cardTableWrapper');
+  if (wrapper.style.display === 'none' || wrapper.style.display === '') {
+    wrapper.style.display = 'block';
+    document.getElementById('signup-form-wrapper').style.display = 'none';
+    document.getElementById('userTableWrapper').style.display = 'none';
+    document.getElementById('emailTableWrapper').style.display = 'none';
+    document.getElementById('contentTableWrapper').style.display = 'none';
+    document.getElementById('card-form-wrapper').style.display = 'none';
+    wrapper.focus();
+  } else {
+    wrapper.style.display = 'none';
+  }
+});
+
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const res = await fetch('/api/card');
+    if (!res.ok) throw new Error('Failed to fetch users');
+
+    const cards = await res.json();
+    const sortedCards = cards
+      .map(card => ({
+        ...card,
+      }))
+      .sort((a, b) => {
+        const titleA = a.titleDEU || '';
+        const titleB = b.titleDEU || '';
+        return titleA.localeCompare(titleB);
+      });
+
+    allCards = sortedCards
+
+    renderCardsTable(allCards);
+  } catch (err) {
+    console.error('Error fetching cards:', err);
+    alert('Could not load cards.');
+  }
+});
+
+function renderCardsTable(cards) {
+  const container = document.getElementById('cardsContainer');
+  container.innerHTML = '';
+  cards.forEach(card => {
+    const entry = document.createElement('div');
+    entry.classList.add('card-entry');
+    entry.innerHTML = `
+      <div><strong class = "onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${card.id}</p></div>
+      <div><strong class = "onscreenText adminhtmlCardTitel:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.titleDEU}</p></div>
+      <div><strong class = "onscreenText adminhtmlCardTitle:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.titleENG}</p></div>
+      <div><strong class = "onscreenText adminhtmlCardNaslov:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.titleMKD}</p></div>      
+      <div><strong class = "onscreenText adminhtmlCardBeschreibung:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.descriptionDEU}</p></div>
+      <div><strong class = "onscreenText adminhtmlCardDescription:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.descriptionENG}</p></div>
+      <div><strong class = "onscreenText adminhtmlCardOpis:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.descriptionMKD}</p></div>
+      <div><strong class = "onscreenText adminhtmlCardPicture:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.picture}</div>
+
+      <div class="image-preview-container" style="width: 100%; margin-top: 0.5em;">
+        <img src="${card.picture}" 
+            alt="Image link is NOT VALID. http://..." 
+            style="width: 100%; height: auto; display: block; object-fit: contain;" 
+            onerror="this.style.display='none'; this.parentElement.innerHTML += '<span style=\'color: red;\'>Image not found</span>';" />
+      </div>
+
+      <button id="enableEdit${card.id}" class="onscreenText adminhtmlUpdate" onclick="enableCardEdit('${card.id}')" style="display: inline;" type="button"></button>
+      <button id="cancelEdition${card.id}" class="onscreenText adminhtmlCancel" onclick="cancelCardEdition('${card.id}', '${card.titleDEU}', '${card.titleENG}', '${card.titleMKD}', '${card.descriptionDEU}', '${card.descriptionENG}', '${card.descriptionMKD}', '${card.picture}')" style="display: none;" type="button"></button>
+      <button id="saveEdition${card.id}" class="onscreenText adminhtmlSave" onclick="saveCardEdition('${card.id}')" style="display: none;" type="button"></button>
+    `;
+    container.appendChild(entry);
+  });
+}
+
+function enableCardEdit(cardId) {
+  console.log(cardId)
+  const onscreenCardId = "onscreenText" + cardId
+  const thisButtonId = "enableEdit" + cardId
+  const otherButton1Id = "saveEdition" + cardId
+  const otherButton2Id = "cancelEdition" + cardId
+  document.getElementById(otherButton1Id).style.display = "inline"
+  document.getElementById(otherButton2Id).style.display = "inline"
+  document.getElementById(thisButtonId).style.display = "none"
+  const elements = document.getElementsByClassName(onscreenCardId);
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    element.contentEditable = true;
+    element.style.border = '1px dashed gray';
+  }
+}
+// 
+
+function cancelCardEdition(cardId, titleDEU, titleENG, titleMKD, descriptionDEU, descriptionENG, descriptionMKD, picture) {
+  const onscreenCardId = "onscreenText" + cardId;
+  const thisButtonId = "cancelEdition" + cardId;
+  const otherButton1Id = "enableEdit" + cardId;
+  const otherButton2Id = "saveEdition" + cardId;
+
+  document.getElementById(otherButton1Id).style.display = "inline";
+  document.getElementById(otherButton2Id).style.display = "none";
+  document.getElementById(thisButtonId).style.display = "none";
+
+  const elements = document.getElementsByClassName(onscreenCardId);
+  elements[0].innerText = titleDEU;
+  elements[1].innerText = titleENG;
+  elements[2].innerText = titleMKD;
+  elements[3].innerText = descriptionDEU;
+  elements[4].innerText = descriptionENG;
+  elements[5].innerText = descriptionMKD;
+  elements[6].innerText = picture;
+
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].contentEditable = false;
+    elements[i].style.border = 'none';
+  }
+}
+
+async function saveCardEdition(cardId) {
+  const onscreenCardId = "onscreenText" + cardId
+  const thisButtonId = "saveEdition" + cardId
+  const otherButton1Id = "enableEdit" + cardId
+  const otherButton2Id = "cancelEdition" + cardId
+  document.getElementById(otherButton1Id).style.display = "inline"
+  document.getElementById(otherButton2Id).style.display = "none"
+  document.getElementById(thisButtonId).style.display = "none"
+  const elements = document.getElementsByClassName(onscreenCardId);
+  for (let i = 0; i < elements.length; i++) {
+    const element = elements[i];
+    element.contentEditable = false;
+    element.style.border = 'none';
+  }
+  // changing card - start
+  const cardFormData = {
+    titleDEU: document.getElementsByClassName(onscreenCardId)[0].innerText,
+    titleENG: document.getElementsByClassName(onscreenCardId)[1].innerText,
+    titleMKD: document.getElementsByClassName(onscreenCardId)[2].innerText,
+    descriptionDEU: document.getElementsByClassName(onscreenCardId)[3].innerText,
+    descriptionENG: document.getElementsByClassName(onscreenCardId)[4].innerText,
+    descriptionMKD: document.getElementsByClassName(onscreenCardId)[5].innerText,
+    picture: document.getElementsByClassName(onscreenCardId)[6].innerText,
+    id: cardId,
+  };
+
+  const res = await fetch('/api/card', {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(cardFormData),
+  });
+
+  const responseBody = await res.json();
+
+  if (res.ok) {
+    alert('Card changed!');
+    location.reload();
+  } else {
+    alert('Failed to change card. ' + (responseBody.message || 'Unknown error.'));
+    const oldCard = allCards.find(c => c.id == cardId);
+    document.getElementsByClassName(onscreenCardId)[0].innerText = oldCard.titleDEU;
+    document.getElementsByClassName(onscreenCardId)[1].innerText = oldCard.titleENG;
+    document.getElementsByClassName(onscreenCardId)[2].innerText = oldCard.titleMKD;
+    document.getElementsByClassName(onscreenCardId)[3].innerText = oldCard.descriptionDEU;
+    document.getElementsByClassName(onscreenCardId)[4].innerText = oldCard.descriptionENG;
+    document.getElementsByClassName(onscreenCardId)[5].innerText = oldCard.descriptionMKD;
+    document.getElementsByClassName(onscreenCardId)[6].innerText = oldCard.picture;
+  }
+  // // changing card - end
+}
+
+// cards - end
 // adminpanel - end

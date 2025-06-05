@@ -1,26 +1,22 @@
 [
   {
-    "title": "1233ttttt222333t",
-    "description": "pppp@opppp.com",
-    "picture": "true",
-    "id": "fb9e5650-ce84-4ce4-9247-c9aa53df0506"
+    "titleDEU": "Titel 544333666444",
+    "titleENG": "Title 23",
+    "titleMKD": "Naslov 23",
+    "descriptionDEU": "qxwqxwecwqxwecwqxwecwqxwecwqxwecwqxwecw     qxwecw qxwecw qxwecw qxwecwqxwecw qxwecwecw",
+    "descriptionENG": "ewcwec",
+    "descriptionMKD": "wecewc",
+    "picture": "https://drive.google.com/uc?export=download&id=1Aplxr-wMvYgLW6odusKziKGvspeaHV-E",
+    "id": "43808d80-a7ed-48c7-86f2-d49de3ae287a"
   },
   {
-    "title": "qwswqswqime ",
-    "description": "121scewce@gsgr.com",
-    "picture": "true",
-    "id": "437240e8-4c46-42fd-a337-488f1ad3f32e"
-  },
-  {
-    "title": "fewfew",
-    "description": "wefwef",
-    "picture": "weefwef",
-    "id": "aca06eb7-e9df-4b35-9627-5c600074ae36"
-  },
-  {
-    "title": "NAslov1",
-    "description": "Opis1",
-    "picture": "Slika1",
-    "id": "ae0079cd-8058-4d17-9db9-3340bdfbf1ca"
+    "titleDEU": "Titel 2356",
+    "titleENG": "Titel 2356",
+    "titleMKD": "Titel 2356",
+    "descriptionDEU": "dwqedfqwd",
+    "descriptionENG": "qwdqwdq",
+    "descriptionMKD": "qwdqwd",
+    "picture": "",
+    "id": "7f7cc727-defe-46d9-a481-f16a91fc3a68"
   }
 ]

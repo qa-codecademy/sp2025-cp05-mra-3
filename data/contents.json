@@ -1,7 +1,7 @@
 [
   {
     "id": "contacthtmlContactUs",
-    "german": "Kontaktieren Sie uns",
+    "german": "Kontaktieren Sie1 uns",
     "english": "Contact us",
     "macedonian": "Контактирајте не"
   },
@@ -246,16 +246,40 @@
     "macedonian": "Слика"
   },
   {
+    "id": "adminhtmlCardTitel:",
+    "german": "Titel DEU: ",
+    "english": "Title DEU: ",
+    "macedonian": "Наслов ГЕР: "
+  },
+  {
     "id": "adminhtmlCardTitle:",
-    "german": "Titel: ",
-    "english": "Title: ",
-    "macedonian": "Наслов: "
+    "german": "Titel ENG: ",
+    "english": "Title ENG: ",
+    "macedonian": "Наслов ЕНГ: "
+  },
+  {
+    "id": "adminhtmlCardNaslov:",
+    "german": "Titel MKD: ",
+    "english": "Title MKD: ",
+    "macedonian": "Наслов МКД: "
+  },
+  {
+    "id": "adminhtmlCardBeschreibung:",
+    "german": "Beschreibung DEU: ",
+    "english": "Description DEU: ",
+    "macedonian": "Опис ГЕР: "
   },
   {
     "id": "adminhtmlCardDescription:",
-    "german": "Beschreibung: ",
-    "english": "Description: ",
-    "macedonian": "Опис: "
+    "german": "Beschreibung ENG: ",
+    "english": "Description ENG: ",
+    "macedonian": "Опис ЕНГ: "
+  },
+  {
+    "id": "adminhtmlCardOpis:",
+    "german": "Beschreibung MKD: ",
+    "english": "Description MKD: ",
+    "macedonian": "Опис МКД: "
   },
   {
     "id": "adminhtmlCardPicture:",

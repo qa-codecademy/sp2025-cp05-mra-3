@@ -26,9 +26,14 @@ export const userUpdateSchema = userCreateSchema.extend({
 });
 
 export const cardCreateSchema  = z.object({
-  title: z.string().min(1, 'Title is required'),  
-  description: z.string().min(1, 'Description is required'),
-  picture: z.string().min(1, 'Picture is required'),
+  titleDEU: z.string().min(1, 'Titel ist erforderlich'), 
+  titleENG: z.string().min(1, 'Title is required'),
+  titleMKD: z.string().min(1, 'Наслов е задолжителен'), 
+  descriptionDEU: z.string().min(1, 'Beschreibung ist erforderlich'),
+  descriptionENG: z.string().min(1, 'Description is required'),
+  descriptionMKD: z.string().min(1, 'Опис е задолжителен'),
+  picture: z.string()
+
 });
 
 export const cardUpdateSchema = cardCreateSchema.extend({
