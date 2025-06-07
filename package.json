@@ -24,6 +24,8 @@
     "nodemon": "^3.1.10"
   },
   "dependencies": {
+    "cloudinary": "^2.6.1",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "nodemailer": "^7.0.3",
     "uuid": "^11.1.0",

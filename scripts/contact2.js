@@ -550,7 +550,7 @@ document.getElementById('submitToggleAllCards').addEventListener('click', () => 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const res = await fetch('/api/card');
-    if (!res.ok) throw new Error('Failed to fetch users');
+    if (!res.ok) throw new Error('Failed to fetch cards');
 
     const cards = await res.json();
     const sortedCards = cards
@@ -696,6 +696,28 @@ async function saveCardEdition(cardId) {
   }
   // // changing card - end
 }
+// cloudinary - start
+const uploadButton = document.getElementById('uploadImageButton');
+const cardPictureInput = document.getElementById('cardPicture');
+const cardPreview = document.getElementById('cardPreview');
+
+const myWidget = cloudinary.createUploadWidget({
+  cloudName: 'du3oe7qmq',
+  uploadPreset: 'ml_default',
+}, (error, result) => {
+  if (!error && result && result.event === "success") {
+    console.log('Image uploaded:', result.info.secure_url);
+    cardPictureInput.value = result.info.secure_url;
+    cardPreview.src = result.info.secure_url;
+    cardPreview.style.display = 'block';
+  }
+});
+
+uploadButton.addEventListener('click', () => {
+  myWidget.open();
+});
+
+// cloudinary - end
 
 // cards - end
 // adminpanel - end

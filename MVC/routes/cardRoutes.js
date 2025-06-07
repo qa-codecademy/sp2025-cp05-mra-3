@@ -1,7 +1,6 @@
  // /MVC/routes/cardRoutes.js
 import { Router } from 'express';
 import { saveCardController, getAllCardsController, updateCardController} from '../controllers/cardController.js';
-
 const router = Router();
 
 // Route to fetch all cards

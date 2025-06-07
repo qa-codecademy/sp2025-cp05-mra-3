@@ -55,9 +55,9 @@ export async function updateCardController(req, res) {
 export async function getAllCardsController(req, res) {
   try {
     // Use the model to fetch all cards
-    const card = await getAllCards();
+    const cards = await getAllCards();
 
-    res.status(200).json(card);
+    res.status(200).json(cards);
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Error fetching cards.' });

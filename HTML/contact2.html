@@ -9,7 +9,7 @@
 
 <body>
   <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="../css/contact2.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -124,15 +124,21 @@
       </div>
       <form id="newCardForm">
         <label class="onscreenText adminhtmlCardTitle" for="cardTitle"></label>
-        <input id="cardTitleDEU" type="text" placeholder="Titel" arequired>
-        <input id="cardTitleENG" type="text" placeholder="Title" arequired>
-        <input id="cardTitleMKD" type="text" placeholder="Наслов" arequired>
+        <input id="cardTitleDEU" type="text" placeholder="Titel" required>
+        <input id="cardTitleENG" type="text" placeholder="Title" required>
+        <input id="cardTitleMKD" type="text" placeholder="Наслов" required>
         <label class="onscreenText adminhtmlCardDescription" for="cardDescription"></label>
         <textarea id="cardDescriptionDEU" type="text" placeholder="Beschreibung" required></textarea>
         <textarea id="cardDescriptionENG" type="text" placeholder="Description" required></textarea>
         <textarea id="cardDescriptionMKD" type="text" placeholder="Опис" required></textarea>
         <label class="onscreenText adminhtmlCardPicture" for="cardPicture"></label>
-        <input id="cardPicture" placeholder="https://wallpapercave.com/wp/wp5879738.jpg"></input>
+<!-- cloudinary start -->
+        <button type="button" id="uploadImageButton">Upload Image</button>
+        <input type="hidden" id="cardPicture" name="cardPicture" />
+        <img id="cardPreview" src="" alt="Card image preview" style="max-width: 200px; display: none;" />
+<!-- cloudinary end -->
+
+        <!-- <input id="cardPicture" placeholder="https://wallpapercave.com/wp/wp5879738.jpg"></input> -->
         <button class="onscreenText adminhtmlSubmit" id="submitNewCard" type="submit"></button>
       </form>
     </div>
@@ -181,8 +187,11 @@
 
   </footer>
 
-  <script src="../scripts/contact.js"></script>
+  <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+  <script src="../scripts/contact2.js"></script>
   <script src="../modules/multilingual.js"></script>
+
+
 </body>
 
 </html>
