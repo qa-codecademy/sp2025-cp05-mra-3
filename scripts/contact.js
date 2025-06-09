@@ -592,7 +592,6 @@ function renderCardsTable(cards) {
         <img src="${card.picture}" 
             alt="Image link is NOT VALID. http://..." 
             style="width: 100%; height: auto; display: block; object-fit: contain;" 
-            onerror="this.style.display='none'; this.parentElement.innerHTML += '<span style=\'color: red;\'>Image not found</span>';" />
       </div>
 
       <button id="enableEdit${card.id}" class="onscreenText adminhtmlUpdate" onclick="enableCardEdit('${card.id}')" style="display: inline;" type="button"></button>
