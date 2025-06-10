@@ -68,7 +68,7 @@
         <label class="onscreenText adminhtmlEmail" for="userNameEmail"></label>
         <input id="userNameEmail" type="email" required>
         <label class="onscreenText adminhtmlPassword" for="userNamePassword"></label>
-        <input id="userNamePassword" required></input>
+        <input id="userNamePassword" required>
         <button class="onscreenText adminhtmlSubmit" id="submitNewUser" type="submit"></button>
       </form>
     </div>
@@ -124,15 +124,17 @@
       </div>
       <form id="newCardForm">
         <label class="onscreenText adminhtmlCardTitle" for="cardTitle"></label>
-        <input id="cardTitleDEU" type="text" placeholder="Titel" arequired>
-        <input id="cardTitleENG" type="text" placeholder="Title" arequired>
-        <input id="cardTitleMKD" type="text" placeholder="Наслов" arequired>
+        <input id="cardTitleDEU" type="text" placeholder="Titel" required>
+        <input id="cardTitleENG" type="text" placeholder="Title" required>
+        <input id="cardTitleMKD" type="text" placeholder="Наслов" required>
         <label class="onscreenText adminhtmlCardDescription" for="cardDescription"></label>
         <textarea id="cardDescriptionDEU" type="text" placeholder="Beschreibung" required></textarea>
         <textarea id="cardDescriptionENG" type="text" placeholder="Description" required></textarea>
         <textarea id="cardDescriptionMKD" type="text" placeholder="Опис" required></textarea>
         <label class="onscreenText adminhtmlCardPicture" for="cardPicture"></label>
-        <input id="cardPicture" placeholder="https://wallpapercave.com/wp/wp5879738.jpg"></input>
+
+        <input id="cardPicture" type="file" accept="image/*" required>
+
         <button class="onscreenText adminhtmlSubmit" id="submitNewCard" type="submit"></button>
       </form>
     </div>

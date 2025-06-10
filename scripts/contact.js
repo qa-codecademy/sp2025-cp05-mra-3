@@ -116,7 +116,7 @@ document.getElementById('logInButton').addEventListener('click', (e) => {
   localStorage.setItem('isLoggedIn', '22a73cfa-6c65-4849-b816-4ada6408daac');
   alert('Logged in! LocalStorage set.');
   const isLoggedIn = localStorage.getItem('isLoggedIn');
-  location.reload()
+  // location.reload()
   console.log(isLoggedIn);
 });
 
@@ -484,7 +484,6 @@ async function saveContentEdition(contentId) {
 // table with all contents - end
 
 // cards - start
-// new card form - start
 document.getElementById('submitToggleNewCard').addEventListener('click', () => {
   const wrapper = document.getElementById('card-form-wrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
@@ -499,10 +498,49 @@ document.getElementById('submitToggleNewCard').addEventListener('click', () => {
     wrapper.style.display = 'none';
   }
 });
+// new card form - start
 
 document.getElementById('newCardForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
+  const imageFile = document.getElementById('cardPicture').files[0];
+
+  if (!imageFile) {
+    alert('Please select an image file.');
+    return;
+  }
+
+  // Cloudinary settings
+  const cloudName = 'du3oe7qmq';
+  const uploadPreset = 'unsigned_preset'; 
+
+  // Step 1: Upload image to Cloudinary
+  const formData = new FormData();
+  formData.append('file', imageFile);
+  formData.append('upload_preset', uploadPreset);
+
+  let imageUrl;
+
+  try {
+    const uploadRes = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/upload`, {
+      method: 'POST',
+      body: formData,
+    });
+
+    const uploadData = await uploadRes.json();
+
+    if (!uploadData.secure_url) {
+      throw new Error('Image upload failed.');
+    }
+
+    imageUrl = uploadData.secure_url;
+  } catch (err) {
+    console.error('Cloudinary upload error:', err);
+    alert('Image upload failed. Please try again.');
+    return;
+  }
+
+  // Step 2: Send the card data with the image URL to your backend
   const cardFormData = {
     titleDEU: document.getElementById('cardTitleDEU').value,
     titleENG: document.getElementById('cardTitleENG').value,
@@ -510,26 +548,33 @@ document.getElementById('newCardForm').addEventListener('submit', async (e) => {
     descriptionDEU: document.getElementById('cardDescriptionDEU').value,
     descriptionENG: document.getElementById('cardDescriptionENG').value,
     descriptionMKD: document.getElementById('cardDescriptionMKD').value,
-    picture: document.getElementById('cardPicture').value,
+    picture: imageUrl, 
   };
 
-  const res = await fetch('/api/card', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(cardFormData),
-  });
+  try {
+    const res = await fetch('/api/card', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(cardFormData),
+    });
 
-  const responseBody = await res.json();
+    const responseBody = await res.json();
 
-  if (res.ok) {
-    alert('Card saved!');
-    document.getElementById('newCardForm').reset();
-    location.reload(true);
-  } else {
-    alert('Failed to save card.' + responseBody.error);
+    if (res.ok) {
+      alert('Card saved!');
+      document.getElementById('newCardForm').reset();
+      location.reload(); 
+    } else {
+      alert('Failed to save card. ' + (responseBody.message || 'Unknown error.'));
+    }
+  } catch (err) {
+    console.error('Saving card error:', err);
+    alert('Unexpected error saving card.');
   }
 });
+
 // new card form - end
+
 // table with all cards - start
 let allCards = [];
 document.getElementById('submitToggleAllCards').addEventListener('click', () => {
@@ -586,13 +631,14 @@ function renderCardsTable(cards) {
       <div><strong class = "onscreenText adminhtmlCardBeschreibung:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.descriptionDEU}</p></div>
       <div><strong class = "onscreenText adminhtmlCardDescription:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.descriptionENG}</p></div>
       <div><strong class = "onscreenText adminhtmlCardOpis:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.descriptionMKD}</p></div>
-      <div><strong class = "onscreenText adminhtmlCardPicture:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()" >${card.picture}</div>
+      <div><strong class = "onscreenText adminhtmlCardPicture:"></strong><p class = "onscreenText${card.id}" style="display: inline;" onclick="this.focus()">${card.picture}</div>
 
       <div class="image-preview-container" style="width: 100%; margin-top: 0.5em;">
-        <img src="${card.picture}" 
-            alt="Image link is NOT VALID. http://..." 
-            style="width: 100%; height: auto; display: block; object-fit: contain;" 
+        <img id="imgPreview${card.id}" src="${card.picture}" style="width: 100%; height: auto; display: block; object-fit: contain;" />
       </div>
+
+      <input type="file" accept="image/*" id="editImageInput${card.id}" style="display: none; margin: 0.5em 0;" />
+      <input type="hidden" id="originalImage${card.id}" value="${card.picture}" />
 
       <button id="enableEdit${card.id}" class="onscreenText adminhtmlUpdate" onclick="enableCardEdit('${card.id}')" style="display: inline;" type="button"></button>
       <button id="cancelEdition${card.id}" class="onscreenText adminhtmlCancel" onclick="cancelCardEdition('${card.id}', '${card.titleDEU}', '${card.titleENG}', '${card.titleMKD}', '${card.descriptionDEU}', '${card.descriptionENG}', '${card.descriptionMKD}', '${card.picture}')" style="display: none;" type="button"></button>
@@ -604,6 +650,10 @@ function renderCardsTable(cards) {
 
 function enableCardEdit(cardId) {
   console.log(cardId)
+
+  const fileInput = document.getElementById(`editImageInput${cardId}`);
+  const imagePreview = document.getElementById(`imgPreview${cardId}`);
+
   const onscreenCardId = "onscreenText" + cardId
   const thisButtonId = "enableEdit" + cardId
   const otherButton1Id = "saveEdition" + cardId
@@ -611,16 +661,26 @@ function enableCardEdit(cardId) {
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "inline"
   document.getElementById(thisButtonId).style.display = "none"
+  fileInput.style.display = "block";
+
   const elements = document.getElementsByClassName(onscreenCardId);
-  for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    element.contentEditable = true;
-    element.style.border = '1px dashed gray';
+  for (let i = 0; i < elements.length-1; i++) {
+    elements[i].contentEditable = true;
+    elements[i].style.border = '1px dashed gray';
   }
+    // Listen for file selection to preview
+  fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const previewUrl = URL.createObjectURL(file);
+      imagePreview.src = previewUrl;
+    }
+  });
 }
 // 
 
 function cancelCardEdition(cardId, titleDEU, titleENG, titleMKD, descriptionDEU, descriptionENG, descriptionMKD, picture) {
+  
   const onscreenCardId = "onscreenText" + cardId;
   const thisButtonId = "cancelEdition" + cardId;
   const otherButton1Id = "enableEdit" + cardId;
@@ -629,6 +689,8 @@ function cancelCardEdition(cardId, titleDEU, titleENG, titleMKD, descriptionDEU,
   document.getElementById(otherButton1Id).style.display = "inline";
   document.getElementById(otherButton2Id).style.display = "none";
   document.getElementById(thisButtonId).style.display = "none";
+  document.getElementById(`editImageInput${cardId}`).style.display = "none";
+
 
   const elements = document.getElementsByClassName(onscreenCardId);
   elements[0].innerText = titleDEU;
@@ -643,58 +705,104 @@ function cancelCardEdition(cardId, titleDEU, titleENG, titleMKD, descriptionDEU,
     elements[i].contentEditable = false;
     elements[i].style.border = 'none';
   }
+    // ✅ Reset image preview to original
+  const originalImageUrl = document.getElementById(`originalImage${cardId}`).value;
+  const imagePreview = document.getElementById(`imgPreview${cardId}`);
+  imagePreview.src = originalImageUrl;
 }
 
 async function saveCardEdition(cardId) {
-  const onscreenCardId = "onscreenText" + cardId
-  const thisButtonId = "saveEdition" + cardId
-  const otherButton1Id = "enableEdit" + cardId
-  const otherButton2Id = "cancelEdition" + cardId
-  document.getElementById(otherButton1Id).style.display = "inline"
-  document.getElementById(otherButton2Id).style.display = "none"
-  document.getElementById(thisButtonId).style.display = "none"
+  const onscreenCardId = "onscreenText" + cardId;
+  const thisButtonId = "saveEdition" + cardId;
+  const otherButton1Id = "enableEdit" + cardId;
+  const otherButton2Id = "cancelEdition" + cardId;
+  const fileInput = document.getElementById(`editImageInput${cardId}`);
+  const imagePreview = document.getElementById(`imgPreview${cardId}`);
+
+  document.getElementById(otherButton1Id).style.display = "inline";
+  document.getElementById(otherButton2Id).style.display = "none";
+  document.getElementById(thisButtonId).style.display = "none";
+  document.getElementById(`editImageInput${cardId}`).style.display = "none";
   const elements = document.getElementsByClassName(onscreenCardId);
   for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    element.contentEditable = false;
-    element.style.border = 'none';
+    elements[i].contentEditable = false;
+    elements[i].style.border = 'none';
   }
-  // changing card - start
-  const cardFormData = {
-    titleDEU: document.getElementsByClassName(onscreenCardId)[0].innerText,
-    titleENG: document.getElementsByClassName(onscreenCardId)[1].innerText,
-    titleMKD: document.getElementsByClassName(onscreenCardId)[2].innerText,
-    descriptionDEU: document.getElementsByClassName(onscreenCardId)[3].innerText,
-    descriptionENG: document.getElementsByClassName(onscreenCardId)[4].innerText,
-    descriptionMKD: document.getElementsByClassName(onscreenCardId)[5].innerText,
-    picture: document.getElementsByClassName(onscreenCardId)[6].innerText,
+
+  // Step 1: Get new values
+  const updatedCard = {
+    titleDEU: elements[0].innerText,
+    titleENG: elements[1].innerText,
+    titleMKD: elements[2].innerText,
+    descriptionDEU: elements[3].innerText,
+    descriptionENG: elements[4].innerText,
+    descriptionMKD: elements[5].innerText,
+    picture: elements[6].innerText,
     id: cardId,
   };
 
-  const res = await fetch('/api/card', {
-    method: 'PUT',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(cardFormData),
-  });
+  // Step 2: If a new file is selected, upload it to Cloudinary
+  if (fileInput.files[0]) {
+    const cloudName = 'du3oe7qmq';
+    const uploadPreset = 'unsigned_preset';
+    const formData = new FormData();
+    formData.append('file', fileInput.files[0]);
+    formData.append('upload_preset', uploadPreset);
 
-  const responseBody = await res.json();
+    try {
+      const uploadRes = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/upload`, {
+        method: 'POST',
+        body: formData,
+      });
 
-  if (res.ok) {
-    alert('Card changed!');
-    location.reload();
-  } else {
-    alert('Failed to change card. ' + (responseBody.message || 'Unknown error.'));
-    const oldCard = allCards.find(c => c.id == cardId);
-    document.getElementsByClassName(onscreenCardId)[0].innerText = oldCard.titleDEU;
-    document.getElementsByClassName(onscreenCardId)[1].innerText = oldCard.titleENG;
-    document.getElementsByClassName(onscreenCardId)[2].innerText = oldCard.titleMKD;
-    document.getElementsByClassName(onscreenCardId)[3].innerText = oldCard.descriptionDEU;
-    document.getElementsByClassName(onscreenCardId)[4].innerText = oldCard.descriptionENG;
-    document.getElementsByClassName(onscreenCardId)[5].innerText = oldCard.descriptionMKD;
-    document.getElementsByClassName(onscreenCardId)[6].innerText = oldCard.picture;
+      const uploadData = await uploadRes.json();
+
+      if (!uploadData.secure_url) {
+        throw new Error('Upload failed');
+      }
+
+      // Update the picture field with Cloudinary URL
+      updatedCard.picture = uploadData.secure_url;
+    } catch (err) {
+      console.error("Cloudinary upload failed:", err);
+      alert("Image upload failed. Changes not saved.");
+      return;
+    }
   }
-  // // changing card - end
-}
 
+  // Step 3: Save updated card to server
+  try {
+    const res = await fetch('/api/card', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(updatedCard),
+    });
+
+    const responseBody = await res.json();
+
+    if (res.ok) {
+      alert('Card updated!');
+      location.reload();
+    } else {
+      throw new Error(responseBody.message || 'Unknown error');
+    }
+  } catch (err) {
+    console.error("Card update failed:", err);
+    alert('Failed to save card. ' + err.message);
+
+    // Revert to previous state
+    const oldCard = allCards.find(c => c.id === cardId);
+    if (oldCard) {
+      elements[0].innerText = oldCard.titleDEU;
+      elements[1].innerText = oldCard.titleENG;
+      elements[2].innerText = oldCard.titleMKD;
+      elements[3].innerText = oldCard.descriptionDEU;
+      elements[4].innerText = oldCard.descriptionENG;
+      elements[5].innerText = oldCard.descriptionMKD;
+      elements[6].innerText = oldCard.picture;
+      imagePreview.src = oldCard.picture;
+    }
+  }
+}
 // cards - end
 // adminpanel - end
