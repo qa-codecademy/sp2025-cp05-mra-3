@@ -5,6 +5,8 @@
 }
 
 body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
 }
 
@@ -12,7 +14,7 @@ body, html {
     position: relative;
     width: 100%;
     height: 70vh;
-    background-color: rgb(241, 248, 254);
+    background-color: rgb(242, 250, 250);
 }
 
 .hero-img {
@@ -250,4 +252,3 @@ body, html {
         margin-right: 0.5vh;
     }
 }
-
