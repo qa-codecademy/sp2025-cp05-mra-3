@@ -1,0 +1,108 @@
+{
+  "cardStyle": {
+    "default": {
+      "backgroundColor": "#ffffff",
+      "color": "#333333",
+      "borderRadius": "8px",
+      "padding": "20px",
+      "boxShadow": "0 4px 12px rgba(0,0,0,0.1)",
+      "margin": "15px",
+      "transition": "all 0.3s ease",
+      ":hover": {
+        "transform": "translateY(-8px)",
+        "boxShadow": "0 8px 20px rgba(0,0,0,0.15)"
+      }
+    },
+    "neonGlow": {
+      "backgroundColor": "#121212",
+      "color": "#ffffff",
+      "borderRadius": "12px",
+      "padding": "22px",
+      "margin": "15px",
+      "boxShadow": "0 0 10px #00f3ff, 0 0 20px rgba(0, 243, 255, 0.3)",
+      "border": "1px solid #00f3ff",
+      "transition": "all 0.3s ease",
+      ":hover": {
+        "transform": "translateY(-8px)",
+        "boxShadow": "0 0 15px #00f3ff, 0 0 30px rgba(0, 243, 255, 0.5), 0 0 45px rgba(0, 243, 255, 0.2)",
+        "textShadow": "0 0 5px rgba(0, 243, 255, 0.5)"
+      }
+    },
+    "gradient": {
+      "background": "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)",
+      "color": "#ffffff",
+      "borderRadius": "8px",
+      "padding": "20px",
+      "boxShadow": "0 4px 12px rgba(255, 154, 158, 0.3)",
+      "margin": "15px",
+      "transition": "all 0.3s ease",
+      ":hover": {
+        "transform": "translateY(-8px)",
+        "boxShadow": "0 8px 20px rgba(255, 154, 158, 0.4)",
+        "background": "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 70%)"
+      }
+    },
+    "softPink": {
+      "backgroundColor": "#fdf2f8",
+      "color": "#9d174d",
+      "borderRadius": "12px",
+      "padding": "20px",
+      "boxShadow": "0 4px 12px rgba(236, 72, 153, 0.1)",
+      "margin": "15px",
+      "transition": "all 0.3s ease",
+      ":hover": {
+        "transform": "translateY(-8px)",
+        "boxShadow": "0 8px 24px rgba(236, 72, 153, 0.2)",
+        "backgroundColor": "#fce7f3",
+        "textShadow": "0 0 2px rgba(251, 207, 232, 0.5)"
+      }
+    },
+    "lightBlue": {
+      "backgroundColor": "#f0f9ff",
+      "color": "#0369a1",
+      "borderRadius": "12px",
+      "padding": "20px",
+      "boxShadow": "0 4px 12px rgba(56, 182, 255, 0.1)",
+      "margin": "15px",
+      "transition": "all 0.3s ease",
+      ":hover": {
+        "transform": "translateY(-8px)",
+        "boxShadow": "0 8px 24px rgba(56, 182, 255, 0.2)",
+        "backgroundColor": "#e0f2fe",
+        "color": "#0284c7"
+      }
+    }
+  },
+  "cards": [
+    {
+      "title": "Streicharbeiten",
+      "description": "Unser Unternehmen bietet umfassende Malerarbeiten an. Dazu gehören Innen- und Außenarbeiten, die Vorbereitung des Untergrunds, die Auswahl hochwertiger Materialien und die präzise Ausführung. Wir arbeiten für Wohnhäuser, Gewerbebauten und Industrieanlagen und garantieren langlebige, makellose Ergebnisse.",
+      "image": "../assets/servicesCardsIMG/Streicharbeiten.jpg"
+    },
+    {
+      "title": "Tapezierarbeiten",
+      "description": "Unser Unternehmen Allround bietet Polsterarbeiten an – professionelle Polsterarbeiten für Möbel und Innenräume. Dazu gehören die Restaurierung von Sesseln, Sofas, Stühlen und anderen Möbeln, der Austausch von Stoffen oder Leder, dekorative Änderungen und die Anbringung von Wandteppichen. Wir arbeiten mit hochwertigen Materialien und achten auf Präzision bis ins kleinste Detail.",
+      "image": "../assets/servicesCardsIMG//Tapezierarbeiten.jpg"
+    },
+    {
+      "title": "Renovierungen",
+      "description": "Ihr Raum verdient Perfektion bis ins kleinste Detail. Als Ihr Allround-Partner runden wir jeden Umbau mit präziser Innenausbauarbeit ab, die Ihr Zuhause einzigartig macht.Vom Möbeleinbau bis hin zu kreativen Dekorationslösungen – unser Team achtet auf jedes Detail, um einen harmonischen und funktionalen Raum zu schaffen. Ob eine Küche, die Sie lieben, stimmungsvolle Beleuchtung oder Bodenbeläge, die den Charakter eines Raumes prägen – wir setzen Ihre Ideen um.",
+      "image": "../assets/servicesCardsIMG/Renovierungen.jpg"
+    }
+    ,
+    {
+      "title": "Sanierung",
+      "description": "Als Ihr zuverlässiger Partner für umfassende Sanierungen bieten wir Ihnen einen umfassenden Ansatz für die Instandhaltung und Verbesserung Ihres Zuhauses. Ob Strukturreparaturen, Feuchtigkeitssanierung oder Raummodernisierung – wir verwandeln Ihr Zuhause in einen sicheren, effizienten und schönen Wohnort.Unser Ansatz ist umfassend – vom ersten Kontakt bis zum letzten Detail. So ist jeder Aspekt Ihres Zuhauses in den besten Händen.",
+      "image": "../assets/servicesCardsIMG/Sanierung.jpg"
+    }
+    ,
+    {
+      "title": "Sonstige Arbeiten im Innenbereich",
+      "description": "Ihr Zuhause verdient den perfekten Abschluss! Als Allround-Unternehmen bieten wir Ihnen professionelle Dienstleistungen für alle Ihre Inneneinrichtungswünsche – von Fliesenarbeiten und Möbelmontage bis hin zur Beleuchtungsinstallation und kleinen Anpassungen.Mit Liebe zum Detail und einem Fokus auf Qualität sorgt unser Team dafür, dass Ihre Räume ordentlich, funktional und modern wirken. <br>  ✆ Kontaktieren Sie uns für eine kostenlose Beratung und ein individuelles Angebot!",
+      "image": "../assets/servicesCardsIMG/Sonstige Arbeiten im Innenbereich.jpg"
+    }
+    
+    
+    
+  ]
+}
