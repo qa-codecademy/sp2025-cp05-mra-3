@@ -3,99 +3,57 @@
 
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/reviews.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-
-<body>
-
-    <nav id="navBar" class="">
-        <div id="logoDiv">
-            <a id="logoLink" href="./homePage.html">
-                <img id="logoPic" class="logo" src="../assets/pictures/navbar-logo.png">
-            </a>
-        </div>
-
-        <button id="menuToggle" class="menu-toggle">&#9776;</button>
-        <div id="menuDiv">
-            <ul id="menuLinks">
-                <li class="menuLink"><a class="link" href="./homePage.html">Home</a></li>
-                <li class="menuLink"><a class="link" href="./services.html">Services</a></li>
-                <li class="menuLink"><a class="link" href="./reviews.html">Reviews</a></li>
-                <li class="menuLink"><a class="link" href="./aboutUs.html">About us</a></li>
-                <li class="menuLink"><a class="link" href="./contact.html">Contact</a></li>
-                <li class="menuLink menuLinkSettings">
-                    <div id="dark-light">
-                        <label class="switch">
-                            <input type="checkbox" name="theme">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
-                </li>
-                <li class="menuLink menuLinkSettings">
-                    <div class="dropdown" id="languageDropdown">
-                        <button class="dropdown-toggle" id="dropdownToggle">
-                            <img src="../assets/pictures/gb.svg" alt="English">
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="#" data-lang="en" data-flag="../assets/pictures/gb.svg">
-                                <img src="../assets/pictures/gb.svg" alt="English">
-                            </a>
-                            <a href="#" data-lang="de" data-flag="../assets/pictures/de.svg">
-                                <img src="../assets/pictures/de.svg" alt="German">
-                            </a>
-                            <a href="#" data-lang="mk" data-flag="../assets/pictures/mk.svg">
-                                <img src="../assets/pictures/mk.svg" alt="Macedonian">
-                            </a>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <footer>
-        <footer class="footer">
-            <div class="footer-section contact-info">
-                <p>Contact us</p>
-                <p>
-                    <a href="https://www.google.com/maps?q=Bannstrasse+5,+4600+Olten" target="_blank"
-                        aria-label="View address on Google Maps">
-                        Bannstrasse 5, 4600 Olten
-                    </a>
-                </p>
-                <p>Phone: <a href="tel:+41786925155">+41 78 692 51 55</a></p>
-                <p>Email: <a href="mailto:info@mrallround.ch">info@mrallround.ch</a></p>
-        </footer>
-        <footer class="footer">
-            <div class="footer-icons"></div>
-            <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
-            <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i
-                    class="fa fa-instagram"></i></a>
-            <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-            <p>© MR.Allaround. All Rights Reserved.</p>
-        </footer>
-    </footer>
-
-    <script src="../scripts/main.js"></script>
-    <script src="../scripts/reviews.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
-</head>
-
-<body>
   <link rel="stylesheet" href="../css/main.css">
   <link rel="stylesheet" href="../css/contact.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+</head>
 
+<body>
   <header>
+    <nav id="navBar" class="">
+      <div id="logoDiv">
+        <a id="logoLink" href="./homePage.html">
+          <img id="logoPic" class="logo" src="../assets/pictures/navbar-logo.png">
+        </a>
+      </div>
+
+      <button id="menuToggle" class="menu-toggle">&#9776;</button>
+      <div id="menuDiv">
+        <ul id="menuLinks">
+          <li class="menuLink"><a class="link" href="./homePage.html">Home</a></li>
+          <li class="menuLink"><a class="link" href="./services.html">Services</a></li>
+          <li class="menuLink"><a class="link" href="./reviews.html">Reviews</a></li>
+          <li class="menuLink"><a class="link" href="./aboutUs.html">About us</a></li>
+          <li class="menuLink"><a class="link" href="./contact.html">Contact</a></li>
+          <li class="menuLink menuLinkSettings">
+            <div id="dark-light">
+              <label class="switch">
+                <input type="checkbox" name="theme">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </li>
+          <li class="menuLink menuLinkSettings">
+            <!-- language selector - start -->
+            <div id="dropdownLanguageSelector">
+              <div id="dropdownLanguageSelector-toggle">
+                <img id="langSelection" src="" alt="">
+              </div>
+              <div id="dropdownLanguageSelector-menu">
+                <a href="#"><img class="langOption" src="/assets/flags/deu.jpg" alt="German"></a>
+                <a href="#"><img class="langOption" src="/assets/flags/eng.jpg" alt="English"></a>
+                <a href="#"><img class="langOption" src="/assets/flags/mkd.jpg" alt="Macedonian"></a>
+              </div>
+            </div>
+            <!-- language selector - end -->
+          </li>
+        </ul>
+      </div>
+    </nav>
 
   </header>
   <main>
@@ -125,18 +83,6 @@
       <button id="logOutButton" type="submit">Log out</button>
       <button class="onscreenText adminhtmlNewCard" id="submitToggleNewCard" type="submit"></button>
       <button class="onscreenText adminhtmlAllCards" id="submitToggleAllCards" type="submit"></button>
-      <!-- language selector - start-->
-      <div id="dropdownLanguageSelector">
-        <div id="dropdownLanguageSelector-toggle">
-          <img id="langSelection" src="" alt="">
-        </div>
-        <div id="dropdownLanguageSelector-menu">
-          <a href="#"><img class="langOption" src="/assets/flags/deu.jpg" alt="German"></a>
-          <a href="#"><img class="langOption" src="/assets/flags/eng.jpg" alt="English"></a>
-          <a href="#"><img class="langOption" src="/assets/flags/mkd.jpg" alt="Macedonian"></a>
-        </div>
-      </div>
-      <!-- language selector - end -->
     </div>
     <!-- Toggler buttons - end -->
     <!-- Sign up form - start -->
@@ -199,7 +145,7 @@
 
     <!-- All contents - end -->
 
-        <!-- New Card form - start -->
+    <!-- New Card form - start -->
     <div id="card-form-wrapper">
       <div id="cardFormTitle">
         <h2 class="onscreenText adminhtmlNewCard heading"></h2>
@@ -264,8 +210,31 @@
     </footer>
 
   </footer>
+  <!--  -->
+  <footer>
+    <footer class="footer">
+      <div class="footer-section contact-info">
+        <p>Contact us</p>
+        <p>
+          <a href="https://www.google.com/maps?q=Bannstrasse+5,+4600+Olten" target="_blank"
+            aria-label="View address on Google Maps">
+            Bannstrasse 5, 4600 Olten
+          </a>
+        </p>
+        <p>Phone: <a href="tel:+41786925155">+41 78 692 51 55</a></p>
+        <p>Email: <a href="mailto:info@mrallround.ch">info@mrallround.ch</a></p>
+    </footer>
+    <footer class="footer">
+      <div class="footer-icons"></div>
+      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+      <p>© MR.Allaround. All Rights Reserved.</p>
+    </footer>
+  </footer>
 
   <script src="../scripts/contact.js"></script>
+  <script src="../scripts/main.js"></script>
   <script src="../modules/multilingual.js"></script>
 </body>
 
