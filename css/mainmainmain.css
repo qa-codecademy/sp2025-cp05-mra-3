@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    color: #2196F3;
+    text-align: center;
+    padding: 5px;
+}
+footer a {
+    color: #2196F3; 
+    text-decoration: none; 
+}
+
+footer a:hover {
+    color: lightgray; 
+}
+
+.footer-icons a {
+    color: #2196F3;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+.fa-facebook { background-color: #1877F2; color: white; }
+.fa-instagram { display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #feda75, #d62976, #962fbf);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s; }
+.fa-linkedin { background-color: #0077B5; color: white; }
+.fa {
+  padding: 5px;
+  font-size: 15px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-icons a:hover {
+    color: #2196F3;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 10px 5px;
+    }
+
+    .footer-icons a {
+        font-size: 1em;
+    }
+}

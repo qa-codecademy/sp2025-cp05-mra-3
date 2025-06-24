@@ -35,14 +35,14 @@ footer {
     margin-left: 3px;
 }
 
-#dropdownLanguageSelector-toggle {
+/* #dropdownLanguageSelector-toggle {
     cursor: pointer;
-}
+} */
 
 #dropdownLanguageSelector-toggle img,
 #dropdownLanguageSelector-menu a img {
     border-radius: 5px;
-    width: 40px;
+    width: 35px;
     vertical-align: middle;
 }
 
@@ -63,14 +63,6 @@ footer {
 #dropdownLanguageSelector-menu a img:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
 }
-
-/* Language selector - end */
-/* footer - start */
-/* body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-} */
 
 .footer {
     background-color: #f4f4f4;
