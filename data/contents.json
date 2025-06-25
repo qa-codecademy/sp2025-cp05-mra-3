@@ -36,10 +36,10 @@
     "macedonian": "Контактирајте не"
   },
   {
-    "id": "footerhtmlAddress",
-    "german": "Adresse: ",
-    "english": "Address: ",
-    "macedonian": "Адреса: "
+    "id": "footerhtmlFollowUs",
+    "german": "Folgen Sie uns ",
+    "english": "Follow us ",
+    "macedonian": "Следете не "
   },
   {
     "id": "footerhtmlPhone",
@@ -58,6 +58,36 @@
     "german": "Alle Rechte vorbehalten.",
     "english": "All Rights Reserved.",
     "macedonian": "Сите права се задржани."
+  },
+    {
+    "id": "headerhtmlHome",
+    "german": "Heim",
+    "english": "Home",
+    "macedonian": "Дома"
+  },
+  {
+    "id": "headerhtmlServices",
+    "german": "Leistungen",
+    "english": "Services",
+    "macedonian": "Услуги"
+  },
+  {
+    "id": "headerhtmlReviews",
+    "german": "Bewertungen",
+    "english": "Reviews",
+    "macedonian": "Осврти"
+  },
+  {
+    "id": "headerhtmlAboutUs",
+    "german": "Über uns",
+    "english": "About us",
+    "macedonian": "За нас"
+  },
+  {
+    "id": "headerhtmlContact",
+    "german": "Kontakt",
+    "english": "Contact",
+    "macedonian": "Контакт"
   },
   {
     "id": "adminhtmlNewUser",

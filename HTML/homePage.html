@@ -1,96 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page</title>
+  <title>Home</title>
   <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/homePage.css">
+  <link rel="stylesheet" href="../css/contact.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body>
+  <header>
+    <nav id="navBar" class="">
+      <div id="logoDiv">
+        <a id="logoLink" href="./homePage.html">
+          <img id="logoPic" class="logo" src="../assets/pictures/navbar-logo.png">
+        </a>
+      </div>
 
-  <nav id="navBar" class="">
-    <div id="logoDiv">
-      <a id="logoLink" href="./homePage.html">
-        <img id="logoPic" class="logo" src="../assets/pictures/navbar-logo.png">
-      </a>
-    </div>
-
-    <button id="menuToggle" class="menu-toggle">&#9776;</button>
-    <div id="menuDiv">
-      <ul id="menuLinks">
-        <li class="menuLink"><a class="link" href="./homePage.html">Home</a></li>
-        <li class="menuLink"><a class="link" href="./services.html">Services</a></li>
-        <li class="menuLink"><a class="link" href="./reviews.html">Reviews</a></li>
-        <li class="menuLink"><a class="link" href="./aboutUs.html">About us</a></li>
-        <li class="menuLink"><a class="link" href="./contact.html">Contact</a></li>
-        <li class="menuLink menuLinkSettings">
-          <div id="dark-light">
-            <label class="switch">
-              <input type="checkbox" name="theme">
-              <span class="slider"></span>
-            </label>
-          </div>
-        </li>
-        <li class="menuLink menuLinkSettings">
-          <div class="dropdown" id="languageDropdown">
-            <button class="dropdown-toggle" id="dropdownToggle">
-              <img src="../assets/pictures/gb.svg" alt="English">
-            </button>
-            <div class="dropdown-menu">
-              <a href="#" data-lang="en" data-flag="../assets/pictures/gb.svg">
-                <img src="../assets/pictures/gb.svg" alt="English">
-              </a>
-              <a href="#" data-lang="de" data-flag="../assets/pictures/de.svg">
-                <img src="../assets/pictures/de.svg" alt="German">
-              </a>
-              <a href="#" data-lang="mk" data-flag="../assets/pictures/mk.svg">
-                <img src="../assets/pictures/mk.svg" alt="Macedonian">
-              </a>
+      <button id="menuToggle" class="menu-toggle">&#9776;</button>
+      <div id="menuDiv">
+        <ul id="menuLinks">
+          <li class="menuLink"><a class="link onscreenText headerhtmlHome" href="./homePage.html"></a></li>
+          <li class="menuLink"><a class="link onscreenText headerhtmlServices" href="./services.html"></a></li>
+          <li class="menuLink"><a class="link onscreenText headerhtmlReviews" href="./reviews.html"></a></li>
+          <li class="menuLink"><a class="link onscreenText headerhtmlAboutUs" href="./aboutUs.html"></a></li>
+          <li class="menuLink"><a class="link onscreenText headerhtmlContact" href="./contact.html"></a></li>
+          <li class="menuLink menuLinkSettings">
+            <div id="dark-light">
+              <label class="switch">
+                <input type="checkbox" name="theme">
+                <span class="slider"></span>
+              </label>
             </div>
+          </li>
+          <li class="menuLink menuLinkSettings">
+            <!-- language selector - start -->
+            <div id="dropdownLanguageSelector">
+              <div id="dropdownLanguageSelector-toggle">
+                <img id="langSelection" src="" alt="">
+              </div>
+              <div id="dropdownLanguageSelector-menu">
+                <a href="#"><img class="langOption" src="/assets/flags/deu.jpg" alt="German"></a>
+                <a href="#"><img class="langOption" src="/assets/flags/eng.jpg" alt="English"></a>
+                <a href="#"><img class="langOption" src="/assets/flags/mkd.jpg" alt="Macedonian"></a>
+              </div>
+            </div>
+            <!-- language selector - end -->
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+  <main>
+    <!-- contact form - start -->
+    <div id="contact-form">
+      <h2 class="onscreenText contacthtmlContactUs heading"></h2>
+      <form id="emailForm">
+        <label class="onscreenText contacthtmlName" for="nameInput"></label>
+        <input id="nameInput" type="text" placeholder="" required>
+        <label class="onscreenText contacthtmlEmail" for="emailInput"></label>
+        <input id="emailInput" type="email" required>
+        <label class="onscreenText contacthtmlMessage" for="messageInput"></label>
+        <textarea id="messageInput" required></textarea>
+        <button class="onscreenText contacthtmlSubmit" id="submitNewContact" type="submit"></button>
+      </form>
+    </div>
+    <!-- contact form - end -->
+    <!-- adminpanel - start -->
+    <!-- Toggler buttons - start -->
+    <div id="leftVerticalMenu">
+      <a href="http://localhost:3000/aboutUs.html">Go to aboutus.html</a>
+      <button class="onscreenText adminhtmlNewUser" id="submitToggleNewUser" type="submit"></button>
+      <button class="onscreenText adminhtmlAllUsers" id="submitToggleAllUsers" type="submit"></button>
+      <button class="onscreenText adminhtmlAllEmails" id="submitToggleAllEmails" type="submit"></button>
+      <button class="onscreenText adminhtmlAllContents" id="submitToggleAllContents" type="submit"></button>
+      <button id="logInButton" type="submit">Log in</button>
+      <button id="logOutButton" type="submit">Log out</button>
+      <button class="onscreenText adminhtmlNewCard" id="submitToggleNewCard" type="submit"></button>
+      <button class="onscreenText adminhtmlAllCards" id="submitToggleAllCards" type="submit"></button>
+    </div>
+    <!-- Toggler buttons - end -->
+    <!-- Sign up form - start -->
+    <div id="signup-form-wrapper">
+      <div id="userFormTitle">
+        <h2 class="onscreenText adminhtmlSignUp heading"></h2>
+      </div>
+      <form id="userSignupForm">
+        <label class="onscreenText adminhtmlFullName" for="userNameInput"></label>
+        <input id="userNameInput" type="text" placeholder="" required>
+        <label class="onscreenText adminhtmlEmail" for="userNameEmail"></label>
+        <input id="userNameEmail" type="email" required>
+        <label class="onscreenText adminhtmlPassword" for="userNamePassword"></label>
+        <input id="userNamePassword" required>
+        <button class="onscreenText adminhtmlSubmit" id="submitNewUser" type="submit"></button>
+      </form>
+    </div>
+    <!-- Sign up form - end -->
+    <!-- All users - start -->
+    <div id="userTableWrapper">
+      <div id="userTableTitle">
+        <h2 class="onscreenText adminhtmlAllUsers heading"></h2>
+      </div>
+      <div id="usersContainer" class="users-container">
+      </div>
+    </div>
+    <!-- All users - end -->
+    <!-- All emails - start -->
+    <div id="emailTableWrapper">
+      <div id="emailTableTitle">
+        <h2 class="onscreenText adminhtmlReceivedEmails heading"></h2>
+      </div>
+      <div id="emailsContainer" class="emails-container">
+      </div>
+    </div>
+    <!-- All emails - end -->
+    <!-- All contents - start -->
+    <div id="contentTableWrapper">
+      <div id="contentTableTitle">
+        <h2 class="onscreenText adminhtmlAllContents heading"></h2>
+        <div id="dropdown1">
+          <div>
+            <strong class="onscreenText adminhtmlPage:"></strong>
+            <div id="dropdown1-toggle" class="onscreenText adminhtmlAll" style="display: inline;"></div>
           </div>
-        </li>
-      </ul>
+          <div id="dropdown1-menu">
+            <div class="pageMenu onscreenText adminhtmlAll">All</div>
+            <div class="pageMenu">aboutUs</div>
+            <div class="pageMenu">contact</div>
+            <div class="pageMenu">admin</div>
+            <div class="pageMenu">homePage</div>
+            <div class="pageMenu">reviews</div>
+            <div class="pageMenu">services</div>
+          </div>
+        </div>
+      </div>
+      <div id="contentsContainer" class="contents-container">
+      </div>
     </div>
-  </nav>
 
-  <section class="hero">
-    <img src="../assets/pictures/img1.jpg" alt="Hero Image" class="hero-img">
-    <div class="hero-content">
-      <h1>Your Trusted Cleaning Service</h1>
-      <p>Efficient. Reliable. Affordable.</p>
-      <a href="#book-now" class="book-btn">Book Now</a>
+    <!-- All contents - end -->
+
+    <!-- New Card form - start -->
+    <div id="card-form-wrapper">
+      <div id="cardFormTitle">
+        <h2 class="onscreenText adminhtmlNewCard heading"></h2>
+      </div>
+      <form id="newCardForm">
+        <label class="onscreenText adminhtmlCardTitle" for="cardTitle"></label>
+        <input id="cardTitleDEU" type="text" placeholder="Titel" required>
+        <input id="cardTitleENG" type="text" placeholder="Title" required>
+        <input id="cardTitleMKD" type="text" placeholder="Наслов" required>
+        <label class="onscreenText adminhtmlCardDescription" for="cardDescription"></label>
+        <textarea id="cardDescriptionDEU" type="text" placeholder="Beschreibung" required></textarea>
+        <textarea id="cardDescriptionENG" type="text" placeholder="Description" required></textarea>
+        <textarea id="cardDescriptionMKD" type="text" placeholder="Опис" required></textarea>
+        <label class="onscreenText adminhtmlCardPicture" for="cardPicture"></label>
+
+        <input id="cardPicture" type="file" accept="image/*" required>
+
+        <button class="onscreenText adminhtmlSubmit" id="submitNewCard" type="submit"></button>
+      </form>
     </div>
-  </section>
+    <!-- New Card form - end -->
 
-  <footer>
-    <footer class="footer">
-      <div class="footer-section contact-info">
-        <p>Contact us</p>
-        <p>
+    <!-- all cards - start -->
+
+
+    <div id="cardTableWrapper">
+      <div id="cardTableTitle">
+        <h2 class="onscreenText adminhtmlAllCards heading"></h2>
+      </div>
+      <div id="cardsContainer" class="cards-container">
+      </div>
+    </div>
+    <!-- all cards - end -->
+    <!-- adminpanel - end -->
+
+  </main>
+
+  <footer class="footer">
+    <div class="contact-container">
+      <div class="onscreenText footerhtmlContactUs"></div>
+
+      <div>
+        <p><i class="fa fa-map-marker"></i>
           <a href="https://www.google.com/maps?q=Bannstrasse+5,+4600+Olten" target="_blank"
-            aria-label="View address on Google Maps">
-            Bannstrasse 5, 4600 Olten
+            aria-label="View address on Google Maps">Bannstrasse 5, 4600 Olten
           </a>
         </p>
-        <p>Phone: <a href="tel:+41786925155">+41 78 692 51 55</a></p>
-        <p>Email: <a href="mailto:info@mrallround.ch">info@mrallround.ch</a></p>
-    </footer>
-    <footer class="footer">
-      <div class="footer-icons"></div>
-      <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
-      <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-      <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-      <p>© MR.Allaround. All Rights Reserved.</p>
-    </footer>
+        <p><i class="fa fa-phone onscreenText footerhtmlPhone"></i>&nbsp<a href="tel:+41786925155">+41 78
+            692 51 55</a></p>
+        <p><i class="fa fa-envelope onscreenText footerhtmlEmail"></i>&nbsp<a
+            href="mailto:info@mrallround.ch">info@mrallround.ch</a></p>
+        <p>
+          <p style="display: inline;">© MR.Allround.</p>
+        <p class="onscreenText footerhtmlAllRightsReserved." style="display: inline;"></p>
+        </p>
+      </div>
+      <div class="footer-icons" style="position: absolute; right: 30px; bottom: 15px;;; text-align: right;">
+        <p class="onscreenText footerhtmlFollowUs" style="font-size: 24px;margin: 5px;">Follow Us</p>
+        <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a>
+        <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+      </div>
   </footer>
 
+  <script src="../scripts/contact.js"></script>
   <script src="../scripts/main.js"></script>
-  <script src="../scripts/homePage.js"></script>
+  <script src="../modules/multilingual.js"></script>
 </body>
+
 
 </html>
