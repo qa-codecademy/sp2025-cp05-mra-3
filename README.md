@@ -21,7 +21,17 @@ Za integriranje na multilingual vo display text vo services.html od ticket dynam
 Kreiran e main.css koj sodrzi:					
     blok namenet za footer, prevzemen kompletno od ticket Footer#10 so napraveni minimalni korekcii vo pozicioniranje I otstraneti nepostoecki klasi.				
     blok namenet za header, prevzemen od ticket navBar#9, so promena vo delot koj se odnesuva na language selector dropdown.				
-                    
+
+Za integriranje na multilingual vo display text vo aboutUs.html	
+    Kako sto pogore e objasneto sredenite header I footer se kopirani tuka, so cel da se oformi strukturata na <body> kade kje ima sekcii za header, main I footer.
+    Potrebno e da se dodade nekoja slika ili tekst vo main delot za da lici kako sto treba.
+
+Za integriranje na multilingual vo display text vo reviews.html		
+    Kako sto pogore e objasneto sredenite header I footer se kopirani tuka.	
+    Kreiran e celosen sistem za pisuvanje na reviews od strana na posetiteli na stranata reviews.html, zaedno so reviews.css.	
+    Vo contact.html I vo contact.js e kreiran sistem za da moze da se poglednat site reviews koi se dobieni I istite da se izmenuvaat vo property public so koe kje se odreduva dali nekoj review kje se prikaze javno ili ne.	
+        Ne sakame site reviews da bidat prikazani javno, bidejki ne sme sigurni dali kje ni odgovara sodrzinata sto nekoj posetitel kje ja napise za nasata rabota.
+
 VAZNO:
     1. Koga vo main.css ili main.js se dodava kod treba, pocetokot I krajot na noviot kod, so komentiranje da se oznaci na sto se odnesuva… 				
     2. Za da kodot se loadira po pravilen redosled I se da funkcionira treba, koga se integriraat .css I .js file-ovite da bidat na sledniot nacin:				

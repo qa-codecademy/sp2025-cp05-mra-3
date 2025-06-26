@@ -1,7 +1,7 @@
 [
   {
     "id": "contacthtmlContactUs",
-    "german": "Kontaktieren Sie1 uns",
+    "german": "Kontaktieren Sie uns",
     "english": "Contact us",
     "macedonian": "Контактирајте не"
   },
@@ -131,7 +131,7 @@
     "english": "Submit",
     "macedonian": "Испрати"
   },
-    {
+  {
     "id": "homepagehtmlYTCS",
     "german": "Ihr vertrauenswürdiger Reinigungsdienst",
     "english": "Your Trusted Cleaning Service",
