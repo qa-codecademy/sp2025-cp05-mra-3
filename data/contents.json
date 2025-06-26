@@ -59,7 +59,7 @@
     "english": "All Rights Reserved.",
     "macedonian": "Сите права се задржани."
   },
-    {
+  {
     "id": "headerhtmlHome",
     "german": "Heim",
     "english": "Home",
@@ -88,6 +88,48 @@
     "german": "Kontakt",
     "english": "Contact",
     "macedonian": "Контакт"
+  },
+  {
+    "id": "reviewshtmlWPTAU",
+    "german": "Was unsere Kunden über uns denken",
+    "english": "What our customers think about us",
+    "macedonian": "Што мислат нашите клиенти за нас"
+  },
+  {
+    "id": "reviewshtmlCTLYO",
+    "german": "Klicken Sie hier, um Ihre Meinung zu hinterlassen",
+    "english": "Click to leave your opinion",
+    "macedonian": "Клинки за да оставиш мислење"
+  },
+  {
+    "id": "reviewshtmlYourOpinion",
+    "german": "Ihre Meinung",
+    "english": "Your opinion",
+    "macedonian": "Ваше мислење"
+  },
+  {
+    "id": "reviewshtmlName",
+    "german": "Name",
+    "english": "Name",
+    "macedonian": "Име"
+  },
+  {
+    "id": "reviewshtmlRateUs",
+    "german": "Bewerten Sie uns",
+    "english": "Rate us",
+    "macedonian": "Оцена"
+  },
+  {
+    "id": "reviewshtmlOpinion",
+    "german": "Meinung",
+    "english": "Opinion",
+    "macedonian": "Мислење"
+  },
+  {
+    "id": "reviewshtmlSubmit",
+    "german": "Einreichen",
+    "english": "Submit",
+    "macedonian": "Испрати"
   },
   {
     "id": "adminhtmlNewUser",
