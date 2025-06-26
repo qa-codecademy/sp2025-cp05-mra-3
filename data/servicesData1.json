@@ -1,0 +1,96 @@
+{
+  "cardStyle": {
+    "default": {
+      "backgroundColor": "#ffffff",
+      "color": "#333333",
+      "borderRadius": "8px",
+      "padding": "20px",
+      "boxShadow": "0 4px 12px rgba(0,0,0,0.1)",
+      "margin": "15px",
+      "transition": "all 0.3s ease",
+      ":hover": {
+        "transform": "translateY(-8px)",
+        "boxShadow": "0 8px 20px rgba(0,0,0,0.15)"
+      }
+    },
+    "neonGlow": {
+      "backgroundColor": "#121212",
+      "color": "#ffffff",
+      "borderRadius": "12px",
+      "padding": "22px",
+      "margin": "15px",
+      "boxShadow": "0 0 10px #00f3ff, 0 0 20px rgba(0, 243, 255, 0.3)",
+      "border": "1px solid #00f3ff",
+      "transition": "all 0.3s ease",
+      ":hover": {
+        "transform": "translateY(-8px)",
+        "boxShadow": "0 0 15px #00f3ff, 0 0 30px rgba(0, 243, 255, 0.5), 0 0 45px rgba(0, 243, 255, 0.2)",
+        "textShadow": "0 0 5px rgba(0, 243, 255, 0.5)"
+      }
+    },
+    "gradient": {
+      "background": "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%)",
+      "color": "#ffffff",
+      "borderRadius": "8px",
+      "padding": "20px",
+      "boxShadow": "0 4px 12px rgba(255, 154, 158, 0.3)",
+      "margin": "15px",
+      "transition": "all 0.3s ease",
+      ":hover": {
+        "transform": "translateY(-8px)",
+        "boxShadow": "0 8px 20px rgba(255, 154, 158, 0.4)",
+        "background": "linear-gradient(135deg, #ff9a9e 0%, #fad0c4 70%)"
+      }
+    },
+    "softPink": {
+      "backgroundColor": "#fdf2f8",
+      "color": "#9d174d",
+      "borderRadius": "12px",
+      "padding": "20px",
+      "boxShadow": "0 4px 12px rgba(236, 72, 153, 0.1)",
+      "margin": "15px",
+      "transition": "all 0.3s ease",
+      ":hover": {
+        "transform": "translateY(-8px)",
+        "boxShadow": "0 8px 24px rgba(236, 72, 153, 0.2)",
+        "backgroundColor": "#fce7f3",
+        "textShadow": "0 0 2px rgba(251, 207, 232, 0.5)"
+      }
+    },
+    "lightBlue": {
+      "backgroundColor": "#f0f9ff",
+      "color": "#0369a1",
+      "borderRadius": "12px",
+      "padding": "20px",
+      "boxShadow": "0 4px 12px rgba(56, 182, 255, 0.1)",
+      "margin": "15px",
+      "transition": "all 0.3s ease",
+      ":hover": {
+        "transform": "translateY(-8px)",
+        "boxShadow": "0 8px 24px rgba(56, 182, 255, 0.2)",
+        "backgroundColor": "#e0f2fe",
+        "color": "#0284c7"
+      }
+    }
+  },
+  "cards": [
+    {
+      "title": "Reparaturarbeiten",
+      "description": "Von kleinen Reparaturen bis hin zu umfangreichen Instandsetzungen. Unsere Experten kümmern sich um alle Ihre Bedürfnisse.",
+      "image": "../assets/download.jpeg"
+    },
+    {
+      "title": "Renovierungen",
+      "description": "Modernisierung von Wohnräumen, Badezimmern und Küchen. Wir verwandeln Ihre Vision in Realität.",
+      "image": "../assets/download (1).jpeg"
+    },
+    {
+      "title": "Renovierungen",
+      "description": "Modernisierung von Wohnräumen, Badezimmern und Küchen. Wir verwandeln Ihre Vision in Realität.",
+      "image": "../assets/download (1).jpeg"
+    }
+    
+    
+    
+  ]
+}

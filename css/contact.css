@@ -1,0 +1,314 @@
+/* contact form - start */
+#contact-form {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  padding: 1.5%;
+  border-radius: 1.5%;
+  width: 50%;
+  height: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 600px) {
+  #contact-form {
+    width: 90%;
+    height: 300px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #contact-form {
+    width: 75%;
+    height: 350px;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  #contact-form {
+    width: 60%;
+    height: 400px;
+  }
+}
+
+.heading {
+  display: block;
+  font-weight: bold;
+  color: black;
+  margin: 0px;
+  height: 10%;
+  font-size: 24px;
+  overflow-y: auto;
+}
+
+#emailForm {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+}
+
+#emailForm label {
+  color: black;
+  padding-bottom: 1%;
+  margin: 0px;
+  height: 5%;
+  font-size: 16px;
+}
+
+#emailForm input {
+  border: none;
+  border-radius: 5px;
+  padding: 1.5%;
+  margin-bottom: 1.5%;
+  height: 5%;
+}
+
+#emailForm textarea, #newCardForm textarea {
+  border: none;
+  resize: none;
+  border-radius: 5px;
+  padding: 1.5%;
+  margin-bottom: 1.5%;
+  height: 100%;
+}
+
+#emailForm input:focus, #emailForm textarea:focus, #newCardForm textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ff6384;
+}
+
+#emailForm button[type="submit"] {
+  cursor: pointer;
+  background-color: #ff6384;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 1.5%;
+  height: 15%;
+  font-size: 18px;
+  
+}
+
+#emailForm button[type="submit"]:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+/* contact form - end */
+/* adminpanel - start */
+#signup-form-wrapper, #card-form-wrapper {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  padding: 1.5%;
+  border-radius: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #signup-form-wrapper, #card-form-wrapper {
+    width: 90%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #signup-form-wrapper, #card-form-wrapper {
+    width: 75%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  #signup-form-wrapper, #card-form-wrapper {
+    width: 60%;
+  }
+}
+
+#signup-form-wrapper label, #card-form-wrapper label {
+  color: black;
+  margin-bottom: 10px;
+}
+
+#signup-form-wrapper .heading, #card-form-wrapper .heading{
+  font-size: 24px;
+  color: black;
+  margin-bottom: 12px;
+  font-weight: bold;
+  display: block;
+}
+
+#signup-form-wrapper form, #card-form-wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+#signup-form-wrapper input, #card-form-wrapper input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#signup-form-wrapper input:focus, #card-form-wrapper input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ff6384;
+}
+
+#signup-form-wrapper button[type="submit"], #card-form-wrapper button[type="submit"] {
+  background-color: #ff6384;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#signup-form-wrapper button[type="submit"]:hover, #card-form-wrapper button[type="submit"]:hover  {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+}
+/* user sign up form - end */
+/* all users form - start */
+#userTableWrapper {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  padding: 1.5%;
+  border-radius: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #userTableWrapper {
+    width: 90%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #userTableWrapper {
+    width: 75%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  #userTableWrapper {
+    width: 60%;
+  }
+}
+/* all users up form - end */
+/* tables with all emails and contents - start */
+
+#emailTableWrapper, #contentTableWrapper, #cardTableWrapper{
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  padding: 1.5%;
+  border-radius: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #emailTableWrapper, #contentTableWrapper, #cardTableWrapper {
+    width: 90%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #emailTableWrapper, #contentTableWrapper, #cardTableWrapper {
+    width: 75%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  #emailTableWrapper, #contentTableWrapper, #cardTableWrapper  {
+    width: 60%;
+  }
+}
+
+.emails-container, .contents-container, .user-container, .card-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.email-entry, .content-entry, .user-entry, .card-entry{
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}
+
+.email-entry div, .content-entry div, .user-entry div, .card-entry div{
+  margin: 6px 0;
+  font-size: 16px;
+}
+#contentTableTitle, #emailTableTitle, #userFormTitle, #cardFormTitle {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+}
+/* Content page selector - start */
+  #dropdown1 {
+    position: relative;
+    display: inline-block;
+    font-family: sans-serif;
+  }
+
+  #dropdown1-toggle {
+    cursor: pointer;
+  }
+
+  #dropdown1-toggle, #dropdown1-toggle div, #dropdown1-menu div{
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  #dropdown1-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+  }
+
+  #dropdown1:hover #dropdown1-menu {
+    display: block;
+  }
+
+  #dropdown1-menu div {
+    display: block;
+    height: auto;
+    cursor: pointer;
+    text-align: right;
+  }
+
+  #dropdown1-menu div:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  }
+/* Content page selector - end */
+/* table with all emails and contents - end */
+/* Left vertical menu - start */
+#leftVerticalMenu{
+  /* margin-top: 70px; */
+  display: inline-flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  left: 0;
+  top: 10%;
+  bottom: 10%;
+  width: 120px; 
+  background-color: #f0f0f0; 
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+/* Left vertical menu - end */
+/* adminpanel - end */
