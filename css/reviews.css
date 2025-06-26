@@ -87,6 +87,17 @@
   margin-bottom: 1.5%;
   height: 100%;
 }
+#reviewForm textarea {
+  border: none;
+  resize: none; 
+  border-radius: 5px;
+  padding: 1.5%;
+  margin-bottom: 1.5%;
+  height: 50px; 
+  overflow-y: auto; 
+  box-sizing: border-box; 
+}
+
 
 #reviewForm input:focus, #reviewForm textarea:focus {
   outline: none;
@@ -140,7 +151,7 @@ h1 {
 }
 
 /* Reviews Grid */
-.reviews-grid {
+#reviewsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-template-rows: auto auto;
@@ -182,8 +193,10 @@ h1 {
   margin: 0.4rem 0 0.6rem;
 }
 
-.review-text {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.5;
+#review-opinion {
+  max-height: 100px; 
+  overflow-y: auto; 
+  margin-bottom: 1rem; 
+  font-size: 0.95rem; 
+  color: #555; 
 }

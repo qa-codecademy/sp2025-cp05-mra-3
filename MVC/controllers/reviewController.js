@@ -9,13 +9,6 @@ export async function saveReviewController(req, res) {
     // Validate the incoming request body using Zod
     const parsedData = reviewCreateSchema.parse(req.body);
 
-    // Check if email exists
-    const existingReviews = await getAllReviews();
-    const emailExists = existingReviews.some(review => review.email.toLowerCase() === parsedData.email.toLowerCase());
-
-    if (emailExists) {
-      return res.status(400).json({ error: 'Email already in use.' });
-    }
     // add unique id to review
     const newReviewWithId = {
       ...parsedData,

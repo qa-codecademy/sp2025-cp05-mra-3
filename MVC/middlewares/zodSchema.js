@@ -42,7 +42,7 @@ export const cardUpdateSchema = cardCreateSchema.extend({
 
 export const reviewCreateSchema  = z.object({
   name: z.string().min(1, 'Name is required'),  
-  // rating: z.number().min(1, 'Rating must be at least 1').max(5, 'Rating cannot exceed 5'),
+  rating: z.number().min(1, 'Rating must be at least 1').max(5, 'Rating cannot exceed 5'),
   opinion: z.string().min(1, "Opinion is required"),
   createdAt: z.string(),
   public: z.string(),
