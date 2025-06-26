@@ -759,18 +759,18 @@ async function saveCardEdition(cardId) {
   }
 }
 // cards - end
-// table with all reviews start
-let allReviews = [];
-document.getElementById('submitToggleAllReviews').addEventListener('click', () => {
-  const wrapper = document.getElementById('reviewTableWrapper');
+// table with all reviews - start
+let allUsers = [];
+document.getElementById('submitToggleAllUsers').addEventListener('click', () => {
+  const wrapper = document.getElementById('userTableWrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
     wrapper.style.display = 'block';
     document.getElementById('signup-form-wrapper').style.display = 'none';
-    document.getElementById('userTableWrapper').style.display = 'none';
     document.getElementById('emailTableWrapper').style.display = 'none';
     document.getElementById('contentTableWrapper').style.display = 'none';
     document.getElementById('card-form-wrapper').style.display = 'none';
     document.getElementById('cardTableWrapper').style.display = 'none';
+    document.getElementById('reviewTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -779,134 +779,81 @@ document.getElementById('submitToggleAllReviews').addEventListener('click', () =
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const res = await fetch('/api/user');
-    if (!res.ok) throw new Error('Failed to fetch users');
+    const res = await fetch('/api/review');
+    if (!res.ok) throw new Error('Failed to fetch reviews');
 
-    const users = await res.json();
-    const sortedUsers = users
-      .map(user => ({
-        ...user,
+    const reviews = await res.json();
+    const sortedReviews = reviews
+      .map(review => ({
+        ...review,
       }))
-      .sort((a, b) => {
-        const nameA = a.name || '';
-        const nameB = b.name || '';
-        return nameA.localeCompare(nameB);
-      });
+      .sort((a, b) => b.createdAt - a.createdAt);
 
-    allUsers = sortedUsers
+    allReviews = sortedReviews
 
-    renderUsersTable(allUsers);
+    renderReviewsTable(allReviews);
   } catch (err) {
-    console.error('Error fetching users:', err);
-    alert('Could not load users.');
+    console.error('Error fetching reviews:', err);
+    alert('Could not load reviews.');
   }
 });
 
-//  Log in and out simulation - start
-document.getElementById('logInButton').addEventListener('click', (e) => {
-  e.preventDefault();
-  localStorage.setItem('isLoggedIn', '22a73cfa-6c65-4849-b816-4ada6408daac');
-  alert('Logged in! LocalStorage set.');
-  const isLoggedIn = localStorage.getItem('isLoggedIn');
-  // location.reload()
-  console.log(isLoggedIn);
-});
-
-document.getElementById('logOutButton').addEventListener('click', (e) => {
-  e.preventDefault();
-  localStorage.removeItem('isLoggedIn');
-  alert('Logged out! LocalStorage removed.');
-});
-const adminId = 'fb9e5650-ce84-4ce4-9247-c9aa53df0506'
-//  Log in and out simulation - end
-function renderUsersTable(users) {
-  const container = document.getElementById('usersContainer');
+function renderReviewsTable(reviews) {
+  const container = document.getElementById('reviewsContainer');
   container.innerHTML = '';
-
-  const loggedInId = localStorage.getItem('isLoggedIn');
-  const isAdmin = (loggedInId === adminId);
-
-  users.forEach(user => {
-    // Toggle enabled status:
-    // Admin can toggle all users, normal user only own row
-    const canToggle = isAdmin || (loggedInId === user.id);
-
-    const cursorStyle = canToggle ? 'pointer' : 'default';
-    const colorStyle = canToggle ? 'blue' : 'black';
+  reviews.forEach(review => {
     const onclickHandler = canToggle ? `onclick="toggleEnabled(this, '${user.id}')"` : '';
 
     const entry = document.createElement('div');
-    entry.classList.add('user-entry');
+    entry.classList.add('review-entry');
     entry.innerHTML = `
-      <div><strong class="onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${user.id}</p></div>
-      <div><strong class="onscreenText adminhtmlFullName:"></strong><p class="onscreenText${user.id}" style="display: inline;" onclick="this.focus()">${user.name}</p></div>
-      <div><strong class="onscreenText adminhtmlEmail:"></strong><p class="onscreenText${user.id}" style="display: inline;" onclick="this.focus()">${user.email}</p></div>
-      <div><strong class="onscreenText adminhtmlPassword:"></strong><p class="onscreenText${user.id}" style="display: inline;">${'•'.repeat(user.password.length)}</p></div>
-      <div><strong class="onscreenText adminhtmlEnabled:"></strong><p class="onscreenText${user.id} enabled-status" style="display: inline; cursor: ${cursorStyle}; color: ${colorStyle};" tabindex="0" ${onclickHandler}>${user.enabled}</p></div>
+      <div><strong class="onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${review.id}</p></div>
+      <div><strong class="onscreenText adminhtmlName:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.name}</p></div>
+      <div><strong class="onscreenText adminhtmlCreatedAt:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.createdAt}</p></div>
+      <div><strong class="onscreenText adminhtmlRating:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.rating}</p></div>
+      <div><strong class="onscreenText adminhtmlOpinion:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.opinion}</p></div>
 
-      <button id="enableEdit${user.id}" class="onscreenText adminhtmlUpdate" onclick="enableUserEdit('${user.id}')" style="display: inline;" type="button"></button>
-      <button id="cancelEdition${user.id}" class="onscreenText adminhtmlCancel" onclick="cancelUserEdition('${user.id}', '${user.name}', '${user.email}', '${user.password}', '${user.enabled}')" style="display: none;" type="button"></button>
-      <button id="saveEdition${user.id}" class="onscreenText adminhtmlSave" onclick="saveUserEdition('${user.id}')" style="display: none;" type="button"></button>
+      <div><strong class="onscreenText adminhtmlPublic:"></strong><p class="onscreenText${review.id} enabled-status" style="display: inline; cursor: ${cursorStyle}; color: ${colorStyle};" tabindex="0" ${onclickHandler}>${review.public}</p></div>
+
+      <button id="enableEdit${review.id}" class="onscreenText adminhtmlUpdate" onclick="enableReviewEdit('${review.id}')" style="display: inline;" type="button"></button>
+      <button id="cancelEdition${review.id}" class="onscreenText adminhtmlCancel" onclick="cancelReviewEdition('${review.id}', '${review.name}', '${review.email}', '${review.password}', '${review.enabled}')" style="display: none;" type="button"></button>
+      <button id="saveEdition${review.id}" class="onscreenText adminhtmlSave" onclick="saveReviewEdition('${review.id}')" style="display: none;" type="button"></button>
     `;
     container.appendChild(entry);
   });
 }
 
-function toggleEnabled(element, userId) {
-  let current = element.textContent;
-  let newValue = (current === 'true') ? 'false' : 'true';
-  element.textContent = newValue;
-  saveUserEdition(userId)
-
-  // update your allUsers data or backend here accordingly
-  const user = allUsers.find(u => u.id == userId);
-  if (user) {
-    user.enabled = newValue;
+function enableReviewEdit(reviewId) {
+  const onscreenReviewId = "onscreenText" + reviewId;
+  const thisButtonId = "enableEdit" + reviewId;
+  const otherButton1Id = "saveEdition" + reviewId;
+  const otherButton2Id = "cancelEdition" + reviewId;
+  document.getElementById(otherButton1Id).style.display = "inline";
+  document.getElementById(otherButton2Id).style.display = "inline";
+  document.getElementById(thisButtonId).style.display = "none";
+  const elements = document.getElementsByClassName(onscreenReviewId);
+  for (let i = 0; i < elements.length - 1; i++) {
+    const element = elements[i];
+    element.contentEditable = true;
+    element.style.border = '1px dashed gray';
   }
 }
-
-function enableUserEdit(userId) {
-  const onscreenUserId = "onscreenText" + userId;
-  const thisButtonId = "enableEdit" + userId;
-  const otherButton1Id = "saveEdition" + userId;
-  const otherButton2Id = "cancelEdition" + userId;
-
-  const elements = document.getElementsByClassName(onscreenUserId);
-  const user = allUsers.find(u => u.id == userId);
-  if (!user) return alert('User not found.');
-
-  const isLoggedIn = localStorage.getItem('isLoggedIn');
-  if (isLoggedIn === user.id) {
-    document.getElementById(otherButton1Id).style.display = "inline";
-    document.getElementById(otherButton2Id).style.display = "inline";
-    document.getElementById(thisButtonId).style.display = "none";
-
-    for (let i = 0; i < elements.length - 1; i++) {
-      const element = elements[i];
-      element.contentEditable = true;
-      element.style.border = '1px dashed gray';
-    }
-  } else {
-    alert("You can only edit your own user details.");
-  }
-}
-// 
-
-function cancelUserEdition(userId, userName, userEmail, userPassword, userEnabled) {
-  const onscreenUserId = "onscreenText" + userId
-  const thisButtonId = "cancelEdition" + userId
-  const otherButton1Id = "enableEdit" + userId
-  const otherButton2Id = "saveEdition" + userId
+function cancelReviewEdition(reviewId, reviewName, reviewRating, reviewOpinion, reviewPublic) {
+  const onscreenUserId = "onscreenText" + reviewId
+  const thisButtonId = "cancelEdition" + reviewId
+  const otherButton1Id = "enableEdit" + reviewId
+  const otherButton2Id = "saveEdition" + reviewId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
 
-  document.getElementsByClassName(onscreenUserId)[0].innerText = userName
-  document.getElementsByClassName(onscreenUserId)[1].innerText = userEmail
-  document.getElementsByClassName(onscreenUserId)[2].innerText = userPassword
-  document.getElementsByClassName(onscreenUserId)[3].innerText = userEnabled
+  document.getElementsByClassName(onscreenReviewId)[0].innerText = reviewName
+  document.getElementsByClassName(onscreenReviewId)[1].innerText = reviewCreatedAt
+  document.getElementsByClassName(onscreenReviewId)[2].innerText = reviewRating
+  document.getElementsByClassName(onscreenReviewId)[3].innerText = reviewOpinion
+  document.getElementsByClassName(onscreenReviewId)[4].innerText = reviewPublic
 
-  const elements = document.getElementsByClassName(onscreenUserId);
+  const elements = document.getElementsByClassName(onscreenReviewId);
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     element.contentEditable = false;
@@ -914,45 +861,46 @@ function cancelUserEdition(userId, userName, userEmail, userPassword, userEnable
   }
 }
 
-async function saveUserEdition(userId) {
-  const onscreenUserId = "onscreenText" + userId
-  const thisButtonId = "saveEdition" + userId
-  const otherButton1Id = "enableEdit" + userId
-  const otherButton2Id = "cancelEdition" + userId
+async function saveReviewEdition(reviewId) {
+  const onscreenReviewId = "onscreenText" + reviewId
+  const thisButtonId = "saveEdition" + reviewId
+  const otherButton1Id = "enableEdit" + reviewId
+  const otherButton2Id = "cancelEdition" + reviewId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
-  const elements = document.getElementsByClassName(onscreenUserId);
+  const elements = document.getElementsByClassName(onscreenReviewId);
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     element.contentEditable = false;
     element.style.border = 'none';
   }
-  // changing user - start
-  const userFormData = {
-    name: document.getElementsByClassName(onscreenUserId)[0].innerText,
-    email: document.getElementsByClassName(onscreenUserId)[1].innerText,
-    password: document.getElementsByClassName(onscreenUserId)[2].innerText,
-    enabled: document.getElementsByClassName(onscreenUserId)[3].innerText,
-    id: userId,
+  // changing review - start
+  const reviewFormData = {
+    name: document.getElementsByClassName(onscreenReviewId)[0].innerText,
+    email: document.getElementsByClassName(onscreenReviewId)[1].innerText,
+    password: document.getElementsByClassName(onscreenReviewId)[2].innerText,
+    enabled: document.getElementsByClassName(onscreenReviewId)[3].innerText,
+    enabled: document.getElementsByClassName(onscreenReviewId)[4].innerText,
+    id: reviewId,
   };
 
-  const res = await fetch('/api/user', {
+  const res = await fetch('/api/review', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(userFormData),
+    body: JSON.stringify(reviewFormData),
   });
 
   const responseBody = await res.json();
 
   if (res.ok) {
-    alert('User changed!');
+    alert('Review changed!');
     location.reload();
   } else {
-    alert('Failed to change user. ' + (responseBody.message || 'Unknown error.'));
-    const oldUser = allUsers.find(u => u.id == userId);
-    document.getElementsByClassName(onscreenUserId)[0].innerText = oldUser.name;
-    document.getElementsByClassName(onscreenUserId)[1].innerText = oldUser.email;
+    alert('Failed to change review. ' + (responseBody.message || 'Unknown error.'));
+    const oldReview = allReviews.find(u => u.id == userId);
+    document.getElementsByClassName(onscreenUserId)[0].innerText = oldReview.name;
+    document.getElementsByClassName(onscreenUserId)[1].innerText = oldReview.email;
     document.getElementsByClassName(onscreenUserId)[2].innerText = '•'.repeat(user.password.length);
     document.getElementsByClassName(onscreenUserId)[3].innerText = oldUser.enabled;
   }
