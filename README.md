@@ -12,6 +12,11 @@ Za integriranje na multilingual vo display text od footer od ticket Footer#10
 Za integriranje na multilingual vo display text vo homePage.html od ticket Hero-section#8		
     Kako sto pogore e objasneto sredenite header I footer se kopirani tuka, zaedno so celosniot kod za section hero od Hero-section#8 od homePage.html I homePage.css.	
         Vo nego dodadeni se potrebnite klasi kaj site elementi koi prikazuvaat text koj zavisi od izborot na jazik na aplikacijata.
+
+Za integriranje na multilingual vo display text vo services.html od ticket dynamic-cards-services#2	
+    Kako sto pogore e objasneto sredenite header I footer se kopirani tuka, zaedno so celosniot kod za section za cards od services.html.
+    Celosnite kodovi od services.js I services.css se isto taka kopirani od dynamic-cards-services#2.
+    Zakomentiran e kodot od ticket dynamic-cards-services#2 I vo services.html, I vo services.js, I vo services.css, za da ne pojavuva konflikti I da moze da se prodolzi so rabota na toj tiket I da se integrira vo aplikacijata soodvetno. 
                     
 Kreiran e main.css koj sodrzi:					
     blok namenet za footer, prevzemen kompletno od ticket Footer#10 so napraveni minimalni korekcii vo pozicioniranje I otstraneti nepostoecki klasi.				
