@@ -6,6 +6,7 @@ import contentRoutes from './MVC/routes/contentRoutes.js';
 import emailRoutes from './MVC/routes/emailRoutes.js';
 import userRoutes from './MVC/routes/userRoutes.js';
 import cardRoutes from './MVC/routes/cardRoutes.js'
+import reviewRoutes from './MVC/routes/reviewRoutes.js';
 
 const app = express();
 const port = 3000;
@@ -28,6 +29,7 @@ app.use('/api', contentRoutes);  // All API routes for content
 app.use('/api', emailRoutes);  // All API routes for emails
 app.use('/api', userRoutes);  // All API routes for users
 app.use('/api', cardRoutes);  // All API routes for cards
+app.use('/api', reviewRoutes);  // All API routes for reviews
 
 // Start the server
 app.listen(port, () => {
