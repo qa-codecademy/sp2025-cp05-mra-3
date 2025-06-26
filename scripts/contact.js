@@ -80,7 +80,6 @@ document.getElementById('submitToggleAllUsers').addEventListener('click', () => 
     document.getElementById('contentTableWrapper').style.display = 'none';
     document.getElementById('card-form-wrapper').style.display = 'none';
     document.getElementById('cardTableWrapper').style.display = 'none';
-    document.getElementById('reviewTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -89,81 +88,134 @@ document.getElementById('submitToggleAllUsers').addEventListener('click', () => 
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    const res = await fetch('/api/review');
-    if (!res.ok) throw new Error('Failed to fetch reviews');
+    const res = await fetch('/api/user');
+    if (!res.ok) throw new Error('Failed to fetch users');
 
-    const reviews = await res.json();
-    const sortedReviews = reviews
-      .map(review => ({
-        ...review,
+    const users = await res.json();
+    const sortedUsers = users
+      .map(user => ({
+        ...user,
       }))
-      .sort((a, b) => b.createdAt - a.createdAt);
+      .sort((a, b) => {
+        const nameA = a.name || '';
+        const nameB = b.name || '';
+        return nameA.localeCompare(nameB);
+      });
 
-    allReviews = sortedReviews
+    allUsers = sortedUsers
 
-    renderReviewsTable(allReviews);
+    renderUsersTable(allUsers);
   } catch (err) {
-    console.error('Error fetching reviews:', err);
-    alert('Could not load reviews.');
+    console.error('Error fetching users:', err);
+    alert('Could not load users.');
   }
 });
 
-function renderReviewsTable(reviews) {
-  const container = document.getElementById('reviewsContainer');
+//  Log in and out simulation - start
+document.getElementById('logInButton').addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.setItem('isLoggedIn', '22a73cfa-6c65-4849-b816-4ada6408daac');
+  alert('Logged in! LocalStorage set.');
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  // location.reload()
+  console.log(isLoggedIn);
+});
+
+document.getElementById('logOutButton').addEventListener('click', (e) => {
+  e.preventDefault();
+  localStorage.removeItem('isLoggedIn');
+  alert('Logged out! LocalStorage removed.');
+});
+const adminId = 'fb9e5650-ce84-4ce4-9247-c9aa53df0506'
+//  Log in and out simulation - end
+function renderUsersTable(users) {
+  const container = document.getElementById('usersContainer');
   container.innerHTML = '';
-  reviews.forEach(review => {
+
+  const loggedInId = localStorage.getItem('isLoggedIn');
+  const isAdmin = (loggedInId === adminId);
+
+  users.forEach(user => {
+    // Toggle enabled status:
+    // Admin can toggle all users, normal user only own row
+    const canToggle = isAdmin || (loggedInId === user.id);
+
+    const cursorStyle = canToggle ? 'pointer' : 'default';
+    const colorStyle = canToggle ? 'blue' : 'black';
     const onclickHandler = canToggle ? `onclick="toggleEnabled(this, '${user.id}')"` : '';
 
     const entry = document.createElement('div');
-    entry.classList.add('review-entry');
+    entry.classList.add('user-entry');
     entry.innerHTML = `
-      <div><strong class="onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${review.id}</p></div>
-      <div><strong class="onscreenText adminhtmlName:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.name}</p></div>
-      <div><strong class="onscreenText adminhtmlCreatedAt:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.createdAt}</p></div>
-      <div><strong class="onscreenText adminhtmlRating:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.rating}</p></div>
-      <div><strong class="onscreenText adminhtmlOpinion:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.opinion}</p></div>
+      <div><strong class="onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${user.id}</p></div>
+      <div><strong class="onscreenText adminhtmlFullName:"></strong><p class="onscreenText${user.id}" style="display: inline;" onclick="this.focus()">${user.name}</p></div>
+      <div><strong class="onscreenText adminhtmlEmail:"></strong><p class="onscreenText${user.id}" style="display: inline;" onclick="this.focus()">${user.email}</p></div>
+      <div><strong class="onscreenText adminhtmlPassword:"></strong><p class="onscreenText${user.id}" style="display: inline;">${'•'.repeat(user.password.length)}</p></div>
+      <div><strong class="onscreenText adminhtmlEnabled:"></strong><p class="onscreenText${user.id} enabled-status" style="display: inline; cursor: ${cursorStyle}; color: ${colorStyle};" tabindex="0" ${onclickHandler}>${user.enabled}</p></div>
 
-      <div><strong class="onscreenText adminhtmlPublic:"></strong><p class="onscreenText${review.id} enabled-status" style="display: inline; cursor: ${cursorStyle}; color: ${colorStyle};" tabindex="0" ${onclickHandler}>${review.public}</p></div>
-
-      <button id="enableEdit${review.id}" class="onscreenText adminhtmlUpdate" onclick="enableReviewEdit('${review.id}')" style="display: inline;" type="button"></button>
-      <button id="cancelEdition${review.id}" class="onscreenText adminhtmlCancel" onclick="cancelReviewEdition('${review.id}', '${review.name}', '${review.email}', '${review.password}', '${review.enabled}')" style="display: none;" type="button"></button>
-      <button id="saveEdition${review.id}" class="onscreenText adminhtmlSave" onclick="saveReviewEdition('${review.id}')" style="display: none;" type="button"></button>
+      <button id="enableEdit${user.id}" class="onscreenText adminhtmlUpdate" onclick="enableUserEdit('${user.id}')" style="display: inline;" type="button"></button>
+      <button id="cancelEdition${user.id}" class="onscreenText adminhtmlCancel" onclick="cancelUserEdition('${user.id}', '${user.name}', '${user.email}', '${user.password}', '${user.enabled}')" style="display: none;" type="button"></button>
+      <button id="saveEdition${user.id}" class="onscreenText adminhtmlSave" onclick="saveUserEdition('${user.id}')" style="display: none;" type="button"></button>
     `;
     container.appendChild(entry);
   });
 }
 
-function enableReviewEdit(reviewId) {
-  const onscreenReviewId = "onscreenText" + reviewId;
-  const thisButtonId = "enableEdit" + reviewId;
-  const otherButton1Id = "saveEdition" + reviewId;
-  const otherButton2Id = "cancelEdition" + reviewId;
-  document.getElementById(otherButton1Id).style.display = "inline";
-  document.getElementById(otherButton2Id).style.display = "inline";
-  document.getElementById(thisButtonId).style.display = "none";
-  const elements = document.getElementsByClassName(onscreenReviewId);
-  for (let i = 0; i < elements.length - 1; i++) {
-    const element = elements[i];
-    element.contentEditable = true;
-    element.style.border = '1px dashed gray';
+function toggleEnabled(element, userId) {
+  let current = element.textContent;
+  let newValue = (current === 'true') ? 'false' : 'true';
+  element.textContent = newValue;
+  saveUserEdition(userId)
+
+  // You can update your allUsers data or backend here accordingly
+  const user = allUsers.find(u => u.id == userId);
+  if (user) {
+    user.enabled = newValue;
   }
 }
-function cancelReviewEdition(reviewId, reviewName, reviewRating, reviewOpinion, reviewPublic) {
-  const onscreenUserId = "onscreenText" + reviewId
-  const thisButtonId = "cancelEdition" + reviewId
-  const otherButton1Id = "enableEdit" + reviewId
-  const otherButton2Id = "saveEdition" + reviewId
+
+function enableUserEdit(userId) {
+  const onscreenUserId = "onscreenText" + userId;
+  const thisButtonId = "enableEdit" + userId;
+  const otherButton1Id = "saveEdition" + userId;
+  const otherButton2Id = "cancelEdition" + userId;
+
+  const elements = document.getElementsByClassName(onscreenUserId);
+  const user = allUsers.find(u => u.id == userId);
+  if (!user) return alert('User not found.');
+
+  const isLoggedIn = localStorage.getItem('isLoggedIn');
+  if (isLoggedIn === user.id) {
+    document.getElementById(otherButton1Id).style.display = "inline";
+    document.getElementById(otherButton2Id).style.display = "inline";
+    document.getElementById(thisButtonId).style.display = "none";
+
+    for (let i = 0; i < elements.length - 1; i++) {
+      const element = elements[i];
+      element.contentEditable = true;
+      element.style.border = '1px dashed gray';
+    }
+  } else {
+    alert("You can only edit your own user details.");
+  }
+}
+// 
+
+function cancelUserEdition(userId, userName, userEmail, userPassword, userEnabled) {
+  const onscreenUserId = "onscreenText" + userId
+  const thisButtonId = "cancelEdition" + userId
+  const otherButton1Id = "enableEdit" + userId
+  const otherButton2Id = "saveEdition" + userId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
 
-  document.getElementsByClassName(onscreenReviewId)[0].innerText = reviewName
-  document.getElementsByClassName(onscreenReviewId)[1].innerText = reviewCreatedAt
-  document.getElementsByClassName(onscreenReviewId)[2].innerText = reviewRating
-  document.getElementsByClassName(onscreenReviewId)[3].innerText = reviewOpinion
-  document.getElementsByClassName(onscreenReviewId)[4].innerText = reviewPublic
+  document.getElementsByClassName(onscreenUserId)[0].innerText = userName
+  document.getElementsByClassName(onscreenUserId)[1].innerText = userEmail
+  document.getElementsByClassName(onscreenUserId)[2].innerText = userPassword
+  document.getElementsByClassName(onscreenUserId)[3].innerText = userEnabled
 
-  const elements = document.getElementsByClassName(onscreenReviewId);
+  const elements = document.getElementsByClassName(onscreenUserId);
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     element.contentEditable = false;
@@ -171,54 +223,51 @@ function cancelReviewEdition(reviewId, reviewName, reviewRating, reviewOpinion, 
   }
 }
 
-async function saveReviewEdition(reviewId) {
-  const onscreenReviewId = "onscreenText" + reviewId
-  const thisButtonId = "saveEdition" + reviewId
-  const otherButton1Id = "enableEdit" + reviewId
-  const otherButton2Id = "cancelEdition" + reviewId
+async function saveUserEdition(userId) {
+  const onscreenUserId = "onscreenText" + userId
+  const thisButtonId = "saveEdition" + userId
+  const otherButton1Id = "enableEdit" + userId
+  const otherButton2Id = "cancelEdition" + userId
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
-  const elements = document.getElementsByClassName(onscreenReviewId);
+  const elements = document.getElementsByClassName(onscreenUserId);
   for (let i = 0; i < elements.length; i++) {
     const element = elements[i];
     element.contentEditable = false;
     element.style.border = 'none';
   }
-  // changing review - start
-  const reviewFormData = {
-    name: document.getElementsByClassName(onscreenReviewId)[0].innerText,
-    email: document.getElementsByClassName(onscreenReviewId)[1].innerText,
-    password: document.getElementsByClassName(onscreenReviewId)[2].innerText,
-    enabled: document.getElementsByClassName(onscreenReviewId)[3].innerText,
-    enabled: document.getElementsByClassName(onscreenReviewId)[4].innerText,
-    id: reviewId,
+  // changing user - start
+  const userFormData = {
+    name: document.getElementsByClassName(onscreenUserId)[0].innerText,
+    email: document.getElementsByClassName(onscreenUserId)[1].innerText,
+    password: document.getElementsByClassName(onscreenUserId)[2].innerText,
+    enabled: document.getElementsByClassName(onscreenUserId)[3].innerText,
+    id: userId,
   };
 
-  const res = await fetch('/api/review', {
+  const res = await fetch('/api/user', {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(reviewFormData),
+    body: JSON.stringify(userFormData),
   });
 
   const responseBody = await res.json();
 
   if (res.ok) {
-    alert('Review changed!');
+    alert('User changed!');
     location.reload();
   } else {
-    alert('Failed to change review. ' + (responseBody.message || 'Unknown error.'));
-    const oldReview = allReviews.find(u => u.id == userId);
-    document.getElementsByClassName(onscreenUserId)[0].innerText = oldReview.name;
-    document.getElementsByClassName(onscreenUserId)[1].innerText = oldReview.email;
+    alert('Failed to change user. ' + (responseBody.message || 'Unknown error.'));
+    const oldUser = allUsers.find(u => u.id == userId);
+    document.getElementsByClassName(onscreenUserId)[0].innerText = oldUser.name;
+    document.getElementsByClassName(onscreenUserId)[1].innerText = oldUser.email;
     document.getElementsByClassName(onscreenUserId)[2].innerText = '•'.repeat(user.password.length);
     document.getElementsByClassName(onscreenUserId)[3].innerText = oldUser.enabled;
   }
-  // // changing review - end
+  // // changing users - end
 }
-// table with all reviews - end
-
-
+// table with all users - end
 // table with all emails - start
 document.getElementById('submitToggleAllEmails').addEventListener('click', () => {
   const wrapper = document.getElementById('emailTableWrapper');
@@ -229,7 +278,6 @@ document.getElementById('submitToggleAllEmails').addEventListener('click', () =>
     document.getElementById('contentTableWrapper').style.display = 'none';
     document.getElementById('card-form-wrapper').style.display = 'none';
     document.getElementById('cardTableWrapper').style.display = 'none';
-    document.getElementById('reviewTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -273,7 +321,7 @@ function renderEmailsTable(emails) {
     container.appendChild(entry);
   });
 }
-// table with all emails - end
+// table with all emails - start
 // table with all contents - start
 let allContents = [];
 document.getElementById('submitToggleAllContents').addEventListener('click', () => {
@@ -285,7 +333,6 @@ document.getElementById('submitToggleAllContents').addEventListener('click', () 
     document.getElementById('emailTableWrapper').style.display = 'none';
     document.getElementById('card-form-wrapper').style.display = 'none';
     document.getElementById('cardTableWrapper').style.display = 'none';
-    document.getElementById('reviewTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -434,7 +481,6 @@ async function saveContentEdition(contentId) {
   // // changing content - end
 }
 // table with all contents - end
-
 // cards - start
 document.getElementById('submitToggleNewCard').addEventListener('click', () => {
   const wrapper = document.getElementById('card-form-wrapper');
@@ -465,7 +511,7 @@ document.getElementById('newCardForm').addEventListener('submit', async (e) => {
 
   // Cloudinary settings
   const cloudName = 'du3oe7qmq';
-  const uploadPreset = 'unsigned_preset'; 
+  const uploadPreset = 'unsigned_preset';
 
   // Upload image to Cloudinary
   const formData = new FormData();
@@ -501,7 +547,7 @@ document.getElementById('newCardForm').addEventListener('submit', async (e) => {
     descriptionDEU: document.getElementById('cardDescriptionDEU').value,
     descriptionENG: document.getElementById('cardDescriptionENG').value,
     descriptionMKD: document.getElementById('cardDescriptionMKD').value,
-    picture: imageUrl, 
+    picture: imageUrl,
   };
 
   try {
@@ -516,7 +562,7 @@ document.getElementById('newCardForm').addEventListener('submit', async (e) => {
     if (res.ok) {
       alert('Card saved!');
       document.getElementById('newCardForm').reset();
-      location.reload(); 
+      location.reload();
     } else {
       alert('Failed to save card. ' + (responseBody.message || 'Unknown error.'));
     }
@@ -618,11 +664,11 @@ function enableCardEdit(cardId) {
   fileInput.style.display = "block";
 
   const elements = document.getElementsByClassName(onscreenCardId);
-  for (let i = 0; i < elements.length-1; i++) {
+  for (let i = 0; i < elements.length - 1; i++) {
     elements[i].contentEditable = true;
     elements[i].style.border = '1px dashed gray';
   }
-    // Listen for file selection to preview
+  // Listen for file selection to preview
   fileInput.addEventListener('change', (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -634,7 +680,7 @@ function enableCardEdit(cardId) {
 // 
 
 function cancelCardEdition(cardId, titleDEU, titleENG, titleMKD, descriptionDEU, descriptionENG, descriptionMKD, picture) {
-  
+
   const onscreenCardId = "onscreenText" + cardId;
   const thisButtonId = "cancelEdition" + cardId;
   const otherButton1Id = "enableEdit" + cardId;
@@ -659,7 +705,7 @@ function cancelCardEdition(cardId, titleDEU, titleENG, titleMKD, descriptionDEU,
     elements[i].contentEditable = false;
     elements[i].style.border = 'none';
   }
-    // Reset image preview to original
+  // Reset image preview to original
   const originalImageUrl = document.getElementById(`originalImage${cardId}`).value;
   const imagePreview = document.getElementById(`imgPreview${cardId}`);
   imagePreview.src = originalImageUrl;
@@ -724,7 +770,7 @@ async function saveCardEdition(cardId) {
     }
   }
 
-  // Step 3: Save updated card to server
+  // Save updated card to server
   try {
     const res = await fetch('/api/card', {
       method: 'PUT',
@@ -760,17 +806,17 @@ async function saveCardEdition(cardId) {
 }
 // cards - end
 // table with all reviews - start
-let allUsers = [];
-document.getElementById('submitToggleAllUsers').addEventListener('click', () => {
-  const wrapper = document.getElementById('userTableWrapper');
+let allReviews = [];
+document.getElementById('submitToggleAllReviews').addEventListener('click', () => {
+  const wrapper = document.getElementById('reviewTableWrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
     wrapper.style.display = 'block';
     document.getElementById('signup-form-wrapper').style.display = 'none';
+    document.getElementById('userTableWrapper').style.display = 'none';
     document.getElementById('emailTableWrapper').style.display = 'none';
     document.getElementById('contentTableWrapper').style.display = 'none';
     document.getElementById('card-form-wrapper').style.display = 'none';
     document.getElementById('cardTableWrapper').style.display = 'none';
-    document.getElementById('reviewTableWrapper').style.display = 'none';
     wrapper.focus();
   } else {
     wrapper.style.display = 'none';
@@ -802,21 +848,18 @@ function renderReviewsTable(reviews) {
   const container = document.getElementById('reviewsContainer');
   container.innerHTML = '';
   reviews.forEach(review => {
-    const onclickHandler = canToggle ? `onclick="toggleEnabled(this, '${user.id}')"` : '';
-
     const entry = document.createElement('div');
     entry.classList.add('review-entry');
     entry.innerHTML = `
-      <div><strong class="onscreenText adminhtmlNumber:"></strong><p style="display: inline;">${review.id}</p></div>
-      <div><strong class="onscreenText adminhtmlName:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.name}</p></div>
-      <div><strong class="onscreenText adminhtmlCreatedAt:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.createdAt}</p></div>
-      <div><strong class="onscreenText adminhtmlRating:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.rating}</p></div>
-      <div><strong class="onscreenText adminhtmlOpinion:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.opinion}</p></div>
-
-      <div><strong class="onscreenText adminhtmlPublic:"></strong><p class="onscreenText${review.id} enabled-status" style="display: inline; cursor: ${cursorStyle}; color: ${colorStyle};" tabindex="0" ${onclickHandler}>${review.public}</p></div>
+      <div><strong class="onscreenText adminhtmlReviewNumber:"></strong><p style="display: inline;">${review.id}</p></div>
+      <div><strong class="onscreenText adminhtmlAllReviewName:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.name}</p></div>
+      <div><strong class="onscreenText adminhtmlAllReviewCreatedAt:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.createdAt}</p></div>
+      <div><strong class="onscreenText adminhtmlAllReviewRating:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.rating}</p></div>
+      <div><strong class="onscreenText adminhtmlAllReviewOpinion:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.opinion}</p></div>
+      <div><strong class="onscreenText adminhtmlAllReviewPublic:"></strong><p class="onscreenText${review.id}" style="display: inline;">${review.public}</p></div>
 
       <button id="enableEdit${review.id}" class="onscreenText adminhtmlUpdate" onclick="enableReviewEdit('${review.id}')" style="display: inline;" type="button"></button>
-      <button id="cancelEdition${review.id}" class="onscreenText adminhtmlCancel" onclick="cancelReviewEdition('${review.id}', '${review.name}', '${review.email}', '${review.password}', '${review.enabled}')" style="display: none;" type="button"></button>
+      <button id="cancelEdition${review.id}" class="onscreenText adminhtmlCancel" onclick="cancelReviewEdition('${review.id}', '${review.name}', '${review.createdAt}', '${review.rating}', '${review.opinion}', '${review.public}')" style="display: none;" type="button"></button>
       <button id="saveEdition${review.id}" class="onscreenText adminhtmlSave" onclick="saveReviewEdition('${review.id}')" style="display: none;" type="button"></button>
     `;
     container.appendChild(entry);
@@ -831,34 +874,30 @@ function enableReviewEdit(reviewId) {
   document.getElementById(otherButton1Id).style.display = "inline";
   document.getElementById(otherButton2Id).style.display = "inline";
   document.getElementById(thisButtonId).style.display = "none";
-  const elements = document.getElementsByClassName(onscreenReviewId);
-  for (let i = 0; i < elements.length - 1; i++) {
-    const element = elements[i];
-    element.contentEditable = true;
-    element.style.border = '1px dashed gray';
-  }
+  const reviewElement = document.getElementsByClassName(onscreenReviewId)[4];
+  reviewElement.contentEditable = true;
+  reviewElement.style.border = '1px dashed gray';
 }
-function cancelReviewEdition(reviewId, reviewName, reviewRating, reviewOpinion, reviewPublic) {
-  const onscreenUserId = "onscreenText" + reviewId
-  const thisButtonId = "cancelEdition" + reviewId
-  const otherButton1Id = "enableEdit" + reviewId
-  const otherButton2Id = "saveEdition" + reviewId
-  document.getElementById(otherButton1Id).style.display = "inline"
-  document.getElementById(otherButton2Id).style.display = "none"
-  document.getElementById(thisButtonId).style.display = "none"
 
-  document.getElementsByClassName(onscreenReviewId)[0].innerText = reviewName
-  document.getElementsByClassName(onscreenReviewId)[1].innerText = reviewCreatedAt
-  document.getElementsByClassName(onscreenReviewId)[2].innerText = reviewRating
-  document.getElementsByClassName(onscreenReviewId)[3].innerText = reviewOpinion
-  document.getElementsByClassName(onscreenReviewId)[4].innerText = reviewPublic
+function cancelReviewEdition(reviewId, reviewName, reviewCreatedAt, reviewRating, reviewOpinion, reviewPublic) {
+  const onscreenReviewId = "onscreenText" + reviewId;  // Declare it here
+  const thisButtonId = "cancelEdition" + reviewId;
+  const otherButton1Id = "enableEdit" + reviewId;
+  const otherButton2Id = "saveEdition" + reviewId;
 
-  const elements = document.getElementsByClassName(onscreenReviewId);
-  for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    element.contentEditable = false;
-    element.style.border = 'none';
-  }
+  document.getElementById(otherButton1Id).style.display = "inline";
+  document.getElementById(otherButton2Id).style.display = "none";
+  document.getElementById(thisButtonId).style.display = "none";
+
+  document.getElementsByClassName(onscreenReviewId)[0].innerText = reviewName;
+  document.getElementsByClassName(onscreenReviewId)[1].innerText = reviewCreatedAt;
+  document.getElementsByClassName(onscreenReviewId)[2].innerText = reviewRating;
+  document.getElementsByClassName(onscreenReviewId)[3].innerText = reviewOpinion;
+  document.getElementsByClassName(onscreenReviewId)[4].innerText = reviewPublic;
+
+  const reviewElement = document.getElementsByClassName(onscreenReviewId)[4];
+  reviewElement.contentEditable = false;
+  reviewElement.style.border = 'none';
 }
 
 async function saveReviewEdition(reviewId) {
@@ -869,19 +908,15 @@ async function saveReviewEdition(reviewId) {
   document.getElementById(otherButton1Id).style.display = "inline"
   document.getElementById(otherButton2Id).style.display = "none"
   document.getElementById(thisButtonId).style.display = "none"
-  const elements = document.getElementsByClassName(onscreenReviewId);
-  for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    element.contentEditable = false;
-    element.style.border = 'none';
-  }
+  document.getElementsByClassName(onscreenReviewId)[4].contentEditable = true;
+  document.getElementsByClassName(onscreenReviewId)[4].style.border = '1px dashed gray';
   // changing review - start
   const reviewFormData = {
     name: document.getElementsByClassName(onscreenReviewId)[0].innerText,
-    email: document.getElementsByClassName(onscreenReviewId)[1].innerText,
-    password: document.getElementsByClassName(onscreenReviewId)[2].innerText,
-    enabled: document.getElementsByClassName(onscreenReviewId)[3].innerText,
-    enabled: document.getElementsByClassName(onscreenReviewId)[4].innerText,
+    createdAt: document.getElementsByClassName(onscreenReviewId)[1].innerText,
+    rating: Number(document.getElementsByClassName(onscreenReviewId)[2].innerText),
+    opinion: document.getElementsByClassName(onscreenReviewId)[3].innerText,
+    public: document.getElementsByClassName(onscreenReviewId)[4].innerText,
     id: reviewId,
   };
 
@@ -900,9 +935,12 @@ async function saveReviewEdition(reviewId) {
     alert('Failed to change review. ' + (responseBody.message || 'Unknown error.'));
     const oldReview = allReviews.find(u => u.id == userId);
     document.getElementsByClassName(onscreenUserId)[0].innerText = oldReview.name;
-    document.getElementsByClassName(onscreenUserId)[1].innerText = oldReview.email;
-    document.getElementsByClassName(onscreenUserId)[2].innerText = '•'.repeat(user.password.length);
-    document.getElementsByClassName(onscreenUserId)[3].innerText = oldUser.enabled;
+    document.getElementsByClassName(onscreenUserId)[1].innerText = oldReview.createdAt;
+    document.getElementsByClassName(onscreenUserId)[2].innerText = oldReview.rating;
+    document.getElementsByClassName(onscreenUserId)[3].innerText = oldReview.opinion;
+    document.getElementsByClassName(onscreenUserId)[4].innerText = oldReview.public;
+
+
   }
   // // changing review - end
 }

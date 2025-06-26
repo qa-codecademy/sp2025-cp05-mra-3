@@ -247,7 +247,7 @@
   },
   {
     "id": "adminhtmlNumber:",
-    "german": "Nein.: ",
+    "german": "Nm.: ",
     "english": "No.: ",
     "macedonian": "Бр.: "
   },
@@ -358,5 +358,47 @@
     "german": "Bild: ",
     "english": "Picture: ",
     "macedonian": "Слика: "
+  },
+  {
+    "id": "adminhtmlAllReviews",
+    "german": "Alle Bewertungen ",
+    "english": "All reviews ",
+    "macedonian": "Сите осврти "
+  },
+  {
+    "id": "adminhtmlReviewNumber:",
+    "german": "Nm: ",
+    "english": "No.: ",
+    "macedonian": "Бр.: "
+  },
+  {
+    "id": "adminhtmlAllReviewName:",
+    "german": "Name: ",
+    "english": "Name: ",
+    "macedonian": "Име: "
+  },
+  {
+    "id": "adminhtmlAllReviewCreatedAt:",
+    "german": "Erstellt am: ",
+    "english": "Created at: ",
+    "macedonian": "Креирано на: "
+  },
+  {
+    "id": "adminhtmlAllReviewRating:",
+    "german": "Bewertung: ",
+    "english": "Rating: ",
+    "macedonian": "Оцена: "
+  },
+  {
+    "id": "adminhtmlAllReviewOpinion:",
+    "german": "Meinung: ",
+    "english": "Opinion: ",
+    "macedonian": "Мислење: "
+  },
+  {
+    "id": "adminhtmlAllReviewPublic:",
+    "german": "Öffentlich: ",
+    "english": "Public: ",
+    "macedonian": "Јавна: "
   }
 ]
