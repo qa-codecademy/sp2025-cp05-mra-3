@@ -1,4 +1,3 @@
-// navbar dropdown - start
 const html = {
     navBar: document.getElementById("navBar"),
 
