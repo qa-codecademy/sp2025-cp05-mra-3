@@ -1,4 +1,3 @@
-// navbar dropdown - start
 const html = {
     navBar: document.getElementById("navBar"),
 
@@ -44,4 +43,3 @@ menuLinks.forEach(link => {
 document.addEventListener('click', () => {
     html.dropdown.classList.remove('open');
 });
-// navbar dropdown - end
