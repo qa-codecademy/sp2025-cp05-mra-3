@@ -99,7 +99,7 @@
     "id": "reviewshtmlCTLYO",
     "german": "Klicken Sie hier, um Ihre Meinung zu hinterlassen",
     "english": "Click to leave your opinion",
-    "macedonian": "Клинки за да оставиш мислење"
+    "macedonian": "Кликни за да оставиш мислење"
   },
   {
     "id": "reviewshtmlYourOpinion",
@@ -130,6 +130,24 @@
     "german": "Einreichen",
     "english": "Submit",
     "macedonian": "Испрати"
+  },
+    {
+    "id": "homepagehtmlYTCS",
+    "german": "Ihr vertrauenswürdiger Reinigungsdienst",
+    "english": "Your Trusted Cleaning Service",
+    "macedonian": "Вашиот доверлив сервис за чистење"
+  },
+  {
+    "id": "homepagehtmlERA",
+    "german": "Effizient. Zuverlässig. Bezahlbar.",
+    "english": "Efficient. Reliable. Affordable.",
+    "macedonian": "Ефикасно. Веродостојно. Достапно."
+  },
+  {
+    "id": "homepagehtmlBookNow",
+    "german": "Jetzt buchen",
+    "english": "Book Now",
+    "macedonian": "Резервирај термин"
   },
   {
     "id": "adminhtmlNewUser",

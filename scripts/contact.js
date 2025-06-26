@@ -832,6 +832,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const sortedReviews = reviews
       .map(review => ({
         ...review,
+        createdAt: new Date(review.createdAt)
       }))
       .sort((a, b) => b.createdAt - a.createdAt);
 

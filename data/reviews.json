@@ -32,19 +32,27 @@
     "id": "1d58cd46-7352-4e21-b535-36c5f82acb33"
   },
   {
-    "name": "ergregre",
-    "rating": 2,
-    "opinion": "wefwefewfwef",
-    "createdAt": "2025-06-26T17:08:56.193Z",
-    "public": "true",
-    "id": "bc77d466-1862-44bf-ab80-4cc7d49b143d"
-  },
-  {
     "name": "ergregreg",
     "rating": 3,
     "opinion": "ergergre ergregreg ferwgrweg ergergre ergregreg ferwgrweg ergergre ergregreg ferwgrwegergergre ergregreg ferwgrweg ergergre ergregreg ferwgrweg ergergre ergregreg ferwgrweg ergergre ergregreg ferwgrweg ergergre ergregreg ferwgrweg ergergre ergregreg ferwgrweg ergergre ergregreg ferwgrweg ergergre ergregreg ferwgrweg",
     "createdAt": "2025-06-26T17:11:55.165Z",
     "public": "true",
     "id": "00af0224-088b-4484-8e38-9e27bdf58c85"
+  },
+  {
+    "name": "test osvrt",
+    "rating": 5,
+    "opinion": "wefwef",
+    "createdAt": "2025-06-26T21:01:59.259Z",
+    "public": "true",
+    "id": "afaa07a9-78c4-457b-8f92-066de04f00d2"
+  },
+  {
+    "name": "nov test",
+    "rating": 5,
+    "opinion": "dobro e",
+    "createdAt": "2025-06-26T21:41:19.025Z",
+    "public": "true",
+    "id": "0df4fb1f-c487-4ed0-ba76-962d131d9305"
   }
 ]

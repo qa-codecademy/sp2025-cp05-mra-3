@@ -45,7 +45,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!res.ok) throw new Error('Failed to fetch reviews');
 
     const reviews = await res.json();
-    const sortedReviews = reviews
+    const publicReviews = reviews.filter(review => review.public === "true");
+    const sortedReviews = publicReviews
       .map(review => ({
         ...review,
         createdAt: new Date(review.createdAt)
@@ -73,7 +74,6 @@ function renderReviewsTable(reviews) {
           <h3> ${review.name}</h3>
           <div class="stars">&#9733&#9734&#9734&#9734&#9734</div>
         </div>
-        <p id="review-rating"> ${review.rating}</p>
         <p id="review-createdAt"> ${new Date(review.createdAt).toLocaleString()}</p>
         <p id="review-opinion"> ${review.opinion}</p>
       `;
@@ -83,7 +83,6 @@ function renderReviewsTable(reviews) {
           <h3> ${review.name}</h3>
           <div class="stars">&#9733&#9733&#9734&#9734&#9734</div>
         </div>
-        <p id="review-rating"> ${review.rating}</p>
         <p id="review-createdAt"> ${new Date(review.createdAt).toLocaleString()}</p>
         <p id="review-opinion"> ${review.opinion}</p>
       `;
@@ -93,7 +92,6 @@ function renderReviewsTable(reviews) {
           <h3> ${review.name}</h3>
           <div class="stars">&#9733&#9733&#9733&#9734&#9734</div>
         </div>
-        <p id="review-rating"> ${review.rating}</p>
         <p id="review-createdAt"> ${new Date(review.createdAt).toLocaleString()}</p>
         <p id="review-opinion"> ${review.opinion}</p>
       `;
@@ -103,7 +101,6 @@ function renderReviewsTable(reviews) {
           <h3> ${review.name}</h3>
           <div class="stars">&#9733&#9733&#9733&#9733&#9734</div>
         </div>
-        <p id="review-rating"> ${review.rating}</p>
         <p id="review-createdAt"> ${new Date(review.createdAt).toLocaleString()}</p>
         <p id="review-opinion"> ${review.opinion}</p>
       `;

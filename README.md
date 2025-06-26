@@ -1,14 +1,17 @@
 Za integriranje na multilingual dropdown vo navbar od ticket navBar#9					
     Vo contact.html, kopiran e block nav od navBar#10 I vo nego vo poslednoto li celosniot div e zamenet so nov.				
         Vo celtiot block nav se dodadeni se potrebnite klasi kaj site elementi koi prikazuvaat text koj zavisi od izborot na jazik na aplikacijata.			
-    Vo main.js e celosno prevzement kodot od main.js na navBar#9.				
+    Vo main.js e celosno prevzement kodot od main.js na navBar#9, no delot koj se odnesuva na language selector dropdown e zakomentiran.				
     Blokot header, od contact.html e spremen da se kopira vo site preostanati .html strani.				
                     
 Za integriranje na multilingual vo display text od footer od ticket Footer#10					
     Celosniot kod za footer od Footer#10 e staven kako footer vo contact.html				
         Vo nego dodadeni se potrebnite klasi kaj site elementi koi prikazuvaat text koj zavisi od izborot na jazik na aplikacijata.			
     Blokot footer, od contact.html e spremen da se kopira vo site preostanati .html strani.				
-                    
+
+Za integriranje na multilingual vo display text vo homePage.html od ticket Hero-section#8		
+    Kako sto pogore e objasneto sredenite header I footer se kopirani tuka, zaedno so celosniot kod za section hero od Hero-section#8 od homePage.html I homePage.css.	
+        Vo nego dodadeni se potrebnite klasi kaj site elementi koi prikazuvaat text koj zavisi od izborot na jazik na aplikacijata.
                     
 Kreiran e main.css koj sodrzi:					
     blok namenet za footer, prevzemen kompletno od ticket Footer#10 so napraveni minimalni korekcii vo pozicioniranje I otstraneti nepostoecki klasi.				
