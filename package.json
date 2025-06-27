@@ -1,0 +1,33 @@
+{
+  "name": "sp2025-cp05-mra-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qa-codecademy/sp2025-cp05-mra-3.git"
+  },
+  "keywords": [],
+  "author": "Stevan Rufcheski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qa-codecademy/sp2025-cp05-mra-3/issues"
+  },
+  "homepage": "https://github.com/qa-codecademy/sp2025-cp05-mra-3#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "cloudinary": "^2.6.1",
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.3",
+    "uuid": "^11.1.0",
+    "zod": "^3.24.3"
+  }
+}
