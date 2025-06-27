@@ -13,7 +13,6 @@ body, html {
     width: 100%;
     height: 70vh;
     background-color: rgb(241, 248, 254);
-    vertical-align: top;
 }
 
 .hero-img {
@@ -251,3 +250,4 @@ body, html {
         margin-right: 0.5vh;
     }
 }
+
