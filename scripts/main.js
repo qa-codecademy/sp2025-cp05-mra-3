@@ -1,3 +1,4 @@
+// navbar dropdown - start
 const html = {
     navBar: document.getElementById("navBar"),
 
@@ -18,28 +19,29 @@ window.addEventListener("scroll", () => {
     }
 });
 
-html.menuToggle.addEventListener("click", () => {
-    html.menu.classList.toggle("show");
-});
+// html.menuToggle.addEventListener("click", () => {
+//     html.menu.classList.toggle("show");
+// });
 
-const menuLinks = html.dropdown.querySelectorAll('.dropdown-menu a');
-const toggleImg = html.toggle.querySelector('img');
+// const menuLinks = html.dropdown.querySelectorAll('.dropdown-menu a');
+// const toggleImg = html.toggle.querySelector('img');
 
-html.toggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    html.dropdown.classList.toggle('open');
-});
+// html.toggle.addEventListener('click', (e) => {
+//     e.stopPropagation();
+//     html.dropdown.classList.toggle('open');
+// });
 
-menuLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const selectedFlag = link.getAttribute('data-flag');
+// menuLinks.forEach(link => {
+//     link.addEventListener('click', (e) => {
+//         e.preventDefault();
+//         const selectedFlag = link.getAttribute('data-flag');
 
-        toggleImg.src = selectedFlag;
-        html.dropdown.classList.remove('open');
-    });
-});
+//         toggleImg.src = selectedFlag;
+//         html.dropdown.classList.remove('open');
+//     });
+// });
 
-document.addEventListener('click', () => {
-    html.dropdown.classList.remove('open');
-});
+// document.addEventListener('click', () => {
+//     html.dropdown.classList.remove('open');
+// });
+// navbar dropdown - end
