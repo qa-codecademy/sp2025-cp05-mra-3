@@ -13,14 +13,16 @@ body, html {
     width: 100%;
     height: 70vh;
     background-color: rgb(241, 248, 254);
-    vertical-align: top;
 }
 
 .hero-img {
-    width: 60%;
+    width: 53%;
     height: 70vh;
     margin-top: 10vh;
     display: block;
+}
+.dark-img {
+  display: none;
 }
 
 .hero-content h1 {
@@ -29,7 +31,7 @@ body, html {
     right: 5vh;
     transform: none;
     color: rgb(6, 36, 82);
-    font-size: 5rem;
+    font-size: 4.9rem;
     font-weight: bold;
     margin: 0;
     opacity: 0;
@@ -73,7 +75,13 @@ body, html {
         opacity: 1;
     }
 }
+.german {
+  font-size:4rem !important;       
+}
 
+.macedonian {
+  font-size: 4.3rem !important;             
+}
 
 .book-btn:hover {
     background-color: #103481;
@@ -85,7 +93,7 @@ body, html {
         height: 60vh;
     }
     .hero-img {
-        width: 75%;
+        width: 60%;
         height: 60vh;
     }
 
@@ -107,13 +115,21 @@ body, html {
         margin-top: 15vh;
         margin-right: 25vh;
     }
+    .german {
+        font-size: 3rem !important;             
+}
+
+    .macedonian {
+        font-size: 3.5rem !important;             
+}
+
 }
 @media (max-width: 1360px) {
     .hero {
         height: 50vh;
     }
     .hero-img {
-        width: 80%;
+        width: 60%;
         height: 50vh;
     }
 
@@ -135,6 +151,12 @@ body, html {
         margin-top: 9vh;
         margin-right: 18vh;
     }
+    .german {
+         font-size: 2.3rem !important;             
+}
+    .macedonian {
+          font-size: 2.3rem !important;            
+}
 }
 
 @media (max-width: 1024px) {
@@ -142,55 +164,68 @@ body, html {
         height: 50vh;
     }
     .hero-img {
-        width: 80%;
+         width: 60%;
         height: 50vh;
     }
 
     .hero-content h1 {
-        font-size: 2rem; 
+        font-size: 2.3rem; 
         top: 5vh;
         right: 5vh;
     }
 
     .hero-content p {
-        font-size: 1.5rem; 
+        font-size: 1.3rem; 
         top: 14vh;
         right: 10vh;
     }
     .book-btn {
         font-size: 1.3rem;
         padding: 10px 30px;
-        margin-top: 9vh;
+        margin-top: 8vh;
         margin-right: 10vh;
     }
+    .german {
+         font-size: 1.8rem !important;             
+}
+    .macedonian {
+          font-size: 1.9rem !important;            
+}
 }
 @media (max-width: 768px) {
     .hero {
         height: 45vh;
     }
     .hero-img {
-        width: 90%;
+        width: 60%;
         height: 45vh;
     }
 
     .hero-content h1 {
-        font-size: 1.5rem; 
+        font-size: 1.7rem; 
         top: 5vh;
         right: 5vh;
     }
 
     .hero-content p {
-        font-size: 1.1rem; 
+        font-size: 0.98rem; 
         top: 12vh;
         right: 10vh;
     }
 
     .book-btn {
-        font-size: 1rem;
+        font-size: 0.8rem;
         padding: 10px 30px;
-        margin-top: 8vh;
+        margin-top: 3vh;
         margin-right: 8vh;
     }
+    
+    .german {
+         font-size: 1.4rem !important;             
+}
+    .macedonian {
+          font-size: 1.5rem !important;           
+}
 }
 
 
@@ -199,12 +234,12 @@ body, html {
         height: 40vh;
     }
     .hero-img {
-        width: 100%;
+       width: 60%;
         height: 40vh;
     }
 
     .hero-content h1 {
-        font-size: 1rem; 
+        font-size: 1.2rem; 
         top: 5vh;
         right: 5vh;
     }
@@ -216,11 +251,17 @@ body, html {
     }
 
     .book-btn {
-        font-size: 1rem;
+        font-size: 0.8rem;
         padding: 10px 15px;
         margin-top: 0.4vh;
-        margin-right: 2vh;
+        margin-right: 5.5vh;
     }
+    .german {
+         font-size: 1rem !important;             
+}
+    .macedonian {
+        font-size: 1rem !important;             
+}
 }
 
 @media (max-width: 480px) {
@@ -228,12 +269,12 @@ body, html {
         height: 35vh;
     }
     .hero-img {
-        width: 100%;
+       width: 60%;
         height: 35vh;
     }
 
     .hero-content h1 {
-        font-size: 0.9rem; 
+        font-size: 1rem; 
         top: 3vh;
         right: 3vh;
     }
@@ -245,9 +286,48 @@ body, html {
     }
 
     .book-btn {
-        font-size: 0.9rem;
+        font-size: 0.6rem; 
         padding: 7px 10px;
-        margin-top: 0.1vh;
-        margin-right: 0.5vh;
+        margin-right: 4vh;
     }
+    .german {
+         font-size: 0.9rem !important;             
+}
+    .macedonian {
+        font-size: 0.9rem !important;             
+}
+}
+
+@media (max-width: 375px) {
+    .hero {
+        height: 35vh;
+    }
+    .hero-img {
+       width: 60%;
+        height: 35vh;
+    }
+
+    .hero-content h1 {
+        font-size: 1rem; 
+        top: 3vh;
+        right: 3vh;
+    }
+
+    .hero-content p {
+        font-size: 0.6rem; 
+        top: 8vh;
+        right: 5vh;
+    }
+
+    .book-btn {
+        font-size: 0.5rem; 
+        padding: 7px 10px;
+        margin-right: 4vh;
+    }
+    .german {
+         font-size: 0.7rem !important;             
+}
+    .macedonian {
+        font-size: 0.7rem !important;             
+}
 }

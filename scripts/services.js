@@ -31,7 +31,9 @@ function renderServicesTable(services) {
 
     services.forEach(service => {
         const entry = document.createElement('div');
-        entry.classList.add('service');
+        // entry.classList.add('service');
+        entry.classList.add('service-card', 'service');
+
 
         if (localStorage.getItem('language') === "English") {
             entry.innerHTML = `
