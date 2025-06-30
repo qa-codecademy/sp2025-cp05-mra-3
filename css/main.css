@@ -58,6 +58,11 @@ nav {
     transition: color 0s ease-in-out;
     transition: background-color 0s ease-in-out;
     z-index: 1;
+    
+}
+
+nav, nav * {
+    box-sizing: border-box;
 }
 
 .link {
@@ -197,6 +202,7 @@ a {
     padding: 0;
     margin: 0;
     display: inline-block;
+    
 }
 
 .dropdown-toggle img {
@@ -215,6 +221,7 @@ a {
     top: 28px;
     margin-left: -3px;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .dropdown-menu a {
@@ -231,6 +238,8 @@ a {
     height: 21px;
     object-fit: cover;
     border-radius: 5px;
+    justify-content: center;
+    
 }
 
 .dropdown.open .dropdown-menu {

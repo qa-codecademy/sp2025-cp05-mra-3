@@ -1,0 +1,139 @@
+#cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 0px;
+  max-width: 1500px;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 10vh;
+}
+
+.bodyStyle {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+
+.service-card {
+  flex: 1 1 300px;
+  max-width: 500px;
+  cursor: pointer;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* Prevent content from overflowing */
+  animation-fill-mode: both;
+  will-change: transform, box-shadow;
+  height: auto;
+  min-height: 450px;
+}
+
+.service-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.service-card h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.service-card p {
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+  overflow: auto;
+  flex-grow: 1;
+  /* max-height: 180px; */
+  text-align: center;
+  /* overflow: auto; */
+}
+
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit:fill;
+  display: block;
+  border-radius: 6px;
+  margin: 0 auto;
+  margin-top: 0px;
+  flex-shrink: 0;
+} 
+
+
+.error-container {
+  background-color: #ffdddd;
+  color: #d8000c;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+  border: 1px solid #d8000c;
+}
+
+.error-title {
+  color: inherit;
+  margin: 0 0 10px 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.error-message {
+  margin: 0;
+  color: #333;
+}
+
+.error-status {
+  margin: 10px 0 0;
+  font-size: 0.9em;
+}
+
+@media (max-width: 375px) {
+    .service-card p {
+        overflow: visible; 
+        max-height: none;
+    }
+    
+    .service-card img {
+        height: auto; 
+        object-fit: cover;
+        display: block 
+    }
+}
+
+@media (max-width: 450px) {
+    .service-card p {
+        overflow: visible; 
+        max-height: none;
+    }
+    
+    .service-card img {
+        max-height: auto; 
+        object-fit: cover;
+        display: block 
+    }
+}
+
+
+
+@media (max-width: 820px) {
+    .service-card p {
+        overflow: visible; 
+        max-height: none;
+    }
+    
+    .service-card img {
+        max-height: auto; 
+        object-fit: cover;
+        display: block 
+    }
+} 
+
