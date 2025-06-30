@@ -5,22 +5,23 @@ window.onload = function () {
   const darkModeStyles = `
     .dark-mode {
         background-color: rgb(18, 18, 18);
-        color: #f1f1f1;
+        color: rgb(200, 230, 255);
     }
     .dark-mode nav,
     .dark-mode footer {
         background-color: rgb(18, 18, 18);
-        color: #f1f1f1;
+        color: rgb(200, 230, 255);
     }
     .dark-mode .hero {
+        background-color: rgb(240, 250, 255);
         filter: brightness(0.8);
-    }
+}
     .dark-mode a {
         color: rgb(200, 230, 255);
     }
     .dark-mode .hero-content h1,
     .dark-mode .hero-content p {
-       color: #444;
+        color: #444;
     }
     .dark-mode .book-btn {
         background-color: #444;
@@ -30,6 +31,26 @@ window.onload = function () {
     .dark-mode .book-btn:hover {
         background-color: #666;
         border-color: #aaa;
+    }
+    .dark-mode #cardContainer {
+        background-color: rgb(18, 18, 18);
+    }
+    .dark-mode .service-card h2,
+    .dark-mode .service-card p {
+        color: rgb(200, 230, 255);
+    }
+    .dark-mode .service-card {
+        background-color: rgb(25, 25, 25)!important;
+    }
+    .dark-mode .dropdown-menu {
+        background-color: rgb(25, 25, 25)!important;
+    }
+
+    .dark-mode .light-img {
+        display: none;
+    }
+    .dark-mode .dark-img {
+        display: block;
     }
   `;
 
