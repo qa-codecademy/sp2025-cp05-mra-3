@@ -19,9 +19,9 @@ window.addEventListener("scroll", () => {
     }
 });
 
-// html.menuToggle.addEventListener("click", () => {
-//     html.menu.classList.toggle("show");
-// });
+html.menuToggle.addEventListener("click", () => {
+    html.menu.classList.toggle("show");
+});
 
 // const menuLinks = html.dropdown.querySelectorAll('.dropdown-menu a');
 // const toggleImg = html.toggle.querySelector('img');
