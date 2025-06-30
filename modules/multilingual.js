@@ -79,7 +79,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             languagesMenu.style.display = 'none';
 
-            readContent(selectedLanguageText)
+            if (window.location.pathname.includes('services.html')) {
+                window.location.reload();
+            } else {
+                readContent(selectedLanguageText);
+            }
         });
     });
 });

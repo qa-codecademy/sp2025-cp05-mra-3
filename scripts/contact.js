@@ -595,7 +595,7 @@ document.getElementById('submitToggleAllCards').addEventListener('click', () => 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
     const res = await fetch('/api/card');
-    if (!res.ok) throw new Error('Failed to fetch users');
+    if (!res.ok) throw new Error('Failed to fetch cards');
 
     const cards = await res.json();
     const sortedCards = cards

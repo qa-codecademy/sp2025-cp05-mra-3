@@ -131,6 +131,12 @@
     "english": "Submit",
     "macedonian": "Испрати"
   },
+    {
+    "id": "serviceshtmlOurServices",
+    "german": "Unsere Leistungen",
+    "english": "Our services",
+    "macedonian": "Наши услуги"
+  },
   {
     "id": "homepagehtmlYTCS",
     "german": "Ihr vertrauenswürdiger Reinigungsdienst",
