@@ -32,9 +32,9 @@ export const cardCreateSchema  = z.object({
   descriptionDEU: z.string().min(1, 'Beschreibung ist erforderlich'),
   descriptionENG: z.string().min(1, 'Description is required'),
   descriptionMKD: z.string().min(1, 'Опис е задолжителен'),
-  picture: z.string().url("Picture must be a valid URL"),
   public: z.string(),
   number: z.string(),
+  picture: z.string().url("Picture must be a valid URL"),
 
 });
 

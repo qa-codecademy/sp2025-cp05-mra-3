@@ -611,7 +611,7 @@ function renderCardsTable(cards) {
       <input type="hidden" id="originalImage${card.id}" value="${card.picture}" />
 
       <button id="enableEdit${card.id}" class="onscreenText adminhtmlUpdate" onclick="enableCardEdit('${card.id}')" style="display: inline;" type="button"></button>
-      <button id="cancelEdition${card.id}" class="onscreenText adminhtmlCancel" onclick="cancelCardEdition('${card.id}', '${card.titleDEU}', '${card.titleENG}', '${card.titleMKD}', '${card.descriptionDEU}', '${card.descriptionENG}', '${card.descriptionMKD}', '${card.public}', '${card.picture}')" style="display: none;" type="button"></button>
+      <button id="cancelEdition${card.id}" class="onscreenText adminhtmlCancel" onclick="cancelCardEdition('${card.id}', '${card.titleDEU}', '${card.titleENG}', '${card.titleMKD}', '${card.descriptionDEU}', '${card.descriptionENG}', '${card.descriptionMKD}', '${card.public}', '${card.number}', '${card.picture}')" style="display: none;" type="button"></button>
       <button id="saveEdition${card.id}" class="onscreenText adminhtmlSave" onclick="saveCardEdition('${card.id}')" style="display: none;" type="button"></button>
     `;
     container.appendChild(entry);
