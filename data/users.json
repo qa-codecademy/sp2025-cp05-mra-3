@@ -1,16 +1,16 @@
 [
   {
-    "name": "1233ttttt222333t",
-    "email": "pppp@opppp.com",
+    "name": "Administrator",
+    "email": "admin@mrallround.com",
     "enabled": "true",
-    "password": "••••••••",
+    "password": "password",
     "id": "fb9e5650-ce84-4ce4-9247-c9aa53df0506"
   },
   {
-    "name": "qwswqswqime ",
-    "email": "121scewce@gsgr.com",
+    "name": "Vravboten",
+    "email": "vraboten@mrallround.com",
     "enabled": "true",
-    "password": "5555555",
+    "password": "password",
     "id": "437240e8-4c46-42fd-a337-488f1ad3f32e"
   },
   {
@@ -24,7 +24,7 @@
     "name": "www",
     "email": "www@www.com",
     "enabled": "true",
-    "password": "wwwwww",
+    "password": "1wwwwww",
     "id": "a91a82cc-6eee-44b3-ba70-578b0689aef1"
   },
   {
@@ -36,9 +36,9 @@
   },
   {
     "name": "pppp",
-    "email": "pppp@opppp.com",
+    "email": "ppppa@opppp.com",
     "enabled": "true",
-    "password": "pppppppp",
+    "password": "••••••••",
     "id": "976b7121-80c0-4313-9f10-d34af5194146"
   },
   {

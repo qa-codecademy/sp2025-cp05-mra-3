@@ -42,7 +42,7 @@ window.onload = function () {
     .dark-mode .service-card {
         background-color: rgb(25, 25, 25)!important;
     }
-    .dark-mode .dropdown-menu, .container {
+    .dark-mode .dropdown-menu {
         background-color: rgb(25, 25, 25)!important;
     }
 

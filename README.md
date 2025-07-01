@@ -1,7 +1,8 @@
 Za integriranje na multilingual dropdown vo navbar od ticket navBar#9					
     Vo contact.html, kopiran e block nav od navBar#10 I vo nego vo poslednoto li celosniot div e zamenet so nov.				
         Vo celtiot block nav se dodadeni se potrebnite klasi kaj site elementi koi prikazuvaat text koj zavisi od izborot na jazik na aplikacijata.			
-    Vo main.js e celosno prevzement kodot od main.js na navBar#9, no delot koj se odnesuva na language selector dropdown e zakomentiran.				
+    Vo main.js e celosno prevzement kodot od main.js na navBar#9, no delot koj se odnesuva na language selector dropdown e zakomentiran.	
+        Napravena e promena da ako user e logiran odnosno ima ima vrednost za localStorage isLoggedIn da vodi do admin.html, a ako nema da vodi do homepage.html			
     Blokot header, od contact.html e spremen da se kopira vo site preostanati .html strani.				
                     
 Za integriranje na multilingual vo display text od footer od ticket Footer#10					

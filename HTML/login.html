@@ -5,9 +5,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
+  <title>Login</title>
   <link rel="stylesheet" href="../css/main.css">
-  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="../css/login.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -20,9 +20,6 @@
           <img id="logoPic" class="logo" src="../assets/pictures/navbar-logo.png">
         </a>
       </div>
-      <!-- <div id="logoDiv">
-        <img id="logoPic" class="logo" src="../assets/pictures/navbar-logo.png">
-      </div> -->
 
       <button id="menuToggle" class="menu-toggle">&#9776;</button>
       <div id="menuDiv">
@@ -60,20 +57,19 @@
 
   </header>
   <main>
-    <!-- contact form - start -->
-    <div id="contact-form">
-      <h2 class="onscreenText contacthtmlContactUs heading"></h2>
-      <form id="emailForm">
-        <label class="onscreenText contacthtmlName" for="nameInput"></label>
-        <input id="nameInput" type="text" placeholder="" required>
-        <label class="onscreenText contacthtmlEmail" for="emailInput"></label>
+    <!-- login form - start -->
+    <div id="login-form">
+      <h2 class="onscreenText loginhtmlLogIn heading"></h2>
+      <form id="loginlForm">
+        <label class="onscreenText loginhtmlEmail" for="emailInput"></label>
         <input id="emailInput" type="email" required>
-        <label class="onscreenText contacthtmlMessage" for="messageInput"></label>
-        <textarea id="messageInput" required></textarea>
-        <button class="onscreenText contacthtmlSubmit" id="submitNewContact" type="submit"></button>
+        <label class="onscreenText loginhtmlPassword" for="passwordInput"></label>
+        <input id="passwordInput" type="password" placeholder="" required>
+
+        <button class="onscreenText loginhtmlSubmit" id="submitNewContact" type="submit"></button>
       </form>
     </div>
-    <!-- contact form - end -->
+    <!-- login form - end -->
   </main>
 
   <footer class="footer">
@@ -104,7 +100,7 @@
   </footer>
 
     <script src="../scripts/main.js"></script>
-    <script src="../scripts/contact.js"></script>
+    <script src="../scripts/login.js"></script>
     <script src="../modules/lightDark.js"></script>
     <script src="../modules/multilingual.js"></script>
 </body>

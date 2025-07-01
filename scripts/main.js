@@ -1,4 +1,18 @@
 // navbar dropdown - start
+const logoLink = document.getElementById('logoLink');
+
+logoLink.addEventListener('click', function (event) {
+event.preventDefault();
+
+const isLoggedIn = localStorage.getItem('isLoggedIn');
+
+if (isLoggedIn) {
+    window.location.href = './admin.html';
+} else {
+    window.location.href = './login.html';
+}
+});
+
 const html = {
     navBar: document.getElementById("navBar"),
 
@@ -44,4 +58,7 @@ html.menuToggle.addEventListener("click", () => {
 // document.addEventListener('click', () => {
 //     html.dropdown.classList.remove('open');
 // });
+
+
+
 // navbar dropdown - end

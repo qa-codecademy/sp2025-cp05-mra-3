@@ -29,6 +29,30 @@
     "english": "Submit",
     "macedonian": "Испрати"
   },
+    {
+    "id": "loginhtmlLogIn",
+    "german": "Einloggen",
+    "english": "Log in",
+    "macedonian": "Логирај се"
+  },
+  {
+    "id": "loginhtmlEmail",
+    "german": "Email",
+    "english": "Email",
+    "macedonian": "Е-пошта"
+  },
+  {
+    "id": "loginhtmlPassword",
+    "german": "Passwort",
+    "english": "Password",
+    "macedonian": "Лозинка"
+  },
+  {
+    "id": "loginhtmlSubmit",
+    "german": "Einreichen",
+    "english": "Submit",
+    "macedonian": "Испрати"
+  },
   {
     "id": "footerhtmlContactUs",
     "german": "Kontaktieren Sie uns",
@@ -175,9 +199,9 @@
   },
   {
     "id": "adminhtmlAllContents",
-    "german": "Inhalt",
-    "english": "Contents",
-    "macedonian": "Содржини"
+    "german": "Alle Inhalte",
+    "english": "All contents",
+    "macedonian": "Сите содржини"
   },
   {
     "id": "adminhtmlSignUp",
@@ -258,10 +282,10 @@
     "macedonian": "Порака:"
   },
   {
-    "id": "adminhtmlPage:",
-    "german": "Seite:",
-    "english": "Page:",
-    "macedonian": "Страна:"
+    "id": "adminhtmlLocation:",
+    "german": "Standort:",
+    "english": "Location:",
+    "macedonian": "Локација:"
   },
   {
     "id": "adminhtmlAll",
@@ -376,6 +400,18 @@
     "german": "Beschreibung MKD: ",
     "english": "Description MKD: ",
     "macedonian": "Опис МКД: "
+  },
+  {
+    "id": "adminhtmlCardPublic:",
+    "german": "Öffentlich: ",
+    "english": "Public: ",
+    "macedonian": "Јавна: "
+  },
+  {
+    "id": "adminhtmlCardNumber:",
+    "german": "Nm: ",
+    "english": "No.: ",
+    "macedonian": "Бр.: "
   },
   {
     "id": "adminhtmlCardPicture:",

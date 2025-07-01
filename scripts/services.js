@@ -6,14 +6,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!res.ok) throw new Error('Failed to fetch services');
 
         const services = await res.json();
-        const sortedServices = services
+        const publicServices = services.filter(service => service.public === "yes");
+        const sortedServices = publicServices
             .map(card => ({
                 ...card,
             }))
             .sort((a, b) => {
-                const titleA = a.titleDEU || '';
-                const titleB = b.titleDEU || '';
-                return titleA.localeCompare(titleB);
+                const numberA = a.number || '';
+                const numberB = b.number || '';
+                return numberA.localeCompare(numberB);
             });
 
         allServices = sortedServices

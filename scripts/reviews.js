@@ -18,7 +18,7 @@ document.getElementById('reviewForm').addEventListener('submit', async (e) => {
     rating: Number(document.getElementById('ratingInput').value),
     opinion: document.getElementById('opinionInput').value,
     createdAt: new Date().toISOString(),
-    public: 'true',
+    public: 'no',
   };
 
   const res = await fetch('/api/review', {
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (!res.ok) throw new Error('Failed to fetch reviews');
 
     const reviews = await res.json();
-    const publicReviews = reviews.filter(review => review.public === "true");
+    const publicReviews = reviews.filter(review => review.public === "yes");
     const sortedReviews = publicReviews
       .map(review => ({
         ...review,
