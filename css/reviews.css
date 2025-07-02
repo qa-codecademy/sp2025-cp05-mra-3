@@ -1,7 +1,7 @@
 /* review form - start */
 .container button[type="submit"] {
   cursor: pointer;
-  background-color: #ff6384;
+  background-color: #2196F3;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -10,6 +10,10 @@
   font-size: 18px;
   width: 100%;
   margin-bottom: 20px;
+}
+.container button[type="submit"]:hover{
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
 #review-form {
     display: none;
@@ -107,12 +111,12 @@
 
 #reviewForm input:focus, #reviewForm textarea:focus {
   outline: none;
-  box-shadow: 0 0 5px #ff6384;
+  box-shadow: 0 0 5px #2196F3;
 }
 
 #reviewForm button[type="submit"] {
   cursor: pointer;
-  background-color: #ff6384;
+  background-color: #2196F3;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -123,7 +127,7 @@
 }
 
 #reviewForm button[type="submit"]:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
 }
 /* review form - end */

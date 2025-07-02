@@ -75,12 +75,12 @@
 
 #emailForm input:focus, #emailForm textarea:focus, #newCardForm textarea:focus {
   outline: none;
-  box-shadow: 0 0 5px #ff6384;
+  box-shadow: 0 0 5px #2196F3;
 }
 
 #emailForm button[type="submit"] {
   cursor: pointer;
-  background-color: #ff6384;
+  background-color: #2196F3;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -91,7 +91,7 @@
 }
 
 #emailForm button[type="submit"]:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
 }
 /* contact form - end */
