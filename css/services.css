@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} */
+}
 
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -14,6 +14,7 @@ body {
 .container {
   max-width: 1200px;
   margin: auto;
+  margin-top: 15vh;
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
@@ -26,21 +27,29 @@ h1 {
   color: #444;
 }
 
-/* Services Grid */
+
 #servicesContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(auto-fill, 350px);
   gap: 1.5rem;
+  justify-content: center;
 }
 
-/* Individual Review Card */
 .service {
+ flex: 1 1 300px;
+  max-width: 500px;
   background-color: #fafafa;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 1.2rem;
+  padding: 0.8rem;       
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  overflow: hidden;
   transition: box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+  min-height: 300px;    
+  height: auto;        
 }
 
 .service:hover {
@@ -54,14 +63,48 @@ h1 {
 }
 
 .service h3 {
-  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  text-align: center;
   color: #222;
 }
 
-#service-description {
-  max-height: 100px; 
-  overflow-y: auto; 
-  margin-bottom: 1rem; 
-  font-size: 0.95rem; 
-  color: #555; 
+
+.service-description {
+  line-height: 1.5;
+  margin: 0 0 15px 0;
+  overflow: auto;
+  flex-grow: 1;
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+
+.image-service-container {
+  width: 100%;
+  margin-top: 0.5em;
+}
+
+
+.image-service-container img {
+  width: 100%;
+  height: 220px;
+  object-fit: fill;
+  display: block;
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 820px) {
+  .service-description {
+    overflow: visible;
+    max-height: none;
+  }
+
+  .image-service-container img {
+    height: auto;
+    object-fit: cover;
+  }
 }

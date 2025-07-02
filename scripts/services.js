@@ -32,34 +32,33 @@ function renderServicesTable(services) {
 
     services.forEach(service => {
         const entry = document.createElement('div');
-        // entry.classList.add('service');
-        entry.classList.add('service-card', 'service');
+        entry.classList.add('service');
 
 
         if (localStorage.getItem('language') === "English") {
-            entry.innerHTML = `
-        <h3> ${service.titleENG}</h3>
-        <div class="image-service-container" style="width: 100%; margin-top: 0.5em;">
-            <img id="imgService${service.id}" src="${service.picture}" style="width: 100%; height: auto; display: block; object-fit: contain;" />
-        </div>
-        <p id="service-description">${service.descriptionENG}</p>
-      `;
-        } else if (localStorage.getItem('language') === "Macedonian") {
-            entry.innerHTML = `
-        <h3> ${service.titleMKD}</h3>
-        <div class="image-service-container" style="width: 100%; margin-top: 0.5em;">
-            <img id="imgService${service.id}" src="${service.picture}" style="width: 100%; height: auto; display: block; object-fit: contain;" />
-        </div>
-        <p id="service-description">${service.descriptionMKD}</p>
-      `;
-        } else {
-            entry.innerHTML = `
-        <h3> ${service.titleDEU}</h3>
-        <div class="image-service-container" style="width: 100%; margin-top: 0.5em;">
-            <img id="imgService${service.id}" src="${service.picture}" style="width: 100%; height: auto; display: block; object-fit: contain;" />
-        </div>
-        <p id="service-description">${service.descriptionDEU}</p>
-      `;
+        entry.innerHTML = `
+  <h3>${service.titleENG}</h3>
+  <div class="image-service-container">
+    <img id="imgService${service.id}" src="${service.picture}" alt="${service.titleENG}" />
+  </div>
+  <p class="service-description">${service.descriptionENG}</p>
+`;
+} else if (localStorage.getItem('language') === "Macedonian") {
+  entry.innerHTML = `
+    <h3>${service.titleMKD}</h3>
+    <div class="image-service-container">
+      <img id="imgService${service.id}" src="${service.picture}" alt="${service.titleMKD}" />
+    </div>
+    <p class="service-description">${service.descriptionMKD}</p>
+  `;
+} else {
+  entry.innerHTML = `
+    <h3>${service.titleDEU}</h3>
+    <div class="image-service-container">
+      <img id="imgService${service.id}" src="${service.picture}" alt="${service.titleDEU}" />
+    </div>
+    <p class="service-description">${service.descriptionDEU}</p>
+  `;
         }
         container.appendChild(entry);
     });

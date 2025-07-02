@@ -14,6 +14,12 @@
 #review-form {
     display: none;
 }
+#review-createdAt {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.8rem;
+  flex-shrink: 0;
+}
 
 #review-form {
   box-sizing: border-box;
@@ -138,6 +144,7 @@ body {
 .container {
   max-width: 1200px;
   margin: auto;
+  margin-top: 15vh;
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;
@@ -156,15 +163,25 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-template-rows: auto auto;
   gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 /* Individual Review Card */
 .review {
+  flex: 1 1 300px;
+  max-width: 500px;
   background-color: #fafafa;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 1.2rem;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  overflow: hidden;
   transition: box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+  min-height: 300px;
+  height: auto;
 }
 
 .review:hover {
@@ -175,15 +192,18 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.8rem;
+  flex-shrink: 0;
 }
 
 .review h3 {
   font-size: 1.1rem;
   color: #222;
+  margin: 0;
 }
 
 .stars {
-  color: #ffb400; /* gold stars */
+  color: #ffb400;
   font-size: 1.1rem;
 }
 
@@ -194,9 +214,11 @@ h1 {
 }
 
 #review-opinion {
-  max-height: 100px; 
-  overflow-y: auto; 
-  margin-bottom: 1rem; 
-  font-size: 0.95rem; 
-  color: #555; 
+  font-size: 0.95rem;
+  color: #555;
+  flex-grow: 1;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.4;
+  margin: 0;
 }
