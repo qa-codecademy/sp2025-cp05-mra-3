@@ -1,0 +1,184 @@
+/* Base styles */
+footer {
+  background: #f9fcff; /* very light blue-white */
+  color: #1f3a93; /* dark blue-gray */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 3rem 4rem;
+  user-select: none;
+  border-top: 1px solid #1abc9c66; /* subtle teal border */
+  letter-spacing: 0.04em;
+}
+
+/* Grid container */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Titles */
+.footer-title {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #1abc9c; /* fresh teal accent */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* Contact info */
+.contact-container p {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+  color: #1f3a93cc;
+  transition: color 0.3s ease;
+}
+
+.contact-container p i.fa {
+  font-size: 1.4rem;
+  min-width: 26px;
+  text-align: center;
+  color: #16a08599; /* darker teal */
+  transition: color 0.3s ease;
+}
+
+.contact-container p:hover,
+.contact-container p a:hover {
+  color: #16a085; /* darker teal highlight */
+}
+
+.contact-container p:hover i.fa {
+  color: #16a085;
+}
+
+/* Links inside contact */
+.contact-container a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.contact-container a:hover {
+  text-decoration: underline;
+  color: #16a085;
+}
+
+/* Copyright centered */
+footer .copyright {
+  grid-column: 2 / 3;
+  text-align: center;
+  font-size: 1rem;
+  color: #16a085cc;
+  font-weight: 500;
+  user-select: text;
+}
+
+/* Social media */
+.footer-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.icons-wrapper {
+  display: flex;
+  gap: 1.8rem;
+}
+
+/* Social icons style */
+.footer-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  transition: transform 0.25s ease, filter 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Original brand colors for social media */
+.footer-icons a[href*="linkedin"] {
+  background-color: #0077b5; /* LinkedIn blue */
+}
+
+.footer-icons a[href*="instagram"] {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.footer-icons a[href*="facebook"] {
+  background-color: #1877f2; /* Facebook blue */
+}
+
+.footer-icons a:hover,
+.footer-icons a:focus {
+  transform: scale(1.15);
+  filter: brightness(1.2);
+  outline: none;
+}
+
+/* Responsive: stack columns and move copyright to bottom */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .contact-container,
+  .footer-icons {
+    align-items: center;
+  }
+
+  .footer-icons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /* Move copyright to bottom by changing grid order */
+  footer .copyright {
+    grid-column: auto;
+    order: 3;
+    margin-top: 1rem;
+    color: #16a085;
+  }
+
+  /* To force order change inside grid */
+  .footer-grid > .contact-container {
+    order: 1;
+  }
+
+  .footer-grid > .footer-icons {
+    order: 2;
+  }
+}
+
+/* Smaller devices */
+@media (max-width: 480px) {
+  footer {
+    padding: 2rem 1.5rem;
+  }
+
+  .footer-icons a {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .footer-title {
+    font-size: 1.1rem;
+  }
+
+  .contact-container p {
+    font-size: 0.95rem;
+  }
+}
