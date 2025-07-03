@@ -1,29 +1,48 @@
-/*  general - start */
-html,
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
+html, body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Changed from 100vw */
+  overflow-x: hidden; /* prevent horizontal scroll */
 }
 
 header {
-    height: 10%;
-    width: 100%;
+  height: 10%;
+  width: 100%;
 }
 
-main {
-    position: relative;
-    top: 10%;
-    width: 100%;
-    flex: 1;
+/* main {
+  position: relative;
+  top: 10%;
+  max-width: 1200px; 
+  width: 100%;        
+  margin: 0 auto;     
+  flex: 1;
+  overflow-x: hidden;
 }
 
 footer {
-    width: 100%;
-    margin-top: 5%;
+  max-width: 1200px;  
+  width: 100%;
+  margin: 5% auto 0 auto; 
+  box-sizing: border-box;
+} */
+main {
+  position: relative;
+  top: 10%;
+  width: 100vw;       /* full width */
+  max-width: 100vw;   /* prevent overflow */
+  flex: 1;
+  overflow-x: hidden;
+  margin: 0;          /* remove any margin */
 }
-/*  general - end */
+
+footer {
+  width: 100vw;       /* full width */
+  max-width: 100vw;
+  margin-top: 5%;     /* keep vertical spacing */
+  box-sizing: border-box;
+}
+
