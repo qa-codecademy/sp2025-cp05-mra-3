@@ -3,9 +3,8 @@ footer {
   background: #f9fcff;
   color: #1f3a93;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding: 3rem 4rem;
+  padding: 1rem 2rem;
   user-select: none;
-  border-top: 1px solid #1abc9c66;
   letter-spacing: 0.04em;
 }
 

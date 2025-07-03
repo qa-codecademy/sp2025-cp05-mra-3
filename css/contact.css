@@ -2,10 +2,11 @@
 #contact-form {
   box-sizing: border-box;
   background-color: #f2f2f2;
-  padding: 1.5%;
+  padding: 2rem;
   border-radius: 1.5%;
   width: 50%;
   height: 450px;
+  margin-top: 3%;
   margin-left: auto;
   margin-right: auto;
 }
