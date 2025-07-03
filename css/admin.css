@@ -198,11 +198,10 @@ body {
   top: 10%;
   bottom: 10%;
   width: 120px; 
-  height: 500px;
+  height: 54vh;
   background-color: #d8eaf6; 
   padding: 10px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-
 }
 #leftVerticalMenu button {
   background-color: #2196F3;
@@ -258,7 +257,6 @@ body {
   background-color: #1976D2;
   transform: translateY(-2px);
 }
-
 
 /* Left vertical menu - end */
 /* adminpanel - end */

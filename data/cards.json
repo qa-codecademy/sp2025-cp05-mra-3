@@ -58,41 +58,5 @@
     "number": "2",
     "picture": "https://res.cloudinary.com/du3oe7qmq/image/upload/v1751280534/lfebe1v1ljp4dsp6lntc.jpg",
     "id": "90e947f8-7cff-4a09-9e79-a58d520929ce"
-  },
-  {
-    "titleDEU": "ewcwec",
-    "titleENG": "Macedonia",
-    "titleMKD": "Makedonija",
-    "descriptionDEU": "wecwc",
-    "descriptionENG": "wec",
-    "descriptionMKD": "wecec",
-    "public": "yes",
-    "number": "12",
-    "picture": "https://res.cloudinary.com/du3oe7qmq/image/upload/v1751363484/lxmgtzxakog5xceew7tw.jpg",
-    "id": "6730c922-2106-4abc-b303-5b9e52a44f26"
-  },
-  {
-    "titleDEU": "nnnnn",
-    "titleENG": "nnnn",
-    "titleMKD": "nnnn",
-    "descriptionDEU": "nnnn",
-    "descriptionENG": "nnn",
-    "descriptionMKD": "nnnn",
-    "public": "yes",
-    "number": "0",
-    "picture": "https://res.cloudinary.com/du3oe7qmq/image/upload/v1751363950/oavc3gpd5pwd2zwyjh53.jpg",
-    "id": "0f40c73b-002e-46bc-9380-e36efe9d9de3"
-  },
-  {
-    "titleDEU": "dadsa",
-    "titleENG": "dasdad",
-    "titleMKD": "asdsada",
-    "descriptionDEU": "dasdsa",
-    "descriptionENG": "dasdasd",
-    "descriptionMKD": "adasd",
-    "public": "yes",
-    "number": "0",
-    "picture": "https://res.cloudinary.com/du3oe7qmq/image/upload/v1751575348/oeojm0ujakqa8alq5lfa.jpg",
-    "id": "303d51b7-49dd-44cc-8592-9e83858afb6b"
   }
 ]

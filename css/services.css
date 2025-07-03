@@ -51,7 +51,11 @@ h1 {
 }
 
 .service:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px) scale(1.02);
+  transition: all 0.3s ease-in-out;
+  border-color: #2196f3;
+  background-color: #f9fcff;
 }
 
 .service-header {

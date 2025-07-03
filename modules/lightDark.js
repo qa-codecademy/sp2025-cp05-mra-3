@@ -134,9 +134,12 @@ window.onload = function () {
   .dark-mode .service-description {
       color: rgb(180, 210, 240);
   }
-  .dark-mode .service:hover {
-      background-color: rgb(0, 0, 0);
-  }
+.dark-mode .service:hover {
+  background-color: rgb(45, 45, 45);
+  box-shadow: 0 0 15px rgb(80, 140, 220);
+  transform: translateY(-4px) scale(1.01);
+  transition: all 0.3s ease-in-out;
+}
   .dark-mode .review {
   box-shadow: 0 0 10px rgb(118, 167, 231);
       background-color: rgb(35, 35, 35);
