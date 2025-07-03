@@ -1,9 +1,21 @@
 /* adminpanel - start */
 /* signup-form and card-form - start */
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 #signup-form-wrapper, #card-form-wrapper {
   box-sizing: border-box;
   background-color: #f2f2f2;
   padding: 1.5%;
+  margin-top: 8vh;
   border-radius: 10px;
   width: 50%;
   margin-left: auto;
@@ -37,6 +49,7 @@
 #signup-form-wrapper .heading, #card-form-wrapper .heading{
   font-size: 24px;
   color: black;
+  
   margin-bottom: 12px;
   font-weight: bold;
   display: block;
@@ -56,11 +69,11 @@
 
 #signup-form-wrapper input:focus, #card-form-wrapper input:focus {
   outline: none;
-  box-shadow: 0 0 5px #ff6384;
+  box-shadow: 0 0 5px #2196F3;
 }
 
 #signup-form-wrapper button[type="submit"], #card-form-wrapper button[type="submit"] {
-  background-color: #ff6384;
+  background-color: #2196F3;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -70,19 +83,20 @@
 }
 
 #signup-form-wrapper button[type="submit"]:hover, #card-form-wrapper button[type="submit"]:hover  {
-  transform: scale(1.1);
+   transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
 }
 /* signup-form and card-form - end */
 
 /* tables with all emails, contents, cards and users - start */
 
-#emailTableWrapper, #contentTableWrapper, #cardTableWrapper, #userTableWrapper, #reviewTableWrapper{
+#emailTableWrapper, #contentTableWrapper,#cardTableWrapper, #userTableWrapper, #reviewTableWrapper{
   box-sizing: border-box;
+  margin-top:8vh;
   background-color: #f2f2f2;
   padding: 1.5%;
   border-radius: 10px;
-  width: 50%;
+  width: 130vh;
   margin-left: auto;
   margin-right: auto;
   display: none;
@@ -120,6 +134,7 @@
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   overflow: auto;
+   margin-bottom: 15px;
 }
 
 .email-entry div, .content-entry div, .user-entry div, .card-entry div, .review-entry div {
@@ -174,20 +189,76 @@
 /* Left vertical menu - start */
 #leftVerticalMenu{
   /* margin-top: 70px; */
+  margin-left:1.5vh;
+  margin-top: 8vh;
   display: inline-flex;
   flex-direction: column;
   gap: 10px;
   position: fixed;
-  left: 0;
   top: 10%;
   bottom: 10%;
   width: 120px; 
-  background-color: #f0f0f0; 
+  height: 500px;
+  background-color: #d8eaf6; 
   padding: 10px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+
 }
-#logOutButton {
-  background-color: red;
+#leftVerticalMenu button {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
+#leftVerticalMenu button:hover {
+  background-color: #1976D2;
+  transform: translateY(-2px);
+}
+
+#leftVerticalMenu #logOutButton {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#leftVerticalMenu #logOutButton:hover {
+  background-color: #c62828;
+  transform: translateY(-2px);
+}
+.user-entry button,
+.review-entry button,
+.content-entry button,
+.card-entry button{
+     background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+.user-entry button:hover,
+.review-entry button:hover,
+.content-entry button:hover,
+.card-entry button:hover{
+  background-color: #1976D2;
+  transform: translateY(-2px);
+}
+
+
 /* Left vertical menu - end */
 /* adminpanel - end */

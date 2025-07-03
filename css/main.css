@@ -1,16 +1,7 @@
 /*  general - start */
-/* html,
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-} */
- 
-body {
+     display: flex;
+  flex-direction: column;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -27,24 +18,15 @@ main {
     flex: 1;
 }
 
-footer {
-    width: 100%;
-    margin-top: 5%;
-}
 /*  general - end */
 /* Footer - start */
 footer {
-  font-family: Arial, sans-serif;
-  justify-content: space-between;
-  /* position: fixed; */
-  position: relative;
-  bottom: 0;
-  left: 0;
   width: 100%;
   background: transparent;
   color: #2196f3;
   text-align: center;
   padding: 5px;
+  margin-top: auto;  /* Ова ќе го спушти футерот на дното ако е внатре во flex container */
 }
 footer a {
   color: #2196f3;
@@ -158,6 +140,7 @@ footer a:hover {
 /* Footer - end */
 /* Header - start */
 nav {
+    background-color: #d8eaf6;
     top: 0;
     left: 0;
     right: 0;
@@ -172,9 +155,18 @@ nav {
     justify-content: space-evenly;
     align-items: center;
     transition: color 0s ease-in-out;
-    transition: background-color 0s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
     z-index: 1;
-    
+}
+
+.menuLink a {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.menuLink a:hover {
+    transform: translateY(-3px);
+     border-bottom: 2px solid #2196F3;
 }
 
 nav, nav * {
@@ -221,10 +213,6 @@ nav, nav * {
     display: inline;
     padding: 0.5%;
     margin-top: 7px;
-}
-
-.menuLink:hover {
-    border-bottom: 2px solid;
 }
 
 a {
@@ -308,6 +296,7 @@ a {
     display: inline-block;
     font-family: sans-serif;
     margin-left: 3px;
+    margin-top: 5px;
 }
 
 #dropdownLanguageSelector-toggle {

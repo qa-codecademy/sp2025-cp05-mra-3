@@ -1,5 +1,6 @@
 /* login form - start */
 #login-form {
+  margin-top: 20vh;
   box-sizing: border-box;
   background-color: #f2f2f2;
   padding: 1.5%;
@@ -69,12 +70,12 @@ margin-bottom: 1rem;
 
 #loginlForm input:focus {
   outline: none;
-  box-shadow: 0 0 5px #ff6384;
+  box-shadow: 0 0 5px #2196F3;;
 }
 
 #loginlForm button[type="submit"] {
   cursor: pointer;
-  background-color: #ff6384;
+  background-color: #2196F3;
   color: #fff;
   border: none;
   border-radius: 5px;

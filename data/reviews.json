@@ -52,7 +52,15 @@
     "rating": 5,
     "opinion": "dobro e",
     "createdAt": "Thu Jun 26 2025 23:41:19 GMT+0200 (Central European Summer Time)",
-    "public": "yes",
+    "public": "no",
     "id": "0df4fb1f-c487-4ed0-ba76-962d131d9305"
+  },
+  {
+    "name": "David",
+    "rating": 5,
+    "opinion": "Jako epten",
+    "createdAt": "Thu Jul 03 2025 20:48:21 GMT+0200 (Central European Summer Time)",
+    "public": "yes",
+    "id": "ca6c7efb-abe9-43db-9773-f506d08788f4"
   }
 ]
