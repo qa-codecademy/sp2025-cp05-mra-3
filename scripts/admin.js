@@ -514,8 +514,10 @@ document.getElementById('newCardForm').addEventListener('submit', async (e) => {
     descriptionDEU: document.getElementById('cardDescriptionDEU').value,
     descriptionENG: document.getElementById('cardDescriptionENG').value,
     descriptionMKD: document.getElementById('cardDescriptionMKD').value,
-    picture: imageUrl,
     public: "yes",
+    number:'0',
+    picture: imageUrl,
+
   };
 
   try {

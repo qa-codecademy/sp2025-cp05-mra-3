@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/aboutUs.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="../css/footer.css">
 </head>
 
 <body>
@@ -61,35 +61,41 @@
 
     </main>
 
-    <footer class="footer">
-        <div class="contact-container">
-            <div class="onscreenText footerhtmlContactUs"></div>
+   <footer class="footer">
+  <div class="footer-grid">
+    <!-- Contact Section -->
+    <div class="contact-container">
+      <div class="onscreenText footerhtmlContactUs">Contact Us</div>
+      <p><i class="fa fa-map-marker"></i>
+        <a href="https://www.google.com/maps?q=Bannstrasse+5,+4600+Olten" target="_blank">
+          Bannstrasse 5, 4600 Olten
+        </a>
+      </p>
+      <p><i class="fa fa-phone"></i>
+        <a href="tel:+41786925155">+41 78 692 51 55</a>
+      </p>
+      <p><i class="fa fa-envelope"></i>
+        <a href="mailto:info@mrallround.ch">info@mrallround.ch</a>
+      </p>
+    </div>
 
-            <div>
-                <p><i class="fa fa-map-marker"></i>
-                    <a href="https://www.google.com/maps?q=Bannstrasse+5,+4600+Olten" target="_blank"
-                        aria-label="View address on Google Maps">Bannstrasse 5, 4600 Olten
-                    </a>
-                </p>
-                <p><i class="fa fa-phone onscreenText footerhtmlPhone"></i>&nbsp<a href="tel:+41786925155">+41 78
-                        692 51 55</a></p>
-                <p><i class="fa fa-envelope onscreenText footerhtmlEmail"></i>&nbsp<a
-                        href="mailto:info@mrallround.ch">info@mrallround.ch</a></p>
-                <p>
-                <p style="display: inline;">© MR.Allround.</p>
-                <p class="onscreenText footerhtmlAllRightsReserved." style="display: inline;"></p>
-                </p>
-            </div>
-            <div class="footer-icons" style="position: absolute; right: 30px; bottom: 15px;;; text-align: right;">
-                <p class="onscreenText footerhtmlFollowUs" style="font-size: 24px;margin: 5px;">Follow Us</p>
-                <a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn"><i
-                        class="fa fa-linkedin"></i></a>
-                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i
-                        class="fa fa-instagram"></i></a>
-                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i
-                        class="fa fa-facebook"></i></a>
-            </div>
-    </footer>
+    <!-- Rights Reserved Section -->
+    <div class="footer-rights">
+      <p style="display: inline;">© MR.Allround.</p>
+      <p class="onscreenText footerhtmlAllRightsReserved" style="display: inline;">All rights reserved.</p>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="footer-icons">
+      <p class="onscreenText footerhtmlFollowUs" style="font-size: 24px; margin: 5px;">Follow Us</p>
+      <div class="icons-wrapper">
+        <a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
 
     <script src="../scripts/aboutUs.js"></script>
     <script src="../scripts/main.js"></script>
