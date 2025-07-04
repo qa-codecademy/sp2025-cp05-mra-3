@@ -1,6 +1,9 @@
 // adminpanel - start 
 // user sign up form - start
 document.getElementById('submitToggleNewUser').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+  });
   const wrapper = document.getElementById('signup-form-wrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
     wrapper.style.display = 'block';
@@ -46,6 +49,9 @@ document.getElementById('userSignupForm').addEventListener('submit', async (e) =
 // table with all users - start
 let allUsers = [];
 document.getElementById('submitToggleAllUsers').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+  });
   const wrapper = document.getElementById('userTableWrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
     wrapper.style.display = 'block';
@@ -236,6 +242,9 @@ async function saveUserEdition(userId, userPassword) {
 // table with all users - end
 // table with all emails - start
 document.getElementById('submitToggleAllEmails').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+  });
   const wrapper = document.getElementById('emailTableWrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
     wrapper.style.display = 'block';
@@ -291,6 +300,9 @@ function renderEmailsTable(emails) {
 // table with all contents - start
 let allContents = [];
 document.getElementById('submitToggleAllContents').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+  });
   const wrapper = document.getElementById('contentTableWrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
     wrapper.style.display = 'block';
@@ -342,7 +354,7 @@ function filterEntriesByPage(page) {
     const contentId = idParagraph.textContent.trim().toLowerCase();
 
     if ((page !== 'alle') && (page !== 'all') && (page !== 'сите')) {
-      const location = page+'html'
+      const location = page + 'html'
       if (contentId.includes(location)) {
         entry.style.display = 'block';
       } else {
@@ -450,6 +462,9 @@ async function saveContentEdition(contentId) {
 // table with all contents - end
 // cards - start
 document.getElementById('submitToggleNewCard').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+  });
   const wrapper = document.getElementById('card-form-wrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
     wrapper.style.display = 'block';
@@ -515,7 +530,7 @@ document.getElementById('newCardForm').addEventListener('submit', async (e) => {
     descriptionENG: document.getElementById('cardDescriptionENG').value,
     descriptionMKD: document.getElementById('cardDescriptionMKD').value,
     public: "yes",
-    number:'0',
+    number: '0',
     picture: imageUrl,
 
   };
@@ -547,6 +562,9 @@ document.getElementById('newCardForm').addEventListener('submit', async (e) => {
 // table with all cards - start
 let allCards = [];
 document.getElementById('submitToggleAllCards').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+  });
   const wrapper = document.getElementById('cardTableWrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
     wrapper.style.display = 'block';
@@ -785,6 +803,9 @@ async function saveCardEdition(cardId) {
 // table with all reviews - start
 let allReviews = [];
 document.getElementById('submitToggleAllReviews').addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+  });
   const wrapper = document.getElementById('reviewTableWrapper');
   if (wrapper.style.display === 'none' || wrapper.style.display === '') {
     wrapper.style.display = 'block';
@@ -858,7 +879,7 @@ function enableReviewEdit(reviewId) {
 }
 
 function cancelReviewEdition(reviewId, reviewName, reviewCreatedAt, reviewRating, reviewOpinion, reviewPublic) {
-  const onscreenReviewId = "onscreenText" + reviewId; 
+  const onscreenReviewId = "onscreenText" + reviewId;
   const thisButtonId = "cancelEdition" + reviewId;
   const otherButton1Id = "enableEdit" + reviewId;
   const otherButton2Id = "saveEdition" + reviewId;
