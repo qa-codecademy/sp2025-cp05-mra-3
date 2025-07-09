@@ -63,11 +63,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     })
     document.addEventListener('click', function () {
-        if (languagesMenu.style.display === 'block')  {
+        if (languagesMenu.style.display === 'block') {
             languagesMenu.style.display = 'none';
         }
     });
-    
+
     languageOptions.forEach(option => {
         option.addEventListener('click', function (event) {
             event.preventDefault();
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             languagesMenu.style.display = 'none';
 
-            if (window.location.pathname.includes('services.html')) {
+            if (window.location.pathname.includes('services.html') || window.location.pathname.includes('homepage.html')) {
                 window.location.reload();
             } else {
                 readContent(selectedLanguageText);
