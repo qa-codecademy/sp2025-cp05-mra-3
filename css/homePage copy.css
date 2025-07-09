@@ -1,0 +1,355 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  background-color: rgb(241, 248, 254);
+}
+
+.hero-img {
+  width: 53%;
+  height: 70vh;
+  margin-top: 9.5vh;
+  display: block;
+}
+.dark-img {
+  display: none;
+}
+
+.hero-content h1 {
+  position: absolute;
+  top: 5vh;
+  right: 5vh;
+  transform: none;
+  color: rgb(6, 36, 82);
+  font-size: 4.9rem;
+  font-weight: bold;
+  margin: 0;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 0.5s forwards;
+}
+
+.hero-content p {
+  position: absolute;
+  top: 25vh;
+  right: 30vh;
+  font-size: 2.5rem;
+  color: rgb(6, 36, 82);
+  margin: 0;
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1s forwards;
+}
+
+.book-btn {
+  padding: 12px 40px;
+  font-size: 1.6rem;
+  background-color: #1d51c0;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  margin-top: 25vh;
+  margin-right: 42vh;
+  position: absolute;
+  top: calc(5vh + 4rem + 1.2rem + 20px);
+  right: 5vh;
+  opacity: 0;
+  animation: fadeIn 1s ease-out 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.german {
+  font-size: 3.5rem !important;
+}
+
+.macedonian {
+  font-size: 3.8rem !important;
+}
+.english {
+  font-size: 3.5rem !important;
+}
+.book-btn:hover {
+  background-color: #103481;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+@media (max-width: 1540px) {
+  .hero {
+    height: 60vh;
+  }
+  .hero-img {
+    width: 60%;
+    height: 60vh;
+  }
+
+  .hero-content h1 {
+    font-size: 3.3rem;
+    top: 5vh;
+    right: 5vh;
+  }
+
+  .hero-content p {
+    font-size: 2.2rem;
+    top: 20vh;
+    right: 15vh;
+  }
+
+  .book-btn {
+    font-size: 1.4rem;
+    padding: 10px 30px;
+    margin-top: 15vh;
+    margin-right: 25vh;
+  }
+  .german {
+    font-size: 3rem !important;
+  }
+
+  .macedonian {
+    font-size: 3.5rem !important;
+  }
+  .english {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 1360px) {
+  .hero {
+    height: 50vh;
+  }
+  .hero-img {
+    width: 60%;
+    height: 50vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2.8rem;
+    top: 5vh;
+    right: 5vh;
+  }
+
+  .hero-content p {
+    font-size: 1.9rem;
+    top: 15vh;
+    right: 13.5vh;
+  }
+
+  .book-btn {
+    font-size: 1.3rem;
+    padding: 10px 30px;
+    margin-top: 9vh;
+    margin-right: 18vh;
+  }
+  .german {
+    font-size: 2.3rem !important;
+  }
+  .macedonian {
+    font-size: 2.3rem !important;
+  }
+  .english {
+    font-size: 2.3rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero {
+    height: 50vh;
+  }
+  .hero-img {
+    width: 60%;
+    height: 50vh;
+  }
+
+  .hero-content h1 {
+    font-size: 2.3rem;
+    top: 5vh;
+    right: 5vh;
+  }
+
+  .hero-content p {
+    font-size: 1.3rem;
+    top: 14vh;
+    right: 10vh;
+  }
+  .book-btn {
+    font-size: 1.3rem;
+    padding: 10px 30px;
+    margin-top: 8vh;
+    margin-right: 10vh;
+  }
+  .german {
+    font-size: 1.8rem !important;
+  }
+  .macedonian {
+    font-size: 1.9rem !important;
+  }
+  .english {
+    font-size: 1.8rem !important;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 45vh;
+  }
+  .hero-img {
+    width: 60%;
+    height: 45vh;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+    top: 5vh;
+    right: 5vh;
+  }
+
+  .hero-content p {
+    font-size: 0.98rem;
+    top: 12vh;
+    right: 10vh;
+  }
+
+  .book-btn {
+    font-size: 0.8rem;
+    padding: 10px 30px;
+    margin-top: 3vh;
+    margin-right: 8vh;
+  }
+
+  .german {
+    font-size: 1.4rem !important;
+  }
+  .macedonian {
+    font-size: 1.5rem !important;
+  }
+  .english {
+    font-size: 1.4rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    height: 40vh;
+  }
+  .hero-img {
+    width: 60%;
+    height: 40vh;
+  }
+
+  .hero-content h1 {
+    font-size: 1.2rem;
+    top: 5vh;
+    right: 5vh;
+  }
+
+  .hero-content p {
+    font-size: 0.8rem;
+    top: 10vh;
+    right: 7vh;
+  }
+
+  .book-btn {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+    margin-top: 0.4vh;
+    margin-right: 5.5vh;
+  }
+  .german {
+    font-size: 1rem !important;
+  }
+  .macedonian {
+    font-size: 1rem !important;
+  }
+  .english {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 35vh;
+  }
+  .hero-img {
+    width: 60%;
+    height: 35vh;
+  }
+
+  .hero-content h1 {
+    font-size: 1rem;
+    top: 3vh;
+    right: 3vh;
+  }
+
+  .hero-content p {
+    font-size: 0.7rem;
+    top: 8vh;
+    right: 5vh;
+  }
+
+  .book-btn {
+    font-size: 0.6rem;
+    padding: 7px 10px;
+    margin-right: 4vh;
+  }
+  .german {
+    font-size: 0.9rem !important;
+  }
+  .macedonian {
+    font-size: 0.9rem !important;
+  }
+  .english {
+    font-size: 0.9rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .hero {
+    height: 35vh;
+  }
+  .hero-img {
+    width: 60%;
+    height: 35vh;
+  }
+
+  .hero-content h1 {
+    font-size: 1rem;
+    top: 3vh;
+    right: 3vh;
+  }
+
+  .hero-content p {
+    font-size: 0.6rem;
+    top: 8vh;
+    right: 5vh;
+  }
+
+  .book-btn {
+    font-size: 0.5rem;
+    padding: 7px 10px;
+    margin-right: 4vh;
+  }
+  .german {
+    font-size: 0.7rem !important;
+  }
+  .macedonian {
+    font-size: 0.7rem !important;
+  }
+  .english {
+    font-size: 0.7rem !important;
+  }
+}
