@@ -146,7 +146,7 @@ body {
 .container {
   max-width: 1200px;
   margin: auto;
-  margin-top: 15vh;
+  /* margin-top: 15vh; */
   background-color: #fff;
   padding: 2rem;
   border-radius: 10px;

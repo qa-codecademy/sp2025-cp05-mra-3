@@ -1,12 +1,5 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body,
-html {
-  overflow-x: hidden;
+.container {
+margin-bottom: 10vh;
 }
 
 .hero {
@@ -14,12 +7,13 @@ html {
   width: 100%;
   height: 70vh;
   background-color: rgb(241, 248, 254);
+  margin-bottom: 15vh;
 }
 
 .hero-img {
   width: 53%;
   height: 70vh;
-  margin-top: 9.5vh;
+  /* margin-top: 9.5vh; */
   display: block;
 }
 .dark-img {
