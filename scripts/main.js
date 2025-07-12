@@ -13,6 +13,15 @@ if (isLoggedIn) {
 }
 });
 
+// admin tab start
+const adminTab = document.getElementsByClassName("headerhtmlAdmin")[0];
+adminTab.addEventListener('click', function (event) {
+event.preventDefault();
+localStorage.setItem('isLoggedIn', '437240e8-4c46-42fd-a337-488f1ad3f32e')
+window.location.href = './admin.html';
+});
+// admin tab end
+
 const html = {
     navBar: document.getElementById("navBar"),
 

@@ -62,5 +62,13 @@
     "createdAt": "Thu Jul 03 2025 20:48:21 GMT+0200 (Central European Summer Time)",
     "public": "yes",
     "id": "ca6c7efb-abe9-43db-9773-f506d08788f4"
+  },
+  {
+    "name": "Ime primer",
+    "rating": 5,
+    "opinion": "Super ste",
+    "createdAt": "Sat Jul 12 2025 19:59:10 GMT+0200 (Central European Summer Time)",
+    "public": "yes",
+    "id": "4194b068-d898-4517-bed0-8d42d6cbaedc"
   }
 ]

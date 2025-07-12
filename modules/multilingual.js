@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             languagesMenu.style.display = 'none';
 
-            if (window.location.pathname.includes('services.html') || window.location.pathname.includes('homePage.html')) {
+            if (window.location.pathname.includes('services.html') || window.location.pathname.includes('homepage.html')) {
                 window.location.reload();
             } else {
                 readContent(selectedLanguageText);

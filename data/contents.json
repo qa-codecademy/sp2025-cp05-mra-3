@@ -114,6 +114,12 @@
     "macedonian": "Контакт"
   },
   {
+    "id": "headerhtmlAdmin",
+    "german": "Admin",
+    "english": "Admin",
+    "macedonian": "Админ"
+  },
+  {
     "id": "reviewshtmlWPTAU",
     "german": "Was unsere Kunden über uns denken",
     "english": "What our customers think about us",
@@ -202,6 +208,12 @@
     "german": "Alle Inhalte",
     "english": "All contents",
     "macedonian": "Сите содржини"
+  },
+  {
+    "id": "adminhtmlLogOut",
+    "german": "Abmelden",
+    "english": "Log out",
+    "macedonian": "Излез"
   },
   {
     "id": "adminhtmlSignUp",

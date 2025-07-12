@@ -5,18 +5,27 @@
   border-radius: 1.5%;
   width: 50%;
   height: 450px;
-  margin-top: 17vh;
+  margin-top: 5vh;
+  margin-bottom: 1vh;
   margin-left: auto;
   margin-right: auto;
 }
-.footer {
+/* #contact-form {
+  max-width: 1200px;
+  margin: 5vh auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+} */
+/* .footer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0; 
   width: 100%;
   box-sizing: border-box; 
-}
+} */
 @media (max-width: 600px) {
   #contact-form {
     width: 90%;
