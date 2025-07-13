@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Administrator",
+    "email": "admin@mrallround.com",
+    "enabled": "true",
+    "password": "password",
+    "id": "fb9e5650-ce84-4ce4-9247-c9aa53df0506"
+  },
+  {
+    "name": "Vraboten",
+    "email": "vraboten@mrallround.com",
+    "enabled": "true",
+    "password": "password",
+    "id": "437240e8-4c46-42fd-a337-488f1ad3f32e"
+  },
+  {
+    "name": "test.test",
+    "email": "test.test@test.com",
+    "enabled": "true",
+    "password": "test.test",
+    "id": "bb09c389-e81b-48f2-b23e-eff7abbdef2b"
+  }
+]

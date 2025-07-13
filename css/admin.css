@@ -1,0 +1,262 @@
+/* adminpanel - start */
+/* signup-form and card-form - start */
+html,
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+     min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+#signup-form-wrapper, #card-form-wrapper {
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  padding: 1.5%;
+  /* margin-top: 17.5vh; */
+  border-radius: 10px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #signup-form-wrapper, #card-form-wrapper {
+    width: 90%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #signup-form-wrapper, #card-form-wrapper {
+    width: 75%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  #signup-form-wrapper, #card-form-wrapper {
+    width: 60%;
+  }
+}
+
+#signup-form-wrapper label, #card-form-wrapper label {
+  color: black;
+  margin-bottom: 10px;
+}
+
+#signup-form-wrapper .heading, #card-form-wrapper .heading{
+  font-size: 24px;
+  color: black;
+  
+  margin-bottom: 12px;
+  font-weight: bold;
+  display: block;
+}
+
+#signup-form-wrapper form, #card-form-wrapper form {
+  display: flex;
+  flex-direction: column;
+}
+
+#signup-form-wrapper input, #card-form-wrapper input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#signup-form-wrapper input:focus, #card-form-wrapper input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #2196F3;
+}
+
+#signup-form-wrapper button[type="submit"], #card-form-wrapper button[type="submit"] {
+  background-color: #2196F3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#signup-form-wrapper button[type="submit"]:hover, #card-form-wrapper button[type="submit"]:hover  {
+   transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+/* signup-form and card-form - end */
+
+/* tables with all emails, contents, cards and users - start */
+
+#emailTableWrapper, #contentTableWrapper,#cardTableWrapper, #userTableWrapper, #reviewTableWrapper{
+  box-sizing: border-box;
+  /* margin-top: 17.5vh; */
+  background-color: #f2f2f2;
+  padding: 1.5%;
+  border-radius: 10px;
+  width: calc(100% - 1.5vh - 200px);
+  margin-left: 200px;
+  margin-right: auto;
+  display: none;
+}
+
+@media (max-width: 600px) {
+  #emailTableWrapper, #contentTableWrapper, #cardTableWrapper, #userTableWrapper, #reviewTableWrapper {
+    width: 90%;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  #emailTableWrapper, #contentTableWrapper, #cardTableWrapper, #userTableWrapper, #reviewTableWrapper {
+    width: 75%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  #emailTableWrapper, #contentTableWrapper, #cardTableWrapper, #userTableWrapper, #reviewTableWrapper  {
+    width: 60%;
+  }
+}
+
+/* .emails-container, .contents-container, .user-container, .card-container, .review-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+} */
+
+.email-entry, .content-entry, .user-entry, .card-entry, .review-entry{
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 16px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+   margin-bottom: 15px;
+}
+
+.email-entry div, .content-entry div, .user-entry div, .card-entry div, .review-entry div {
+  margin: 6px 0;
+  font-size: 16px;
+}
+#contentTableTitle, #emailTableTitle, #userFormTitle, #cardFormTitle, #reviewTableTitle {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+}
+/* Content page selector - start */
+  #contentPageDropdown {
+    position: relative;
+    display: inline-block;
+    font-family: sans-serif;
+  }
+
+  #contentPageDropdown-toggle {
+    cursor: pointer;
+  }
+
+  #contentPageDropdown-toggle, #contentPageDropdown-toggle div, #contentPageDropdown-menu div{
+    border-radius: 5px;
+    padding: 5px;
+  }
+
+  #contentPageDropdown-menu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1000;
+  }
+
+  #contentPageDropdown:hover #contentPageDropdown-menu {
+    display: block;
+  }
+
+  #contentPageDropdown-menu div {
+    display: block;
+    height: auto;
+    cursor: pointer;
+    text-align: right;
+  }
+
+  #contentPageDropdown-menu div:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+  }
+/* Content page selector - end */
+/* table with all emails, contents, cards and users - end */
+/* Left vertical menu - start */
+#leftVerticalMenu{
+  /* margin-top: 70px; */
+  margin-left:1.5vh;
+  /* margin-top: 8vh; */
+  display: inline-flex;
+  flex-direction: column;
+  gap: 5px;
+  position: fixed;
+  top: 10%;
+  bottom: 10%;
+  width: fit-content; 
+  height: fit-content;
+  background-color: #d8eaf6; 
+  padding: 10px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+#leftVerticalMenu button {
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#leftVerticalMenu button:hover {
+  background-color: #1976D2;
+  transform: translateY(-2px);
+}
+
+#leftVerticalMenu #logOutButton {
+  background-color: #e53935;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#leftVerticalMenu #logOutButton:hover {
+  background-color: #c62828;
+  transform: translateY(-2px);
+}
+.user-entry button,
+.review-entry button,
+.content-entry button,
+.card-entry button{
+     background-color: #2196F3;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+.user-entry button:hover,
+.review-entry button:hover,
+.content-entry button:hover,
+.card-entry button:hover{
+  background-color: #1976D2;
+  transform: translateY(-2px);
+}
+
+/* Left vertical menu - end */
+/* adminpanel - end */

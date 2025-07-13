@@ -1,54 +1,38 @@
-#contact-form {
+/* login form - start */
+#login-form {
+  margin-top: 20vh;
   box-sizing: border-box;
   background-color: #f2f2f2;
   padding: 1.5%;
   border-radius: 1.5%;
   width: 50%;
-  height: 450px;
-  margin-top: 5vh;
-  margin-bottom: 1vh;
   margin-left: auto;
   margin-right: auto;
+  height: fit-content;
 }
-/* #contact-form {
-  max-width: 1200px;
-  margin: 5vh auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-} */
-/* .footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0; 
-  width: 100%;
-  box-sizing: border-box; 
-} */
+
+#login-form h2 {
+margin-bottom: 1rem;
+}
+
 @media (max-width: 600px) {
-  #contact-form {
+  #login-form {
     width: 90%;
-    height: 300px;
+    /* height: 300px; */
   }
 }
 
 @media (min-width: 601px) and (max-width: 800px) {
-  #contact-form {
+  #login-form {
     width: 75%;
-    height: 300px;
+    /* height: 350px; */
   }
 }
-@media  (max-width: 900px) {
-  #contact-form {
-    width: 60%;
-    height: 320px;
-  }
-}
+
 @media (min-width: 801px) and (max-width: 1000px) {
-  #contact-form {
+  #login-form {
     width: 60%;
-    height: 325px;
+    /* height: 400px; */
   }
 }
 
@@ -62,13 +46,13 @@
   overflow-y: auto;
 }
 
-#emailForm {
+#loginlForm {
   display: flex;
   flex-direction: column;
   height: 90%;
 }
 
-#emailForm label {
+#loginlForm label {
   color: black;
   padding-bottom: 1%;
   margin: 0px;
@@ -76,7 +60,7 @@
   font-size: 16px;
 }
 
-#emailForm input {
+#loginlForm input {
   border: none;
   border-radius: 5px;
   padding: 1.5%;
@@ -84,21 +68,12 @@
   height: 5%;
 }
 
-#emailForm textarea, #newCardForm textarea {
-  border: none;
-  resize: none;
-  border-radius: 5px;
-  padding: 1.5%;
-  margin-bottom: 1.5%;
-  height: 100%;
-}
-
-#emailForm input:focus, #emailForm textarea:focus, #newCardForm textarea:focus {
+#loginlForm input:focus {
   outline: none;
-  box-shadow: 0 0 5px #2196F3;
+  box-shadow: 0 0 5px #2196F3;;
 }
 
-#emailForm button[type="submit"] {
+#loginlForm button[type="submit"] {
   cursor: pointer;
   background-color: #2196F3;
   color: #fff;
@@ -111,7 +86,7 @@
 }
 
 #emailForm button[type="submit"]:hover {
-  transform: scale(1.05);
+  transform: scale(1.1);
   transition: transform 0.3s ease-in-out;
 }
-/* contact form - end */
+/* login form - end */

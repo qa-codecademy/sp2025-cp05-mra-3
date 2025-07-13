@@ -1,0 +1,476 @@
+[
+  {
+    "id": "contacthtmlContactUs",
+    "german": "Kontaktieren Sie uns",
+    "english": "Contact us",
+    "macedonian": "Контактирајте не"
+  },
+  {
+    "id": "contacthtmlName",
+    "german": "Name",
+    "english": "Name",
+    "macedonian": "Име"
+  },
+  {
+    "id": "contacthtmlEmail",
+    "german": "Email",
+    "english": "Email",
+    "macedonian": "Е-пошта"
+  },
+  {
+    "id": "contacthtmlMessage",
+    "german": "Nachricht",
+    "english": "Message",
+    "macedonian": "Порака"
+  },
+  {
+    "id": "contacthtmlSubmit",
+    "german": "Einreichen",
+    "english": "Submit",
+    "macedonian": "Испрати"
+  },
+  {
+    "id": "loginhtmlLogIn",
+    "german": "Einloggen",
+    "english": "Log in",
+    "macedonian": "Логирај се"
+  },
+  {
+    "id": "loginhtmlEmail",
+    "german": "Email",
+    "english": "Email",
+    "macedonian": "Е-пошта"
+  },
+  {
+    "id": "loginhtmlPassword",
+    "german": "Passwort",
+    "english": "Password",
+    "macedonian": "Лозинка"
+  },
+  {
+    "id": "loginhtmlSubmit",
+    "german": "Einreichen",
+    "english": "Submit",
+    "macedonian": "Испрати"
+  },
+  {
+    "id": "footerhtmlContactUs",
+    "german": "Kontaktieren Sie uns",
+    "english": "Contact us",
+    "macedonian": "Контактирајте не"
+  },
+  {
+    "id": "footerhtmlFollowUs",
+    "german": "Folgen Sie uns ",
+    "english": "Follow us ",
+    "macedonian": "Следете не "
+  },
+  {
+    "id": "footerhtmlPhone",
+    "german": "Telefon: ",
+    "english": "Phone: ",
+    "macedonian": "Телефон: "
+  },
+  {
+    "id": "footerhtmlEmail",
+    "german": "Email: ",
+    "english": "Email: ",
+    "macedonian": "Е-пошта: "
+  },
+  {
+    "id": "footerhtmlAllRightsReserved.",
+    "german": "Alle Rechte vorbehalten.",
+    "english": "All Rights Reserved.",
+    "macedonian": "Сите права се задржани."
+  },
+  {
+    "id": "headerhtmlHome",
+    "german": "Heim",
+    "english": "Home",
+    "macedonian": "Дома"
+  },
+  {
+    "id": "headerhtmlServices",
+    "german": "Leistungen",
+    "english": "Services",
+    "macedonian": "Услуги"
+  },
+  {
+    "id": "headerhtmlReviews",
+    "german": "Bewertungen",
+    "english": "Reviews",
+    "macedonian": "Осврти"
+  },
+  {
+    "id": "headerhtmlAboutUs",
+    "german": "Über uns",
+    "english": "About us",
+    "macedonian": "За нас"
+  },
+  {
+    "id": "headerhtmlContact",
+    "german": "Kontakt",
+    "english": "Contact",
+    "macedonian": "Контакт"
+  },
+  {
+    "id": "headerhtmlAdmin",
+    "german": "Admin",
+    "english": "Admin",
+    "macedonian": "Админ"
+  },
+  {
+    "id": "reviewshtmlWPTAU",
+    "german": "Was unsere Kunden über uns denken",
+    "english": "What our customers think about us",
+    "macedonian": "Што мислат нашите клиенти за нас"
+  },
+  {
+    "id": "reviewshtmlCTLYO",
+    "german": "Klicken Sie hier, um Ihre Meinung zu hinterlassen",
+    "english": "Click to leave your opinion",
+    "macedonian": "Кликни за да оставиш мислење"
+  },
+  {
+    "id": "reviewshtmlYourOpinion",
+    "german": "Ihre Meinung",
+    "english": "Your opinion",
+    "macedonian": "Ваше мислење"
+  },
+  {
+    "id": "reviewshtmlName",
+    "german": "Name",
+    "english": "Name",
+    "macedonian": "Име"
+  },
+  {
+    "id": "reviewshtmlRateUs",
+    "german": "Bewerten Sie uns",
+    "english": "Rate us",
+    "macedonian": "Оцена"
+  },
+  {
+    "id": "reviewshtmlOpinion",
+    "german": "Meinung",
+    "english": "Opinion",
+    "macedonian": "Мислење"
+  },
+  {
+    "id": "reviewshtmlSubmit",
+    "german": "Einreichen",
+    "english": "Submit",
+    "macedonian": "Испрати"
+  },
+  {
+    "id": "serviceshtmlOurServices",
+    "german": "Unsere Leistungen",
+    "english": "Our services",
+    "macedonian": "Наши услуги"
+  },
+  {
+    "id": "homepagehtmlYTCS",
+    "german": "Ihr vertrauenswürdiger Reinigungsdienst",
+    "english": "Your Trusted Cleaning Service",
+    "macedonian": "Вашиот доверлив сервис за чистење"
+  },
+  {
+    "id": "homepagehtmlERA",
+    "german": "Effizient. Zuverlässig. Bezahlbar.",
+    "english": "Efficient. Reliable. Affordable.",
+    "macedonian": "Ефикасно. Веродостојно. Достапно."
+  },
+  {
+    "id": "homepagehtmlBookNow",
+    "german": "Jetzt buchen",
+    "english": "Book Now",
+    "macedonian": "Резервирај термин"
+  },
+  {
+    "id": "adminhtmlNewUser",
+    "german": "Neuer kunde",
+    "english": "New user",
+    "macedonian": "Нов корисник"
+  },
+  {
+    "id": "adminhtmlAllUsers",
+    "german": "Alle Benutzer",
+    "english": "All users",
+    "macedonian": "Сите корисници"
+  },
+  {
+    "id": "adminhtmlAllEmails",
+    "german": "Alle e-mails",
+    "english": "All e-mails",
+    "macedonian": "Сите е-пошти"
+  },
+  {
+    "id": "adminhtmlAllContents",
+    "german": "Alle Inhalte",
+    "english": "All contents",
+    "macedonian": "Сите содржини"
+  },
+  {
+    "id": "adminhtmlLogOut",
+    "german": "Abmelden",
+    "english": "Log out",
+    "macedonian": "Излез"
+  },
+  {
+    "id": "adminhtmlSignUp",
+    "german": "Neuen Benutzer anmelden",
+    "english": "Sign up new user",
+    "macedonian": "Регистрирај нов корисник"
+  },
+  {
+    "id": "adminhtmlFullName",
+    "german": "Vollständiger Name",
+    "english": "Full name",
+    "macedonian": "Целосно име"
+  },
+  {
+    "id": "adminhtmlEmail",
+    "german": "Email",
+    "english": "Email",
+    "macedonian": "Е-пошта"
+  },
+  {
+    "id": "adminhtmlPassword",
+    "german": "Passwort",
+    "english": "Password",
+    "macedonian": "Лозинка"
+  },
+  {
+    "id": "adminhtmlSubmit",
+    "german": "Einreichen",
+    "english": "Submit",
+    "macedonian": "Испрати"
+  },
+  {
+    "id": "adminhtmlFullName:",
+    "german": "Vollständiger Name: ",
+    "english": "Full name: ",
+    "macedonian": "Целосно име: "
+  },
+  {
+    "id": "adminhtmlEmail:",
+    "german": "Email: ",
+    "english": "Email: ",
+    "macedonian": "Е-пошта: "
+  },
+  {
+    "id": "adminhtmlPassword:",
+    "german": "Passwort: ",
+    "english": "Password: ",
+    "macedonian": "Лозинка: "
+  },
+  {
+    "id": "adminhtmlEnabled:",
+    "german": "Ermöglicht: ",
+    "english": "Enabled: ",
+    "macedonian": "Активен: "
+  },
+  {
+    "id": "adminhtmlReceivedEmails",
+    "german": "Empfangene E-Mails",
+    "english": "Received E-mails",
+    "macedonian": "Примени пораки"
+  },
+  {
+    "id": "adminhtmlDate:",
+    "german": "Datum:",
+    "english": "Date:",
+    "macedonian": "Датум:"
+  },
+  {
+    "id": "adminhtmlName:",
+    "german": "Name:",
+    "english": "Name:",
+    "macedonian": "Име:"
+  },
+  {
+    "id": "adminhtmlMessage:",
+    "german": "Nachricht:",
+    "english": "Message:",
+    "macedonian": "Порака:"
+  },
+  {
+    "id": "adminhtmlLocation:",
+    "german": "Standort:",
+    "english": "Location:",
+    "macedonian": "Локација:"
+  },
+  {
+    "id": "adminhtmlAll",
+    "german": "Alle",
+    "english": "All",
+    "macedonian": "Сите"
+  },
+  {
+    "id": "adminhtmlNumber:",
+    "german": "Nm.: ",
+    "english": "No.: ",
+    "macedonian": "Бр.: "
+  },
+  {
+    "id": "adminhtmlGerman:",
+    "german": "Deutsche: ",
+    "english": "German: ",
+    "macedonian": "Германски: "
+  },
+  {
+    "id": "adminhtmlEnglish:",
+    "german": "Englische: ",
+    "english": "English: ",
+    "macedonian": "Англиски: "
+  },
+  {
+    "id": "adminhtmlMacedonian:",
+    "german": "Mazedonische: ",
+    "english": "Macedonian: ",
+    "macedonian": "Македонски: "
+  },
+  {
+    "id": "adminhtmlUpdate",
+    "german": "Aktualisieren",
+    "english": "Update",
+    "macedonian": "Измени"
+  },
+  {
+    "id": "adminhtmlCancel",
+    "german": "Stornieren",
+    "english": "Cancel",
+    "macedonian": "Откажи"
+  },
+  {
+    "id": "adminhtmlSave",
+    "german": "Speichern",
+    "english": "Save",
+    "macedonian": "Зачувај"
+  },
+  {
+    "id": "adminhtmlAllCards",
+    "german": "Alle Karten",
+    "english": "All cards",
+    "macedonian": "Сите картички"
+  },
+  {
+    "id": "adminhtmlNewCard",
+    "german": "Neue Karte",
+    "english": "New card",
+    "macedonian": "Нова картичка"
+  },
+  {
+    "id": "adminhtmlCardTitle",
+    "german": "Titel",
+    "english": "Title",
+    "macedonian": "Наслов"
+  },
+  {
+    "id": "adminhtmlCardDescription",
+    "german": "Beschreibung",
+    "english": "Description",
+    "macedonian": "Опис"
+  },
+  {
+    "id": "adminhtmlCardPicture",
+    "german": "Bild",
+    "english": "Picture",
+    "macedonian": "Слика"
+  },
+  {
+    "id": "adminhtmlCardTitel:",
+    "german": "Titel DEU: ",
+    "english": "Title DEU: ",
+    "macedonian": "Наслов ГЕР: "
+  },
+  {
+    "id": "adminhtmlCardTitle:",
+    "german": "Titel ENG: ",
+    "english": "Title ENG: ",
+    "macedonian": "Наслов ЕНГ: "
+  },
+  {
+    "id": "adminhtmlCardNaslov:",
+    "german": "Titel MKD: ",
+    "english": "Title MKD: ",
+    "macedonian": "Наслов МКД: "
+  },
+  {
+    "id": "adminhtmlCardBeschreibung:",
+    "german": "Beschreibung DEU: ",
+    "english": "Description DEU: ",
+    "macedonian": "Опис ГЕР: "
+  },
+  {
+    "id": "adminhtmlCardDescription:",
+    "german": "Beschreibung ENG: ",
+    "english": "Description ENG: ",
+    "macedonian": "Опис ЕНГ: "
+  },
+  {
+    "id": "adminhtmlCardOpis:",
+    "german": "Beschreibung MKD: ",
+    "english": "Description MKD: ",
+    "macedonian": "Опис МКД: "
+  },
+  {
+    "id": "adminhtmlCardPublic:",
+    "german": "Öffentlich: ",
+    "english": "Public: ",
+    "macedonian": "Јавна: "
+  },
+  {
+    "id": "adminhtmlCardNumber:",
+    "german": "Nm: ",
+    "english": "No.: ",
+    "macedonian": "Бр.: "
+  },
+  {
+    "id": "adminhtmlCardPicture:",
+    "german": "Bild: ",
+    "english": "Picture: ",
+    "macedonian": "Слика: "
+  },
+  {
+    "id": "adminhtmlAllReviews",
+    "german": "Alle Bewertungen ",
+    "english": "All reviews ",
+    "macedonian": "Сите осврти "
+  },
+  {
+    "id": "adminhtmlReviewNumber:",
+    "german": "Nm: ",
+    "english": "No.: ",
+    "macedonian": "Бр.: "
+  },
+  {
+    "id": "adminhtmlAllReviewName:",
+    "german": "Name: ",
+    "english": "Name: ",
+    "macedonian": "Име: "
+  },
+  {
+    "id": "adminhtmlAllReviewCreatedAt:",
+    "german": "Erstellt am: ",
+    "english": "Created at: ",
+    "macedonian": "Креирано на: "
+  },
+  {
+    "id": "adminhtmlAllReviewRating:",
+    "german": "Bewertung: ",
+    "english": "Rating: ",
+    "macedonian": "Оцена: "
+  },
+  {
+    "id": "adminhtmlAllReviewOpinion:",
+    "german": "Meinung: ",
+    "english": "Opinion: ",
+    "macedonian": "Мислење: "
+  },
+  {
+    "id": "adminhtmlAllReviewPublic:",
+    "german": "Öffentlich: ",
+    "english": "Public: ",
+    "macedonian": "Јавна: "
+  }
+]
