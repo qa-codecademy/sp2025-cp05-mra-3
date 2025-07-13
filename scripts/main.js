@@ -1,27 +1,3 @@
-// navbar dropdown - start
-const logoLink = document.getElementById('logoLink');
-
-logoLink.addEventListener('click', function (event) {
-event.preventDefault();
-
-const isLoggedIn = localStorage.getItem('isLoggedIn');
-
-if (isLoggedIn) {
-    window.location.href = './admin.html';
-} else {
-    window.location.href = './login.html';
-}
-});
-
-// admin tab start
-const adminTab = document.getElementsByClassName("headerhtmlAdmin")[0];
-adminTab.addEventListener('click', function (event) {
-event.preventDefault();
-localStorage.setItem('isLoggedIn', '437240e8-4c46-42fd-a337-488f1ad3f32e')
-window.location.href = './admin.html';
-});
-// admin tab end
-
 const html = {
     navBar: document.getElementById("navBar"),
 
@@ -64,10 +40,6 @@ menuLinks.forEach(link => {
     });
 });
 
-// document.addEventListener('click', () => {
-//     html.dropdown.classList.remove('open');
-// });
-
-
-
-// navbar dropdown - end
+document.addEventListener('click', () => {
+    html.dropdown.classList.remove('open');
+});
